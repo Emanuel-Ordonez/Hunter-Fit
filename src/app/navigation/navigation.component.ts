@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  // providers: [UserService],
+  moduleId: module.id,
+  templateUrl: './navigation.component.tns.html',
+  styleUrls: ['./navigation.component.tns.css']
 })
 export class NavigationComponent implements OnInit {
 

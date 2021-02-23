@@ -1,1 +1,65 @@
-<Button text="navigation works!" class="btn btn-primary"></Button>
+<!-- <Button text="navigation works!" class="btn btn-primary"></Button> -->
+<ActionBar title="HunterFit"></ActionBar>
+
+<FlexboxLayout>
+    <!-- <StackLayout> -->
+    <BottomNavigation id="bottomNavBar">
+        <!-- <Tabs> -->
+        <TabStrip>
+            <TabStripItem>
+                <Label text="Home" class="nav-label" id="nav-home">
+                    </Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Search" class="nav-label" id="nav-search">
+                    </Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Clubs" class="nav-label" id="nav-clubs">
+                    </Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Workouts" class="nav-label" id="nav-workouts">
+                    </Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Profile" class="nav-label" id="nav-profile">
+                    </Label>
+            </TabStripItem>
+        </TabStrip>
+
+        <TabContentItem>
+            <GridLayout>
+                <!-- <Label text="Home Page in nav html" class="h2 text-center">
+                    </Label> -->
+                <home></home>
+            </GridLayout>
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <search></search>
+            </GridLayout>
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <clubs></clubs>
+            </GridLayout>
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <!-- <Label text="Workouts Page in nav html" class="h2 text-center">
+                    </Label> -->
+                <workouts></workouts>
+            </GridLayout>
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <!-- <Label text="Profile Page in nav html" class="h2 text-center">
+                    </Label> -->
+                <profile></profile>
+            </GridLayout>
+        </TabContentItem>
+    </BottomNavigation>
+    <!-- </Tabs> -->
+    <!-- </StackLayout> -->
+</FlexboxLayout>

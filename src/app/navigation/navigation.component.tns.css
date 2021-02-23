@@ -1,1 +1,15 @@
 /* Add mobile styles for the component here.  */
+TabStrip {
+    background-color: #047493;
+}
+
+Label {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#bottomNavBar {
+    width: 100%;
+    height: 100%;
+}
