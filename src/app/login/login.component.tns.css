@@ -1,1 +1,35 @@
 /* Add mobile styles for the component here.  */
+
+FlexboxLayout {
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    /* background-image: url("~/images/background.jpg"); */
+    background-color: rgb(136, 164, 188);
+}
+
+StackLayout {
+    width: 300;
+    padding: 10 16;
+    background-color: #f0f0f0;
+}
+
+Image {
+    margin-bottom: 20;
+    height: 70;
+}
+
+Button,
+TextField {
+    margin-bottom: 10;
+}
+
+.btn-primary {
+    background-color: rgb(0, 101, 138);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+TextField {
+    color: black;
+}
