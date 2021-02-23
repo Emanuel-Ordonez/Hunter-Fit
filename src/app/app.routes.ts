@@ -1,13 +1,16 @@
 import { Routes } from '@angular/router';
 
+
 import { HomeComponent } from './navigation/home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SearchComponent } from './navigation/search/search.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: '/navigation',
     pathMatch: 'full',
+
   },
   {
     path: 'navigation',
@@ -17,4 +20,7 @@ export const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
+    path: 'search',
+    component: SearchComponent,
+  }
 ];
