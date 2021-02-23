@@ -3,6 +3,8 @@ import { NativeScriptModule } from '@nativescript/angular';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
+import { HomeComponent } from '@src/app/navigation/home/home.component';
+import { LoginComponent } from '@src/app/login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 
@@ -12,7 +14,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
+    HomeComponent,
+    LoginComponent,
+    NavigationComponent
   ],
   imports: [
     NativeScriptModule,
