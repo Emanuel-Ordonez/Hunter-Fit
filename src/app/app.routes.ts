@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from '@src/app/home/home.component';
-import { LoginComponent } from '@src/app/login/login.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 export const routes: Routes = [
   {
       path: '',
-      redirectTo: '/login',
+      redirectTo: '/navigation',
       pathMatch: 'full',
   },
   {
@@ -14,7 +14,7 @@ export const routes: Routes = [
       component: HomeComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
+    path: 'navigation',
+    component: NavigationComponent,
+},
 ];
