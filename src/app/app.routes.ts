@@ -8,7 +8,7 @@ import { SearchComponent } from './navigation/search/search.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/navigation',
+    redirectTo: '/search',
     pathMatch: 'full',
 
   },
@@ -20,6 +20,7 @@ export const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
+  {
     path: 'search',
     component: SearchComponent,
   }
