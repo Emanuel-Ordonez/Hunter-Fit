@@ -10,7 +10,7 @@ import { WorkoutsComponent } from './navigation/workouts/workouts.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/profile',
+    redirectTo: '/navigation',
     pathMatch: 'full',
   },
   {
