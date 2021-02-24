@@ -1,1 +1,21 @@
 /* Add mobile styles for the component here.  */
+
+#profile-info-flexbox {
+    height: 26%;
+    background-color: #047493;
+}
+
+#profile-tabs {
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 68, 255);
+}
+
+#profile-picture {
+    background-color: white;
+}
+
+#second-Stack {
+    height: 92%;
+}

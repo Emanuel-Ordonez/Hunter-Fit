@@ -1,1 +1,20 @@
-<Button text="workouts works!" class="btn btn-primary"></Button>
+<GridLayout>
+    <ScrollView>
+        <StackLayout class="p-20">
+
+            <Card:CardView class="cardStyle">
+                <StackLayout class="cardContent">
+                    <Label text="Current Workout:" class="workout-name"></Label>
+                    <Label [text]="currentWorkoutName" class="workout-name"></Label>
+                </StackLayout>
+            <Label class="timeLabel" [text]="'Elapsed Time: ' + currentTimeB" textWrap="true"></Label>
+            </Card:CardView>
+
+            <FlexboxLayout id="pause-finish-button-flexbox">
+                <Button class="viewWorkoutButton" text="View"></Button>
+                <Button class="conclude-button" text="Conclude" (tap)="stopWorkout"></Button>
+                <!-- <Button text="Stop" class="stop-button" (tap)="stopWorkout($event)"></Button> -->
+            </FlexboxLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>
