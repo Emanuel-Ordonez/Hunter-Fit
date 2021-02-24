@@ -1,37 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  getBoolean,
-  setBoolean,
-  getNumber,
-  setNumber,
-  getString,
-  setString,
-  hasKey,
-  remove,
-  clear
-} from "@nativescript/core/application-settings";
+import { getNumber, getString, setNumber } from '@nativescript/core/application-settings';
 
 @Component({
   selector: 'app-workouts',
-  templateUrl: './workouts.component.html',
-  styleUrls: ['./workouts.component.css']
+  moduleId: module.id,
+  templateUrl: './workouts.component.tns.html',
+  styleUrls: ['./workouts.component.tns.css']
 })
 export class WorkoutsComponent implements OnInit {
-    currentWorkoutName: string;
-    currentTimeB: number = 0;
-    interval;
-    public status = true;
 
-    constructor() {  
-         
-    }
+  currentWorkoutName: string;
+  currentTimeB: number = 0;
+  interval;
+  public status = true;
 
-    //todo: have it do this on every time the page loads instead of just once
-    //todo: or ngrx way to share data between components
-    public ngOnInit(){
-      //todo: extract dup key to const
-      this.currentWorkoutName = getString("MannyLovesHisNewAndroid");
-    }
+  constructor() { }
+
+  //todo: have it do this on every time the page loads instead of just once
+  //todo: or ngrx way to share data between components
+  public ngOnInit() {
+    //todo: extract dup key to const
+    this.currentWorkoutName = getString("MannyLovesHisNewAndroid");
+  }
 
     public startWorkoutB() {
         console.log("workout starting in workoutComponent");
