@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { getNumber, setNumber } from '@nativescript/core/application-settings';
 import { EventData, Observable } from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
-import { WorkoutConstants } from '../services/WorkoutConstants';
+// import { WorkoutConstants } from '../../../services/WorkoutConstants.tns';
 
 @Component({
   selector: 'app-start-workout',
@@ -10,7 +10,7 @@ import { WorkoutConstants } from '../services/WorkoutConstants';
   templateUrl: './start-workout.component.tns.html',
   styleUrls: ['./start-workout.component.tns.css']
 })
-export class StartWorkoutComponent implements OnInit {
+export class StartWorkoutComponent  {
 
   public workoutType: any;
   currentTime: number = 0;
@@ -27,7 +27,7 @@ export class StartWorkoutComponent implements OnInit {
   }
 
   constructor() { }
-  ngOnInit(): void { }
+  // ngOnInit(): void { }
 
   //////////////////////////////////////////
 
@@ -78,12 +78,12 @@ export class StartWorkoutComponent implements OnInit {
     // setString("MannyLovesHisNewAndroid", workoutType.object.id);
     this.viewModel.set("workoutType", workoutType.object.id);
     console.log(this.viewModel.get("workoutType"));
-
+    /*
     for (var button in WorkoutConstants.buttons) {
       if (workoutType.object.id === WorkoutConstants.buttons[button]) {
         workoutType.object.backgroundColor = "#787774";
       }
-    }
+    }*/
 
     if (this.prevWorkoutType) {
       this.prevWorkoutType.object.backgroundColor = "#00658A";
