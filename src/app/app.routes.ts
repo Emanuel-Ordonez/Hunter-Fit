@@ -10,7 +10,7 @@ import { WorkoutsComponent } from './navigation/workouts/workouts.component';
 import { StartWorkoutComponent } from './start-workout/start-workout.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "workouts", pathMatch: "full" },
+  { path: "", redirectTo: "navigation", pathMatch: "full" },
   { path: "navigation", component: NavigationComponent },
 
   { path: "home", component: HomeComponent},
