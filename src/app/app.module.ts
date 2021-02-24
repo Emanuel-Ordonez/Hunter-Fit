@@ -7,6 +7,7 @@ import { HomeComponent } from '@src/app/navigation/home/home.component';
 import { NavigationComponent } from '@src/app/navigation/navigation.component';
 import { ClubsComponent } from '@src/app/navigation/clubs/clubs.component';
 import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.component';
+import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.comp
     HomeComponent,
     NavigationComponent,
     ClubsComponent,
-    StartWorkoutComponent
+    StartWorkoutComponent,
+    WorkoutsComponent
   ],
   imports: [
     BrowserModule,
