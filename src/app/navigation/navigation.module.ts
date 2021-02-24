@@ -9,9 +9,10 @@ import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.compone
 
 
 @NgModule({
-  declarations: [HomeComponent, NavigationComponent, ProfileComponent, SearchComponent, WorkoutsComponent],
+  declarations: [NavigationComponent, HomeComponent, ProfileComponent, SearchComponent, WorkoutsComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  bootstrap: [NavigationComponent],
 })
 export class NavigationModule { }
