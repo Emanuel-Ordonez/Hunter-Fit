@@ -9,11 +9,13 @@ import { NavigationComponent } from '@src/app/navigation/navigation.component';
 import { HomeComponent } from '@src/app/navigation/home/home.component';
 import { ClubsComponent } from '@src/app/navigation/clubs/clubs.component';
 import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
-import { ProfileComponent } from './navigation/profile/profile.component';
-import { SearchComponent } from './navigation/search/search.component';
+import { ProfileComponent } from '@src/app/navigation/profile/profile.component';
+import { SearchComponent } from '@src/app/navigation/search/search.component';
 
 //WorkoutsComponent Child
 import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workout/start-workout.component';
+import { CardioWorkoutComponent } from '@src/app/cardio-workout/cardio-workout.component';
+import { WeightLiftingWorkoutComponent } from '@src/app/weight-lifting-workout/weight-lifting-workout.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
@@ -31,6 +33,10 @@ import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workou
     ProfileComponent,
     
     StartWorkoutComponent,
+    
+    CardioWorkoutComponent,
+    
+    WeightLiftingWorkoutComponent,
   ],
   imports: [
     NativeScriptModule,

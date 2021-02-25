@@ -10,10 +10,10 @@
             <Label class="cardioLabel" text="Cardio:"></Label>
             <FlexboxLayout class="cardio-flexbox">
 
-                <Button class="workoutButton" id="walking" text="Walking" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="running" text="Running" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="swimming" text="Swimming" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="biking" text="Biking" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="cardioWorkoutButton" id="walking" text="Walking" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="cardioWorkoutButton" id="running" text="Running" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="cardioWorkoutButton" id="swimming" text="Swimming" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="cardioWorkoutButton" id="biking" text="Biking" (tap)="selectWorkoutType($event)"></Button>
 
             </FlexboxLayout>
 
@@ -21,30 +21,29 @@
             <Label class="weightLiftingLabel" text="Weightlifting:"></Label>
             <FlexboxLayout class="weightLifting-flexbox">
 
-                <Button class="workoutButton" id="benchpress" text="Bench Press"
+                <Button class="wlWorkoutButton" id="benchpress" text="Bench Press"
                     (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="squats" text="Squats" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="curls" text="Curls" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="deadlifts" text="Deadlifts"
+                <Button class="wlWorkoutButton" id="squats" text="Squats" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="curls" text="Curls" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="deadlifts" text="Deadlifts"
                     (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="rows" text="Rows" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="pushups" text="Push-Ups" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="crunches" text="Crunches" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="planks" text="Planks" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="legpress" text="Leg Press" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="workoutButton" id="powerclean" text="Powerclean"
+                <Button class="wlWorkoutButton" id="rows" text="Rows" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="pushups" text="Push-Ups" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="crunches" text="Crunches" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="planks" text="Planks" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="legpress" text="Leg Press" (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="powerclean" text="Powerclean"
                     (tap)="selectWorkoutType($event)"></Button>
 
             </FlexboxLayout>
 
             <div>
                 <Label class="timeLabel" [text]="'Time: ' + currentTime" textWrap="true"></Label>
-                <Button text="Start" class="start-button" (tap)="startWorkout()"></Button>
+                <Button text="Start" class="start-button" (tap)="startWorkout($event)"></Button>
                 <Button text="Stop" class="stop-button" (tap)="stopWorkout()"></Button>
-                <Button text="Cancel" class="cancel-button" [nsRouterLink]="['/navigation']"></Button>
+                <Button text="Cancel" class="cancel-button" [nsRouterLink]="['/navigation']" pageTransition="slide"></Button>
 
-                <Label class="lastWorkoutLabel" [text]="'Last Workout Time: ' + lastWorkoutTime"
-                    textWrap="true"></Label>
+                <!-- <Label class="lastWorkoutLabel" [text]="'Last Workout Time: ' + lastWorkoutTime" textWrap="true"></Label> -->
             </div>
         </StackLayout>
     </GridLayout>
