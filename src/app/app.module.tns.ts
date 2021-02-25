@@ -14,8 +14,8 @@ import { SearchComponent } from '@src/app/navigation/search/search.component';
 
 //WorkoutsComponent Child
 import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workout/start-workout.component';
-import { CardioWorkoutComponent } from '@src/app/cardio-workout/cardio-workout.component';
-import { WeightLiftingWorkoutComponent } from '@src/app/weight-lifting-workout/weight-lifting-workout.component';
+import { CardioWorkoutComponent } from '@src/app/navigation/workouts/start-workout/cardio-workout/cardio-workout.component';
+import { WeightLiftingWorkoutComponent } from '@src/app/navigation/workouts/start-workout/weight-lifting-workout/weight-lifting-workout.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
@@ -35,7 +35,6 @@ import { WeightLiftingWorkoutComponent } from '@src/app/weight-lifting-workout/w
     StartWorkoutComponent,
     
     CardioWorkoutComponent,
-    
     WeightLiftingWorkoutComponent,
   ],
   imports: [
