@@ -1,4 +1,20 @@
 /* Add mobile styles for the component here.  */
+/* Add mobile styles for the component here.  */
+ActionBar {
+    background-color: #00658A;
+    color: white;
+}
+
+Button {
+    background-color: #00658A;
+    border-radius: 15px;
+    border-style: outset;
+    border-width: 5px;
+    color: white;
+    margin-bottom: 2%;
+    width: 35%;
+}
+
 .cancel-button {
     background-color: gainsboro;
     color: #C00000;

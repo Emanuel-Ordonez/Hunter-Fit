@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.component';
+import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workout/start-workout.component';
 
 describe('StartWorkoutComponent', () => {
   let component: StartWorkoutComponent;
