@@ -10,7 +10,6 @@ import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.comp
 import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
 import { ProfileComponent } from './navigation/profile/profile.component';
 import { SearchComponent } from './navigation/search/search.component';
-er
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper

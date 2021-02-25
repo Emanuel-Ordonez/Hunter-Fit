@@ -32,31 +32,29 @@
             <GridLayout>
                 <!-- <Label text="Home Page in nav html" class="h2 text-center">
                     </Label> -->
-                <home></home>
+                <router-outlet name="home"></router-outlet>
             </GridLayout>
         </TabContentItem>
         <TabContentItem>
             <GridLayout>
-                <search></search>
+                <router-outlet name="search"></router-outlet>
             </GridLayout>
         </TabContentItem>
         <TabContentItem>
             <GridLayout>
-                <clubs></clubs>
+                <router-outlet name="clubs"></router-outlet>
             </GridLayout>
         </TabContentItem>
         <TabContentItem>
             <GridLayout>
                 <!-- <Label text="Workouts Page in nav html" class="h2 text-center">
                     </Label> -->
-                <workouts></workouts>
+                <router-outlet name="workouts"></router-outlet>
             </GridLayout>
         </TabContentItem>
         <TabContentItem>
             <GridLayout>
-                <!-- <Label text="Profile Page in nav html" class="h2 text-center">
-                    </Label> -->
-                <profile></profile>
+                <router-outlet name="profile"></router-outlet>
             </GridLayout>
         </TabContentItem>
     </BottomNavigation>

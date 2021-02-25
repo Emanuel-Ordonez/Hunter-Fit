@@ -11,13 +11,15 @@ import { StartWorkoutComponent } from './start-workout/start-workout.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "navigation", pathMatch: "full" },
-  { path: "navigation", component: NavigationComponent },
-
-  { path: "home", component: HomeComponent},
-  { path: "search", component: SearchComponent},
-  { path: "clubs", component: ClubsComponent},
-  { path: "workouts", component: WorkoutsComponent},
-  { path: "profile", component: ProfileComponent},
+  { path: "navigation", component: NavigationComponent,
+    children: [
+      { path: "", component: HomeComponent, outlet: 'home' },
+      { path: "", component: SearchComponent, outlet: 'search' },
+      { path: "", component: ClubsComponent, outlet: 'clubs' },
+      { path: "", component: WorkoutsComponent,outlet: 'workouts' },
+      { path: "", component: ProfileComponent, outlet: 'profile' },
+    ]
+  },
 
   { path: "startWorkout", component: StartWorkoutComponent},
   // { path: "tracking", component: trackingComponent}
