@@ -4,14 +4,6 @@ Button {
     background-color: #47ABD1;
 }
 
-GridLayout {
-    background-color: pink;
-}
-
-StackLayout {
-    background-color: lavender;
-}
-
 .cancel-button {
     background-color: gainsboro;
     color: #C00000;

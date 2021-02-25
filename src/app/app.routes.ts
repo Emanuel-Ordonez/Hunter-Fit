@@ -11,7 +11,7 @@ import { StartWorkoutComponent } from './navigation/workouts/start-workout/start
 import { CurrentWorkoutComponent } from './navigation/workouts/current-workout/current-workout.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "navigation", pathMatch: "full" },
+  { path: "", redirectTo: "startWorkout", pathMatch: "full" },
   { path: "navigation", component: NavigationComponent },
 
   { path: "home", component: HomeComponent },
