@@ -28,8 +28,6 @@ export class WorkoutsComponent implements OnInit {
     const picker = <ListPicker>args.object;
   }
 
-  constructor(private routerExtensions: RouterExtensions){}
-
   ngOnInit(){
     // this.viewModel.set("workoutType", "");
   }
@@ -39,7 +37,7 @@ export class WorkoutsComponent implements OnInit {
   @Output() timeOutput = new EventEmitter();
 
   public startWorkout() {
-    this.callCurrentWorkout();
+    // this.callCurrentWorkout();
 
     if (this.status) {
       this.status = false;
@@ -53,7 +51,7 @@ export class WorkoutsComponent implements OnInit {
     }
 
   }
-
+/*
   public callCurrentWorkout(){
     var selectedWorkout = this.viewModel.get("workoutTypeClass");
     console.log(this.viewModel.get("workoutTypeClass"));
@@ -90,7 +88,7 @@ export class WorkoutsComponent implements OnInit {
     this.lastWorkoutTime = getNumber("workoutTime");
 
     //CONSIDER: having the UI page go back to the navigation/workouts page>
-  }
+  }*/
 
   public selectWorkoutType(workoutType: any) { //HTMLButtonElement
 
@@ -111,13 +109,5 @@ export class WorkoutsComponent implements OnInit {
 
   ////////////////////////////////////////////////////////////////
 
-  public goBack(): void {
-    this.routerExtensions.back(); //doesnt work yet
-    console.log("going back!");
-  }
-
-  public goForward(page: any): void {
-    this.routerExtensions.navigate(page); //doesnt work yet
-  }
 }
 

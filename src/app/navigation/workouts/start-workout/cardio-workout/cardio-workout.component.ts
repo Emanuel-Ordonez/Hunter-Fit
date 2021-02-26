@@ -10,6 +10,7 @@ import { WorkoutsComponent } from '../../workouts.component';
 export class CardioWorkoutComponent extends WorkoutsComponent implements OnInit {
 
   ngOnInit(): void {
+    this.startWorkout();
   }
 
 }
