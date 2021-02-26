@@ -6,13 +6,13 @@
             <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
             <!-- viewModel.get("workoutTypeId") -->
 
-            <!-- <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label> -->
+            <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label> 
             <!-- currentTime displays here -->
 
             <Label text="Rep Sets:"></Label>
             <ScrollView orientation="vertical">
                 <StackLayout>
-
+                    <router-outlet name="addRep"></router-outlet>
                 </StackLayout>
             </ScrollView>
 
@@ -24,8 +24,6 @@
             </TextView>
             <!-- Research user input to go in here? -->
         </StackLayout>
-
-        <Button class="add-set-button" text="Add Set"></Button>
 
         <StackLayout class="buttonStackLayout-weightLifting">
             <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->

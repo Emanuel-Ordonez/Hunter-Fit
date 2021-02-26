@@ -1,0 +1,51 @@
+/* Add mobile styles for the component here.  */
+
+#reps-weight-stackLayout {
+    margin-top: 10em;
+    width: 92%;
+}
+
+#remove-stackLayout {
+    width: 10%;
+}
+
+#addRepButton {
+    margin-top: 10em;
+    height: 23em;
+    background-color: aliceblue;
+    color: black;
+    width: 100em;
+}
+
+.rep-details {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.rep-weight-stackLayout {
+    width: 45%;
+}
+
+.reps-weight-labels {
+    margin-bottom: 5em;
+    color: white;
+    font-weight: bold;
+    width: 95%;
+    text-align: center;
+}
+
+.reps-weight-textField {
+    background-color: cyan;
+    width: 95%;
+    text-align: center;
+}
+
+.removeButton {
+    background-color: #C00000;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    height: 15em;
+    width: 15em;
+}
