@@ -59,11 +59,13 @@ export class WorkoutsComponent implements OnInit {
     console.log(this.viewModel.get("workoutTypeClass"));
 
     if(selectedWorkout == 'cardioWorkoutButton'){
-      this.goForward("cardio-workout");
+      // this.goForward("cardio-workout");
+      this.routerExtensions.navigate(['/cardioWorkout']);
       this.status = true;
     } 
     else if(selectedWorkout == 'wlWorkoutButton'){ 
-      this.goForward("weight-lifting-workout");
+      // this.goForward("weight-lifting-workout");
+      this.routerExtensions.navigate(['/weightLiftingWorkout']);
       this.status = true;
     }
     else {
