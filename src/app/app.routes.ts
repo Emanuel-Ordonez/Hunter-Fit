@@ -12,14 +12,16 @@ import { CardioWorkoutComponent } from './navigation/workouts/start-workout/card
 import { WeightLiftingWorkoutComponent } from './navigation/workouts/start-workout/weight-lifting-workout/weight-lifting-workout.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "startWorkout", pathMatch: "full" },
-  { path: "navigation", component: NavigationComponent },
-
-  { path: "home", component: HomeComponent },
-  { path: "search", component: SearchComponent },
-  { path: "clubs", component: ClubsComponent },
-  { path: "workouts", component: WorkoutsComponent },
-  { path: "profile", component: ProfileComponent },
+  { path: "", redirectTo: "navigation", pathMatch: "full" },
+  { path: "navigation", component: NavigationComponent,
+    children: [
+      { path: "", component: HomeComponent, outlet: 'home' },
+      { path: "", component: SearchComponent, outlet: 'search' },
+      { path: "", component: ClubsComponent, outlet: 'clubs' },
+      { path: "", component: WorkoutsComponent,outlet: 'workouts' },
+      { path: "", component: ProfileComponent, outlet: 'profile' },
+    ]
+  },
 
   { path: "startWorkout", component: StartWorkoutComponent },
   { path: "cardioWorkout", component: CardioWorkoutComponent },
