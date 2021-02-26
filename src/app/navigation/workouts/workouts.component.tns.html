@@ -3,6 +3,13 @@
         <StackLayout>
 
             <Button text='workouts works!'></Button>
+        <startWorkout></startWorkout>
+
+            <FlexboxLayout id="pause-finish-button-flexbox">
+                <Button class="viewWorkoutButton" text="View"></Button>
+                <Button class="conclude-button" text="Conclude" (tap)="stopWorkout"></Button>
+                <!-- <Button text="Stop" class="stop-button" (tap)="stopWorkout($event)"></Button> -->
+            </FlexboxLayout>
         </StackLayout>
     </ScrollView>
 </GridLayout>
