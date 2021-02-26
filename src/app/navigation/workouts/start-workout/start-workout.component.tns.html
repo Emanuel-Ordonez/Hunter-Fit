@@ -25,8 +25,7 @@
                     (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="squats" text="Squats" (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="curls" text="Curls" (tap)="selectWorkoutType($event)"></Button>
-                <Button class="wlWorkoutButton" id="deadlifts" text="Deadlifts"
-                    (tap)="selectWorkoutType($event)"></Button>
+                <Button class="wlWorkoutButton" id="deadlifts" text="Deadlifts" (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="rows" text="Rows" (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="pushups" text="Push-Ups" (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="crunches" text="Crunches" (tap)="selectWorkoutType($event)"></Button>
@@ -39,9 +38,9 @@
 
             <div>
                 <Label class="timeLabel" [text]="'Time: ' + currentTime" textWrap="true"></Label>
-                <Button text="Start" class="start-button" (tap)="startWorkout($event)"></Button>
-                <Button text="Stop" class="stop-button" (tap)="stopWorkout()"></Button>
-                <Button text="Cancel" class="cancel-button" [nsRouterLink]="['/navigation']" pageTransition="slide"></Button>
+                <Button text="Start" class="start-button" ></Button>
+                <Button text="Stop" class="stop-button"></Button>
+                <Button text="Cancel" class="cancel-button" pageTransition="slide"></Button>
 
                 <!-- <Label class="lastWorkoutLabel" [text]="'Last Workout Time: ' + lastWorkoutTime" textWrap="true"></Label> -->
             </div>

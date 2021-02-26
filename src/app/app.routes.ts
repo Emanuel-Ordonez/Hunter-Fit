@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
-import { ClubsComponent } from './navigation/clubs/clubs.component';
 
+import { NavigationComponent } from './navigation/navigation.component';
 
 import { HomeComponent } from './navigation/home/home.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { ClubsComponent } from './navigation/clubs/clubs.component';
 import { ProfileComponent } from './navigation/profile/profile.component';
 import { SearchComponent } from './navigation/search/search.component';
 import { WorkoutsComponent } from './navigation/workouts/workouts.component';
+
 import { StartWorkoutComponent } from './navigation/workouts/start-workout/start-workout.component';
 import { CardioWorkoutComponent } from './navigation/workouts/start-workout/cardio-workout/cardio-workout.component';
 import { WeightLiftingWorkoutComponent } from './navigation/workouts/start-workout/weight-lifting-workout/weight-lifting-workout.component';
@@ -18,7 +19,7 @@ export const routes: Routes = [
       { path: "", component: HomeComponent, outlet: 'home' },
       { path: "", component: SearchComponent, outlet: 'search' },
       { path: "", component: ClubsComponent, outlet: 'clubs' },
-      { path: "", component: WorkoutsComponent,outlet: 'workouts' },
+      { path: "", component: WorkoutsComponent, outlet: 'workouts'},
       { path: "", component: ProfileComponent, outlet: 'profile' },
     ]
   },
