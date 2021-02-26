@@ -12,11 +12,11 @@ import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
   templateUrl: './start-workout.component.tns.html',
   styleUrls: ['./start-workout.component.tns.css']
 })
-export class StartWorkoutComponent  {
+export class StartWorkoutComponent {
 
-  constructor(private routerExtensions: RouterExtensions){
+  constructor(private routerExtensions: RouterExtensions) {
   }
-  
+
   public workoutType: any;
   currentTime: number = 0;
   interval;
@@ -31,7 +31,7 @@ export class StartWorkoutComponent  {
     const picker = <ListPicker>args.object;
   }
 
-  ngOnInit(){
+  ngOnInit() {
     // this.viewModel.set("workoutType", "");
   }
 
@@ -40,8 +40,6 @@ export class StartWorkoutComponent  {
   @Output() timeOutput = new EventEmitter();
 
   public startWorkout() {
-    // this.callCurrentWorkout();
-
     if (this.status) {
       this.status = false;
       this.interval = setInterval(() => {
@@ -55,17 +53,15 @@ export class StartWorkoutComponent  {
 
   }
 
-  public callCurrentWorkout(){
+  public callCurrentWorkout() {
     var selectedWorkout = this.viewModel.get("workoutTypeClass");
     console.log(this.viewModel.get("workoutTypeClass"));
 
-    if(selectedWorkout == 'cardioWorkoutButton'){
-      // this.goForward("cardio-workout");
+    if (selectedWorkout == 'cardioWorkoutButton') {
       this.routerExtensions.navigate(['/cardioWorkout']);
       this.status = true;
-    } 
-    else if(selectedWorkout == 'wlWorkoutButton'){ 
-      // this.goForward("weight-lifting-workout");
+    }
+    else if (selectedWorkout == 'wlWorkoutButton') {
       this.routerExtensions.navigate(['/weightLiftingWorkout']);
       this.status = true;
     }
@@ -115,10 +111,6 @@ export class StartWorkoutComponent  {
   public goBack(): void {
     this.routerExtensions.back(); //doesnt work yet
     console.log("going back!");
-  }
-
-  public goForward(page: any): void {
-    this.routerExtensions.navigate(page); //doesnt work yet
   }
 
 }
