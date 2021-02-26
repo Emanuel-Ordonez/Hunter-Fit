@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { NSRouterLink } from '@nativescript/angular';
+import { Router, RouterLink } from '@angular/router';
+import { NSRouterLink, RouterExtensions } from '@nativescript/angular';
 import { getNumber, getString, setNumber } from '@nativescript/core/application-settings';
 import { EventData, Observable } from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
@@ -27,6 +27,8 @@ export class WorkoutsComponent implements OnInit {
   public onSelectedIndexChanged(args: EventData) {
     const picker = <ListPicker>args.object;
   }
+
+  constructor(private routerExtensions: RouterExtensions){}
 
   ngOnInit(){
     // this.viewModel.set("workoutType", "");
@@ -57,13 +59,11 @@ export class WorkoutsComponent implements OnInit {
     console.log(this.viewModel.get("workoutTypeClass"));
 
     if(selectedWorkout == 'cardioWorkoutButton'){
-      //route to cardioWorkout component
-      console.log('in if');
+      this.goForward("cardio-workout");
       this.status = true;
     } 
-    else if(selectedWorkout == 'wlWorkoutButton'){ // == wlWorkoutButton
-      //route to wlWorkout component
-      console.log('in elseif');
+    else if(selectedWorkout == 'wlWorkoutButton'){ 
+      this.goForward("weight-lifting-workout");
       this.status = true;
     }
     else {
@@ -86,6 +86,8 @@ export class WorkoutsComponent implements OnInit {
     console.log(this.viewModel.get("totalWorkoutTime"));
     this.currentTime = 0;
     this.lastWorkoutTime = getNumber("workoutTime");
+
+    //CONSIDER: having the UI page go back to the navigation/workouts page>
   }
 
   public selectWorkoutType(workoutType: any) { //HTMLButtonElement
@@ -103,6 +105,17 @@ export class WorkoutsComponent implements OnInit {
       this.prevWorkoutType.object.backgroundColor = "#00658A";
     }
     this.prevWorkoutType = workoutType;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  public goBack(): void {
+    this.routerExtensions.back(); //doesnt work yet
+    console.log("going back!");
+  }
+
+  public goForward(page: any): void {
+    this.routerExtensions.navigate(page); //doesnt work yet
   }
 }
 

@@ -1,10 +1,20 @@
 <!-- <Button text="cardio-workout works!" class="btn btn-primary"></Button> -->
 <StackLayout>
-    <div>
-        <Label class="timeLabel" [text]="'Time: ' + currentTime" textWrap="true"></Label>
-        <Button text="Stop" class="stop-button" (tap)="stopWorkout()"></Button>
-        <Button text="Cancel" class="cancel-button" [nsRouterLink]="['/navigation']" pageTransition="slide"></Button>
 
-        <!-- <Label class="lastWorkoutLabel" [text]="'Last Workout Time: ' + lastWorkoutTime" textWrap="true"></Label> -->
+    <Label [text]="Current Workout: "></Label>
+    <!-- viewModel.get("workoutTypeId") -->
+
+    <Label class="timeLabel" [text]="Elapsed Time: " textWrap="true"></Label>
+    <!-- currentTime displays here -->
+
+    <Label [text]="Distance: "></Label>
+    <!-- Distance output will go here when tracking component is implemented -->
+
+    <Label [text]="Notes: "></Label>
+    <!-- Research user input to go in here? -->
+
+    <div>
+        <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
+        <Button text="Conclude" class="stop-button" (tap)="stopWorkout()"></Button>
     </div>
 </StackLayout>

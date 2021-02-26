@@ -1,1 +1,20 @@
-<Button text="weight-lifting-workout works!" class="btn btn-primary"></Button>
+<!-- <Button text="weight-lifting-workout works!" class="btn btn-primary"></Button> -->
+<StackLayout>
+
+    <Label [text]="Current Workout: "></Label>
+    <!-- viewModel.get("workoutTypeId") -->
+
+    <Label class="timeLabel" [text]="Elapsed Time: " textWrap="true"></Label>
+    <!-- currentTime displays here -->
+
+    <Button text="Add Rep Set"></Button>
+    <!-- add popup menu where user can input numberOfReps and weightAmountLifted -->
+
+    <Label [text]="Notes: "></Label>
+    <!-- Research user input to go in here? -->
+
+    <div>
+        <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
+        <Button text="Conclude" class="stop-button" (tap)="stopWorkout()"></Button>
+    </div>
+</StackLayout>

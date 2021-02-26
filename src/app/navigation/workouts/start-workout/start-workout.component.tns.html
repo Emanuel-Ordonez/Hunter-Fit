@@ -41,7 +41,7 @@
                 <Label class="timeLabel" [text]="'Time: ' + currentTime" textWrap="true"></Label>
                 <Button text="Start" class="start-button" (tap)="startWorkout()"></Button>
                 <Button text="Stop" class="stop-button" (tap)="stopWorkout()"></Button>
-                <Button text="Cancel" class="cancel-button" [nsRouterLink]="['/navigation']" pageTransition="slide"></Button>
+                <Button text="Cancel" class="cancel-button" (tap)="goBack()" pageTransition="slide"></Button>
 
                 <!-- <Label class="lastWorkoutLabel" [text]="'Last Workout Time: ' + lastWorkoutTime" textWrap="true"></Label> -->
             </div>
