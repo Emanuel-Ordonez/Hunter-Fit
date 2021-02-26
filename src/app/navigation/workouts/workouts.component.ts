@@ -69,6 +69,7 @@ export class WorkoutsComponent implements OnInit {
     else {
       this.status = false;
       console.log('in else: ' + selectedWorkout);
+      alert("You must select a workout type before proceeding.");
     }
   }
 
