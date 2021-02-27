@@ -1,17 +1,18 @@
 <!-- <Button text="cardio-workout works!" class="btn btn-primary"></Button> -->
 <StackLayout>
 
-    <Label text="Current Workout: "></Label>
+  <Label text="Current Workout: {{ currentWorkout }}"></Label>
     <!-- viewModel.get("workoutTypeId") -->
 
-    <Label class="timeLabel" text="Elapsed Time: " textWrap="true"></Label>
-    <!-- currentTime displays here -->
+    <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label>
 
     <Label text="Distance: "></Label>
     <!-- Distance output will go here when tracking component is implemented -->
 
     <Label text="Notes: "></Label>
     <!-- Research user input to go in here? -->
+
+    <!-- <Label class="lastWorkoutLabel" [text]="Last Workout Time: {{lastWorkoutTime}}" textWrap="true"></Label> -->
 
     <div>
         <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->

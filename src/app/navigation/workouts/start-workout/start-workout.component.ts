@@ -13,10 +13,7 @@ import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
   styleUrls: ['./start-workout.component.tns.css']
 })
 export class StartWorkoutComponent {
-
-  constructor(private routerExtensions: RouterExtensions) {
-  }
-
+  currentWorkout: string = "Justin";
   public workoutType: any;
   currentTime: number = 0;
   interval;
@@ -26,18 +23,20 @@ export class StartWorkoutComponent {
   public viewModel = new Observable(); // <-- needs to be updated/fixed
   public prevWorkoutType: any;
   public allWorkouts: Array<string | number>[];
+  @Output() timeOutput = new EventEmitter();
 
-  public onSelectedIndexChanged(args: EventData) {
-    const picker = <ListPicker>args.object;
+  constructor(private routerExtensions: RouterExtensions) {
   }
 
   ngOnInit() {
     // this.viewModel.set("workoutType", "");
   }
 
-  //////////////////////////////////////////
+  public onSelectedIndexChanged(args: EventData) {
+    const picker = <ListPicker>args.object;
+  }
 
-  @Output() timeOutput = new EventEmitter();
+  //////////////////////////////////////////
 
   public startWorkout() {
     if (this.status) {
@@ -57,6 +56,7 @@ export class StartWorkoutComponent {
     var selectedWorkout = this.viewModel.get("workoutTypeClass");
     console.log(this.viewModel.get("workoutTypeClass"));
 
+    //switch statement
     if (selectedWorkout == 'cardioWorkoutButton') {
       this.routerExtensions.navigate(['/cardioWorkout']);
       this.status = true;
@@ -90,7 +90,9 @@ export class StartWorkoutComponent {
   }
 
   public selectWorkoutType(workoutType: any) { //HTMLButtonElement
-
+    console.log(workoutType.object.id);
+    this.currentWorkout = workoutType.object.id.toString();
+    console.log('this.currentWorkout = ', this.currentWorkout);
     this.viewModel.set("workoutTypeId", workoutType.object.id);
     this.viewModel.set("workoutTypeClass", workoutType.object.class);
     console.log(this.viewModel.get("workoutTypeId"));
