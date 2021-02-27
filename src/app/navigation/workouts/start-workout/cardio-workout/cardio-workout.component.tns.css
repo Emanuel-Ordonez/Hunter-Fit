@@ -1,4 +1,8 @@
 /* Add mobile styles for the component here.  */
+ActionBar {
+    background-color: #00658A;
+}
+
 Button {
     background-color: #00658A;
     border-radius: 15px;
@@ -10,7 +14,7 @@ Button {
 }
 
 .cardioWorkoutLabel-stackLayout, .cardioNotes-stackLayout{
-    color: #eeeeee;
+    color: white;
     margin: 50px 15px auto 15px;
     border-radius: 15px;
     border-width: 5px;
@@ -34,8 +38,8 @@ Label {
     margin-bottom: 50px;
 }
 
-.buttonDiv-cardio{
-    margin-top: 150px;
+.buttonStackLayout-cardio{
+    margin-top: 110px;
 
 }
 

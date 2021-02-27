@@ -13,7 +13,7 @@ import { CardioWorkoutComponent } from './navigation/workouts/start-workout/card
 import { WeightLiftingWorkoutComponent } from './navigation/workouts/start-workout/weight-lifting-workout/weight-lifting-workout.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "cardioWorkout", pathMatch: "full" },
+  { path: "", redirectTo: "startWorkout", pathMatch: "full" },
   { path: "navigation", component: NavigationComponent,
     children: [
       { path: "", component: HomeComponent, outlet: 'home' },

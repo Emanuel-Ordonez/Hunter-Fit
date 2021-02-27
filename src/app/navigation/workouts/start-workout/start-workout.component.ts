@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { getNumber, setNumber } from '@nativescript/core/application-settings';
+import { getNumber, setNumber , setString } from '@nativescript/core/application-settings';
 import { NSRouterLink, RouterExtensions } from '@nativescript/angular';
 import { EventData, Observable } from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
@@ -13,7 +13,6 @@ import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
   styleUrls: ['./start-workout.component.tns.css']
 })
 export class StartWorkoutComponent {
-  currentWorkout: string = "Justin";
   public workoutType: any;
   currentTime: number = 0;
   interval;
@@ -55,7 +54,7 @@ export class StartWorkoutComponent {
   public callCurrentWorkout() {
     var selectedWorkout = this.viewModel.get("workoutTypeClass");
     console.log(this.viewModel.get("workoutTypeClass"));
-
+    
     //switch statement
     if (selectedWorkout == 'cardioWorkoutButton') {
       this.routerExtensions.navigate(['/cardioWorkout']);
@@ -90,12 +89,9 @@ export class StartWorkoutComponent {
   }
 
   public selectWorkoutType(workoutType: any) { //HTMLButtonElement
-    console.log(workoutType.object.id);
-    this.currentWorkout = workoutType.object.id.toString();
-    console.log('this.currentWorkout = ', this.currentWorkout);
     this.viewModel.set("workoutTypeId", workoutType.object.id);
     this.viewModel.set("workoutTypeClass", workoutType.object.class);
-    console.log(this.viewModel.get("workoutTypeId"));
+    setString("workoutTypeId", workoutType.object.id);
     for (var button in WorkoutConstants.buttons) {
       if (workoutType.object.id === WorkoutConstants.buttons[button]) {
         workoutType.object.backgroundColor = "#787774";
