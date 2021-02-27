@@ -1,4 +1,8 @@
 /* Add mobile styles for the component here.  */
+ActionBar{
+    background-color: black;
+}
+
 TabStrip {
     background-color: #047493;
 }

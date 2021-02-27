@@ -1,1 +1,62 @@
 /* Add mobile styles for the component here.  */
+Button {
+    background-color: #00658A;
+    border-radius: 15px;
+    border-style: outset;
+    border-width: 5px;
+    color: white;
+    margin-bottom: 2%;
+    width: 35%;
+}
+
+.cardioWorkoutLabel-stackLayout, .cardioNotes-stackLayout{
+    color: #eeeeee;
+    margin: 50px 15px auto 15px;
+    border-radius: 15px;
+    border-width: 5px;
+    background-color: #00658A;
+}
+
+Label {
+    margin-left: 3%;
+    margin-bottom: 2%;
+    margin-top: 2%; 
+    font-size: 20%;  
+    padding-top: 15%;
+}
+
+.workoutNotes{
+    background-color: #eeeeee;
+    border-radius: 15px;
+    padding-left: 20px;
+    border-style: outset;
+    border-width: 5px;
+    margin-bottom: 50px;
+}
+
+.buttonDiv-cardio{
+    margin-top: 150px;
+
+}
+
+.cancel-button {
+    background-color: gainsboro;
+    color: #C00000;
+    font-weight: bold;
+    width: 40%;
+}
+
+.pause-button {
+    font-weight: bold;
+    width: 40%;
+}
+
+.stop-button {
+    font-weight: bold;
+    width: 40%;
+    background-color:#C00000
+}
+
+.start-button:active {
+    background-color: orange;
+}
