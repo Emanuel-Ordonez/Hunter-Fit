@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CurrentWorkoutComponent } from '@src/app/navigation/workouts/current-workout/current-workout.component';
 import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workout/start-workout.component';
+import { CardioWorkoutComponent } from './start-workout/cardio-workout/cardio-workout.component';
+import { WeightLiftingWorkoutComponent } from './start-workout/weight-lifting-workout/weight-lifting-workout.component';
 
 
 
 @NgModule({
-  declarations: [CurrentWorkoutComponent, StartWorkoutComponent],
+  declarations: [CardioWorkoutComponent, WeightLiftingWorkoutComponent, StartWorkoutComponent],
   imports: [
     CommonModule
   ]
