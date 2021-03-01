@@ -1,20 +1,35 @@
-<!-- <Button text="weight-lifting-workout works!" class="btn btn-primary"></Button> -->
-<StackLayout>
+<ActionBar title="Weightlifting Workout"></ActionBar>
+<ScrollView orientation="vertical">
+    <StackLayout>
 
-    <Label text="Current Workout: "></Label>
-    <!-- viewModel.get("workoutTypeId") -->
+        <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
+            <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
+            <!-- viewModel.get("workoutTypeId") -->
 
-    <Label class="timeLabel" text="Elapsed Time: " textWrap="true"></Label>
-    <!-- currentTime displays here -->
+            <!-- <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label> -->
+            <!-- currentTime displays here -->
 
-    <Button text="Add Set"></Button>
-    <!-- add popup menu where user can input numberOfReps and weightAmountLifted -->
+            <Label text="Rep Sets:"></Label>
+            <ScrollView orientation="vertical">
+                <StackLayout>
 
-    <Label text="Notes: "></Label>
-    <!-- Research user input to go in here? -->
+                </StackLayout>
+            </ScrollView>
 
-    <div>
-        <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
-        <Button text="Conclude" class="stop-button" (tap)="stopWorkout()"></Button>
-    </div>
-</StackLayout>
+            <!-- add popup menu where user can input numberOfReps and weightAmountLifted -->
+
+            <Label text="Notes: "></Label>
+            <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext"
+                (textChange)="onTextChange($event)">
+            </TextView>
+            <!-- Research user input to go in here? -->
+        </StackLayout>
+
+        <Button class="add-set-button" text="Add Set"></Button>
+
+        <StackLayout class="buttonStackLayout-weightLifting">
+            <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
+            <Button text="Conclude" class="stop-button" (tap)="stopWorkout()"></Button>
+        </StackLayout>
+    </StackLayout>
+</ScrollView>
