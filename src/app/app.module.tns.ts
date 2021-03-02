@@ -16,6 +16,7 @@ import { SearchComponent } from '@src/app/navigation/search/search.component';
 import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workout/start-workout.component';
 import { CardioWorkoutComponent } from '@src/app/navigation/workouts/start-workout/cardio-workout/cardio-workout.component';
 import { WeightLiftingWorkoutComponent } from '@src/app/navigation/workouts/start-workout/weight-lifting-workout/weight-lifting-workout.component';
+import { AddRepComponent } from './navigation/workouts/start-workout/weight-lifting-workout/add-rep/add-rep.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
@@ -36,6 +37,8 @@ import { WeightLiftingWorkoutComponent } from '@src/app/navigation/workouts/star
     
     CardioWorkoutComponent,
     WeightLiftingWorkoutComponent,
+
+    AddRepComponent,
   ],
   imports: [
     NativeScriptModule,

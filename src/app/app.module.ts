@@ -16,6 +16,7 @@ import { SearchComponent } from '@src/app/navigation/search/search.component';
 import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workout/start-workout.component';
 import { CardioWorkoutComponent } from '@src/app/navigation/workouts/start-workout/cardio-workout/cardio-workout.component';
 import { WeightLiftingWorkoutComponent } from './navigation/workouts/start-workout/weight-lifting-workout/weight-lifting-workout.component';
+import { AddRepComponent } from './navigation/workouts/start-workout/weight-lifting-workout/add-rep/add-rep.component';
 
 
 @NgModule({
@@ -33,6 +34,8 @@ import { WeightLiftingWorkoutComponent } from './navigation/workouts/start-worko
     
     CardioWorkoutComponent,
     WeightLiftingWorkoutComponent,
+
+    AddRepComponent,
   ],
   imports: [
     BrowserModule,

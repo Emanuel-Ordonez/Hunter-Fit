@@ -1,0 +1,22 @@
+<StackLayout>
+        <StackLayout id = "reps-weight-stackLayout">
+            <FlexboxLayout class = "rep-topic">
+                <StackLayout class= "rep-weight-stackLayout">
+                    <Label class = "reps-weight-labels" text = "Reps"></Label>
+                </StackLayout>
+                <StackLayout class= "rep-weight-stackLayout">
+                    <Label class = "reps-weight-labels" text = "Weight"></Label>
+                </StackLayout>
+            </FlexboxLayout>
+            <ScrollView>
+                <StackLayout class= "rep-details">
+                    <FlexboxLayout>
+                        <TextField class = "reps-weight-textField" hint = "reps"></TextField>
+                        <TextField class = "reps-weight-textField" hint = "weight"></TextField>
+                        <Button class = "removeButton" text="-"></Button>
+                    </FlexboxLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    <Button id = "addRepButton" text="Add Set"></Button>
+</StackLayout>
