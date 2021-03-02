@@ -1,10 +1,22 @@
-<!-- <Button text="cardio-workout works!" class="btn btn-primary"></Button> -->
+<ActionBar title="Cardio Workout"></ActionBar>
 <StackLayout>
-    <div>
-        <Label class="timeLabel" [text]="'Time: ' + currentTime" textWrap="true"></Label>
-        <Button text="Stop" class="stop-button" (tap)="stopWorkout()"></Button>
-        <Button text="Cancel" class="cancel-button" [nsRouterLink]="['/navigation']" pageTransition="slide"></Button>
 
-        <!-- <Label class="lastWorkoutLabel" [text]="'Last Workout Time: ' + lastWorkoutTime" textWrap="true"></Label> -->
-    </div>
+  <StackLayout class="cardioWorkoutLabel-stackLayout">
+    <Label class="currentWorkoutLabel" text="Current Workout: {{ currentWorkout }}"></Label>
+
+    <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label>
+
+    <Label text="Distance: "></Label>
+    <!-- Distance output will go here when tracking component is implemented -->
+
+    <Label text="Notes: "></Label>
+    <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)">
+    </TextView>
+    <!-- Research user input to go in here? -->
+  </StackLayout>
+
+  <StackLayout class="buttonStackLayout-cardio">
+    <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
+    <Button text="Finish" class="stop-button" (tap)="stopWorkout()"></Button>
+  </StackLayout>
 </StackLayout>
