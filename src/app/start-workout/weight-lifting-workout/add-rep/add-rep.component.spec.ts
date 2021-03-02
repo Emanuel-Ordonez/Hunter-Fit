@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartWorkoutComponent } from '@src/app/navigation/workouts/start-workout/start-workout.component';
+import { AddRepComponent } from '@src/app/start-workout/weight-lifting-workout/add-rep/add-rep.component';
 
-describe('StartWorkoutComponent', () => {
-  let component: StartWorkoutComponent;
-  let fixture: ComponentFixture<StartWorkoutComponent>;
+describe('AddRepComponent', () => {
+  let component: AddRepComponent;
+  let fixture: ComponentFixture<AddRepComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StartWorkoutComponent ]
+      declarations: [ AddRepComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StartWorkoutComponent);
+    fixture = TestBed.createComponent(AddRepComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

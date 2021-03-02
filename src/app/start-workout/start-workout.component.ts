@@ -3,7 +3,7 @@ import { getNumber, setNumber , setString } from '@nativescript/core/application
 import { NSRouterLink, RouterExtensions } from '@nativescript/angular';
 import { EventData, Observable } from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
-import { WorkoutsComponent } from '../workouts.component';
+import { WorkoutsComponent } from '../navigation/workouts/workouts.component';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({
