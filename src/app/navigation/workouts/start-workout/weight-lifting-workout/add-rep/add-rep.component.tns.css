@@ -18,7 +18,7 @@
 }
 
 .rep-details {
-    background-color: #eeeeee;
+    background-color: #c8c8c8;
     border-radius: 15px;
     width: 100%;
 }
@@ -36,9 +36,10 @@
 }
 
 .reps-weight-textField {
-    background-color: cyan;
+    background-color: #eeeeee;
     width: 95%;
     text-align: center;
+    color: red;
 }
 
 .removeButton {

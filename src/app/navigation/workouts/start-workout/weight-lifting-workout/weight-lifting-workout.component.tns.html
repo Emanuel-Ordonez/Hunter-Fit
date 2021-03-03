@@ -1,12 +1,11 @@
 <ActionBar title="Weightlifting Workout"></ActionBar>
-<ScrollView orientation="vertical">
+<!-- <ScrollView orientation="vertical"> -->
     <StackLayout>
-
         <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
             <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
             <!-- viewModel.get("workoutTypeId") -->
 
-            <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label> 
+            <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label>
             <!-- currentTime displays here -->
 
             <Label text="Rep Sets:"></Label>
@@ -16,11 +15,8 @@
                 </StackLayout>
             </ScrollView>
 
-            <!-- add popup menu where user can input numberOfReps and weightAmountLifted -->
-
             <Label text="Notes: "></Label>
-            <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext"
-                (textChange)="onTextChange($event)">
+            <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)">
             </TextView>
             <!-- Research user input to go in here? -->
         </StackLayout>
@@ -30,4 +26,4 @@
             <Button text="Conclude" class="stop-button" (tap)="stopWorkout()"></Button>
         </StackLayout>
     </StackLayout>
-</ScrollView>
+<!-- </ScrollView> -->
