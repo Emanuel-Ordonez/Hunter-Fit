@@ -1,5 +1,13 @@
 /* Add mobile styles for the component here.  */
 
+Label {
+    margin-left: 3%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-size: 20%;
+    padding-top: 15%;
+}
+
 .weightLiftingWorkoutLabel-stackLayout,
 .weightLiftingNotes-stackLayout {
     color: white;
@@ -7,14 +15,6 @@
     border-radius: 15px;
     border-width: 5px;
     background-color: #00658A;
-}
-
-Label {
-    margin-left: 3%;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    font-size: 20%;
-    padding-top: 15%;
 }
 
 .workoutNotes {
@@ -27,7 +27,7 @@ Label {
 }
 
 .buttonStackLayout-weightLifting {
-    margin-top: 110px;
+    margin-top: 10px;
 }
 
 .add-set-button {
