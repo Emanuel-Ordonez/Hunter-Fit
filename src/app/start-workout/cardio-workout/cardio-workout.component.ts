@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { getString } from '@nativescript/core/application-settings';
 import { EventData } from '@nativescript/core/data/observable';
 import { TextView } from '@nativescript/core/ui/text-view';
-import { WorkoutsComponent } from '../../workouts.component';
+import { WorkoutsComponent } from '../../navigation/workouts/workouts.component';
 import { StartWorkoutComponent } from '../start-workout.component';
 
 @Component({

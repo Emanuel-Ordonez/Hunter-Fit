@@ -1,19 +1,15 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { NSRouterLink, RouterExtensions } from '@nativescript/angular';
-import { getNumber, getString, setNumber } from '@nativescript/core/application-settings';
-import { EventData, Observable } from '@nativescript/core/data/observable';
-import { ListPicker } from '@nativescript/core/ui/list-picker';
-import { WorkoutConstants } from '../../services/WorkoutConstants';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-workouts',
-  moduleId: module.id,
-  templateUrl: './workouts.component.tns.html',
-  styleUrls: ['./workouts.component.tns.css']
+  templateUrl: './workouts.component.html',
+  styleUrls: ['./workouts.component.css']
 })
-export class WorkoutsComponent  {
+export class WorkoutsComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }
-

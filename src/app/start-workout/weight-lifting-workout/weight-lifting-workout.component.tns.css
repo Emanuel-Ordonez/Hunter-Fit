@@ -1,19 +1,7 @@
 /* Add mobile styles for the component here.  */
-ActionBar {
-    background-color: #00658A;
-}
 
-Button {
-    background-color: #00658A;
-    border-radius: 15px;
-    border-style: outset;
-    border-width: 5px;
-    color: white;
-    margin-bottom: 2%;
-    width: 35%;
-}
-
-.cardioWorkoutLabel-stackLayout, .cardioNotes-stackLayout{
+.weightLiftingWorkoutLabel-stackLayout,
+.weightLiftingNotes-stackLayout {
     color: white;
     margin: 50px 15px auto 15px;
     border-radius: 15px;
@@ -24,12 +12,12 @@ Button {
 Label {
     margin-left: 3%;
     margin-bottom: 2%;
-    margin-top: 2%; 
-    font-size: 20%;  
+    margin-top: 2%;
+    font-size: 20%;
     padding-top: 15%;
 }
 
-.workoutNotes{
+.workoutNotes {
     background-color: #eeeeee;
     border-radius: 15px;
     padding-left: 20px;
@@ -38,9 +26,18 @@ Label {
     margin-bottom: 50px;
 }
 
-.buttonStackLayout-cardio{
+.buttonStackLayout-weightLifting {
     margin-top: 110px;
+}
 
+.add-set-button {
+    background-color: #00658A;
+    border-radius: 15px;
+    border-style: outset;
+    border-width: 5px;
+    color: white;
+    margin-bottom: 2%;
+    width: 40%;
 }
 
 .cancel-button {
@@ -58,7 +55,7 @@ Label {
 .stop-button {
     font-weight: bold;
     width: 40%;
-    background-color:#C00000
+    background-color: #C00000
 }
 
 .start-button:active {
