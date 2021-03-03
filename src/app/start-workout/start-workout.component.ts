@@ -18,6 +18,7 @@ export class StartWorkoutComponent {
   public workoutType: any;
   public workoutTypeClass: string;
   currentTime: number = 0;
+  display;
   interval;
   public status = true;
   public prevWorkoutType: any;
@@ -51,6 +52,10 @@ export class StartWorkoutComponent {
     }
     this.prevWorkoutType = workoutTypeButton;
   }
+  
+  public pauseTimer() {
+    clearInterval(this.interval);
+  }
 
   ///////////
 
@@ -59,14 +64,19 @@ export class StartWorkoutComponent {
       this.status = false;
       this.interval = setInterval(() => {
         this.currentTime++;
+        this.display = this.transform(this.currentTime);
       }, 1000)
     }
     else {
       this.status = true;
       console.log("in startWorkout() else");
     }
-
   }
+  public transform(value: number): string {
+    const minutes: number = Math.floor(value/60);
+    return minutes + ':' + (value - minutes * 60);
+  }
+  
 
   public callCurrentWorkout() {
     switch (this.workoutTypeClass) {
