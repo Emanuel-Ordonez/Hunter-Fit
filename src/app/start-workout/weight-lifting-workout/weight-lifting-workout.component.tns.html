@@ -1,25 +1,24 @@
 <ActionBar title="Weightlifting Workout"></ActionBar>
-<ScrollView>
-    <StackLayout>
-        <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
-            <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
-            <!-- viewModel.get("workoutTypeId") -->
+<StackLayout height="100%">
+    <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
+        <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
+        <!-- viewModel.get("workoutTypeId") -->
 
-            <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label>
-            <!-- currentTime displays here -->
+        <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label>
+        <!-- currentTime displays here -->
 
-            <Label text="Rep Sets:"></Label>
+        <Label text="Rep Sets:"></Label>
+        <StackLayout>
             <router-outlet name="addRep" ></router-outlet>
-
-            <Label text="Notes: "></Label>
-            <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)">
-            </TextView>
-            <!-- Research user input to go in here? -->
         </StackLayout>
-
-        <StackLayout class="buttonStackLayout-weightLifting">
-            <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
-            <Button text="Conclude" class="stop-button" (tap)="stopWorkout()"></Button>
-        </StackLayout>
+        <Label text="Notes: "></Label>
+        <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)">
+        </TextView>
+        <!-- Research user input to go in here? -->
     </StackLayout>
-</ScrollView>
+
+    <StackLayout class="buttonStackLayout-weightLifting">
+        <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
+        <Button text="Conclude" class="stop-button" (tap)="stopWorkout()"></Button>
+    </StackLayout>
+</StackLayout>

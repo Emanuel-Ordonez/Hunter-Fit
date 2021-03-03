@@ -2,10 +2,8 @@
 
 Label {
     margin-left: 3%;
-    margin-bottom: 2%;
     margin-top: 2%;
     font-size: 20%;
-    padding-top: 15%;
 }
 
 .weightLiftingWorkoutLabel-stackLayout,
@@ -15,6 +13,7 @@ Label {
     border-radius: 15px;
     border-width: 5px;
     background-color: #00658A;
+    height: 75%;
 }
 
 .workoutNotes {
