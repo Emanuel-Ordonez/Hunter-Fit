@@ -2,7 +2,7 @@
 
 #reps-weight-stackLayout {
     margin-top: 10em;
-    width: 92%;
+    width: 100%;
 }
 
 #remove-stackLayout {
@@ -18,9 +18,8 @@
 }
 
 .rep-details {
-    background-color: #c8c8c8;
-    border-radius: 15px;
     width: 100%;
+    height: 100;
 }
 
 .rep-weight-stackLayout {
@@ -36,8 +35,9 @@
 }
 
 .reps-weight-textField {
-    background-color: #eeeeee;
-    width: 95%;
+    background-color: cyan;
+    width: 100%;
+    height: 100%;
     text-align: center;
     color: red;
 }

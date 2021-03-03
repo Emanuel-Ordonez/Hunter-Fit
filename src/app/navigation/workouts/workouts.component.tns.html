@@ -1,10 +1,8 @@
-<GridLayout>
+<StackLayout>
+    <Button class="viewWorkoutButton" text="Start Workout" [nsRouterLink]="['/startWorkout']"></Button>
     <ScrollView>
         <StackLayout>
-            <FlexboxLayout id="pause-finish-button-flexbox">
-                <Button class="viewWorkoutButton" text="Start Workout" [nsRouterLink]="['/startWorkout']"></Button>
-                <!-- <Button text="Stop" class="stop-button" (tap)="stopWorkout($event)"></Button> -->
-            </FlexboxLayout>
+            
         </StackLayout>
     </ScrollView>
-</GridLayout>
+</StackLayout>

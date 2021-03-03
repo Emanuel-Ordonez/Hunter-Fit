@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeightLiftingWorkoutComponent } from '@src/app/navigation/workouts/start-workout/weight-lifting-workout/weight-lifting-workout.component';
+import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lifting-workout/weight-lifting-workout.component';
 
 describe('WeightLiftingWorkoutComponent', () => {
   let component: WeightLiftingWorkoutComponent;
