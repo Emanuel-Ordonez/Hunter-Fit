@@ -13,3 +13,7 @@ Button {
     margin-bottom: 2%;
     width: 35%;
 }
+
+.center-Text {
+    text-align: center;
+}
