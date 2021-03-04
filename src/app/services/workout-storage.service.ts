@@ -12,11 +12,12 @@ export class WorkoutStorageService {
   constructor() { }
 
   saveWorkout(totalTime: number, type: any) {
-    // construct workout object
+    // construct workout object:
     const workoutToSave : Workout = {totalWorkoutTime: totalTime, workoutType: type};
-    // store workout object
+    // store workout object:
     this.allWorkouts.push(workoutToSave);
-    console.log("allWorkouts: " + this.allWorkouts[0].workoutType, this.allWorkouts[0].totalWorkoutTime);
+    for (let data of this.allWorkouts){console.log(data);}
+    // console.log("allWorkouts: " + this.allWorkouts[0].workoutType, this.allWorkouts[0].totalWorkoutTime);
   }
 
 
