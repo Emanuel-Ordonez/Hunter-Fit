@@ -1,8 +1,10 @@
 /* Add mobile styles for the component here.  */
 
 #reps-weight-stackLayout {
+    border-color: black;
+    border-style: solid;
     margin-top: 10em;
-    width: 100%;
+    width: 95%;
 }
 
 #remove-stackLayout {
@@ -18,12 +20,12 @@
 }
 
 .rep-details {
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
     width: 100%;
     height: 100;
-}
-
-.rep-weight-stackLayout {
-    width: 45%;
 }
 
 .reps-weight-labels {
@@ -35,11 +37,9 @@
 }
 
 .reps-weight-textField {
-    background-color: cyan;
-    width: 100%;
-    height: 100%;
+    background-color: #eeeeee;
+    border-radius: 10px;
     text-align: center;
-    color: red;
 }
 
 .removeButton {
@@ -49,4 +49,5 @@
     font-weight: bold;
     height: 15em;
     width: 15em;
+    margin-bottom: 8em;
 }
