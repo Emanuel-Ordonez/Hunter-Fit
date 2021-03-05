@@ -64,7 +64,7 @@ export class StartWorkoutComponent {
       this.status = false;
       this.interval = setInterval(() => {
         this.currentTime++;
-        this.display = this.transform(this.currentTime);
+        this.display = this.formatTime(this.currentTime);
       }, 1000)
     }
     else {
@@ -72,9 +72,10 @@ export class StartWorkoutComponent {
       console.log("in startWorkout() else");
     }
   }
-  public transform(value: number): string {
+
+  public formatTime(value: number): string {
     const minutes: number = Math.floor(value/60);
-    return minutes + ':' + (value - minutes * 60);
+    return minutes + ':' + String(value - minutes * 60).padStart(2, '0');
   }
   
 
