@@ -7,22 +7,30 @@ import { GridLayout, ItemSpec} from '@nativescript/core';
   styleUrls: ['./add-rep.component.css']
 })
 export class AddRepComponent implements OnInit {
-  repGrid: GridLayout = new GridLayout();
+  repSets: RepSet[] = [];
+  setNumberCounter = 1;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public addRow(){
-    alert(this.repGrid);
-    this.repGrid.addRow(new ItemSpec(1, "auto"));
-    this.repGrid.removeRows();
-    alert("bye");
+  public addRep(){
+    const rep = new RepSet();
+    rep.setNumber = this.setNumberCounter++;
+    rep.setReps = 10;
+    rep.setWeight = 110;
+    this.repSets.push(rep);
   }
 
-  public deleteRow(){
+  public deleteRep(){
     alert("delete");
   }
 
+}
+
+class RepSet{
+  setNumber: number;
+  setReps: number;
+  setWeight: number;
 }

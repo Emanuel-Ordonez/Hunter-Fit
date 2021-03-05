@@ -17,7 +17,7 @@ export class WeightLiftingWorkoutComponent extends StartWorkoutComponent impleme
   currentWorkout: string;
 
   ngOnInit(): void {
-    //this.startWorkout();
+    // this.startWorkout();
     this.getWorkoutType();
   }
 
