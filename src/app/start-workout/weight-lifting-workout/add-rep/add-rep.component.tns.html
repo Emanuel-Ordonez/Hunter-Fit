@@ -7,9 +7,9 @@
             <Label col = "3" text = "" class = "center-Text"></Label>
         </GridLayout>
         <ScrollView class= "rep-details">
-            <StackLayout >
-                <GridLayout *ngFor="let repSet of repSets" id="repGrid{{repSet.setNumber}}" rows = "auto" columns = "40,*,*,40" >
-                    <Label col = "0" [text]="repSet.setNumber" class = "center-Text"></Label>
+            <StackLayout>
+                <GridLayout *ngFor="let repSet of repSets" id="repGrid{{repSet.setNumber}}" rows = "auto" columns = "40,*,*,40">
+                    <Label col = "0" [text]="repSet.setNumber" class = "setNumber-label"></Label>
                     <TextField col = "1" class = "reps-weight-textField" hint = "input reps" [(text)]="repSet.setReps" type="number"></TextField>
                     <TextField col = "2" class = "reps-weight-textField" hint = "input weight"  [(text)]="repSet.setReps"></TextField>
                     <Button col = "3" class = "removeButton" text="-" (tap) = "deleteRow()"></Button>

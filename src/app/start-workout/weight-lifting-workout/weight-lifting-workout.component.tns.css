@@ -25,8 +25,8 @@ Label {
     margin-bottom: 50px;
 }
 
-.buttonStackLayout-weightLifting {
-    margin-top: 10px;
+.buttonFlexLayout-weightLifting {
+    margin: auto, 110px, auto, 130px;
 }
 
 .add-set-button {

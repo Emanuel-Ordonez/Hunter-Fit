@@ -17,7 +17,7 @@ export class CardioWorkoutComponent extends StartWorkoutComponent implements OnI
   currentWorkout: string;
 
   ngOnInit(): void {
-    this.startWorkout();
+    //this.startWorkout();
     this.getWorkoutType();
   }
 
