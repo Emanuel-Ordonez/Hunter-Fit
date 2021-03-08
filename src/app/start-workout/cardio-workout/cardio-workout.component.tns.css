@@ -26,8 +26,8 @@ Label {
     margin-bottom: 50px;
 }
 
-.buttonStackLayout-cardio {
-    margin-top: 110px;
+.buttonFlexLayout-cardio {
+    margin: auto, 110px, auto, 130px;
 }
 
 .cancel-button {

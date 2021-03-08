@@ -1,1 +1,12 @@
 /* Add mobile styles for the component here.  */
+
+.workout-history-flexbox{
+    background-color: blue;
+    align-items: center;
+}
+
+#workout-history-label{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

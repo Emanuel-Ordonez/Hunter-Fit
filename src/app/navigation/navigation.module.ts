@@ -5,11 +5,12 @@ import { NavigationComponent } from '@src/app/navigation/navigation.component';
 import { ProfileComponent } from '@src/app/navigation/profile/profile.component';
 import { SearchComponent } from '@src/app/navigation/search/search.component';
 import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
+import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
 
 
 
 @NgModule({
-  declarations: [NavigationComponent, HomeComponent, ProfileComponent, SearchComponent, WorkoutsComponent],
+  declarations: [NavigationComponent, HomeComponent, ProfileComponent, SearchComponent, WorkoutsComponent, WorkoutHistoryComponent],
   imports: [
     CommonModule
   ],

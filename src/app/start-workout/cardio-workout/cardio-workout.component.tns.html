@@ -4,7 +4,7 @@
   <StackLayout class="cardioWorkoutLabel-stackLayout">
     <Label class="currentWorkoutLabel" text="Current Workout: {{ currentWorkout }}"></Label>
 
-    <Label class="timeLabel" text="Elapsed Time: {{ currentTime }}" textWrap="true"></Label>
+    <Label class="timeLabel" text="Elapsed Time:  {{ display }}" textWrap="true"></Label>
 
     <Label text="Distance: "></Label>
     <!-- Distance output will go here when tracking component is implemented -->
@@ -15,8 +15,8 @@
     <!-- Research user input to go in here? -->
   </StackLayout>
 
-  <StackLayout class="buttonStackLayout-cardio">
-    <Button text="Pause" class="pause-button"></Button> <!-- needs to route to a pause function-->
+  <FlexboxLayout class="buttonFlexLayout-cardio">
+    <Button text="Pause" class="pause-button" (tap)="pauseTimer()"></Button> <!-- needs to route to a pause function-->
     <Button text="Finish" class="stop-button" (tap)="stopWorkout()"></Button>
-  </StackLayout>
+  </FlexboxLayout>
 </StackLayout>

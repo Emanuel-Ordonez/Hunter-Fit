@@ -28,6 +28,11 @@
     height: 100;
 }
 
+.setNumber-label{
+    text-align: center;
+    margin-top: 24px;
+}
+
 .reps-weight-labels {
     margin-bottom: 5em;
     color: white;
