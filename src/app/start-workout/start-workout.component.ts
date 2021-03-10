@@ -53,12 +53,18 @@ export class StartWorkoutComponent {
     this.prevWorkoutType = workoutTypeButton;
   }
   
-  public pauseTimer() {
-    clearInterval(this.interval);
-    // this.interval = setInterval(() => {
-    //   this.currentTime++;
-    //   this.display = this.formatTime(this.currentTime);
-    // }, 1000)
+  public pauseTimer(pauseButton: any) {
+    if (pauseButton.object.text=="Resume"){
+      pauseButton.object.text="Pause";
+      this.interval = setInterval(() => {
+        this.currentTime++;
+        this.display = this.formatTime(this.currentTime);
+      }, 1000)
+    }
+    else{
+      pauseButton.object.text="Resume";
+      clearInterval(this.interval);
+    }
   }
 
   ///////////

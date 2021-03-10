@@ -17,7 +17,7 @@
     </StackLayout>
 
     <FlexboxLayout class="buttonFlexLayout-weightLifting">
-        <Button text="Pause" class="pause-button" (tap)="pauseTimer()"></Button> <!-- needs to route to a pause function-->
+        <Button text="Pause" class="pause-button" id = "pauseButton" (tap)="pauseTimer($event)"></Button> <!-- needs to route to a pause function-->
         <Button text="Finish" class="stop-button" (tap)="stopWorkout()"></Button>
     </FlexboxLayout>
 </StackLayout>
