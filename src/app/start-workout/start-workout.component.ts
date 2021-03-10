@@ -55,6 +55,10 @@ export class StartWorkoutComponent {
   
   public pauseTimer() {
     clearInterval(this.interval);
+    // this.interval = setInterval(() => {
+    //   this.currentTime++;
+    //   this.display = this.formatTime(this.currentTime);
+    // }, 1000)
   }
 
   ///////////

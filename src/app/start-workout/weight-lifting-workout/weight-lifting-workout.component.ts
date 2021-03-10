@@ -19,7 +19,7 @@ export class WeightLiftingWorkoutComponent extends StartWorkoutComponent impleme
   repSets: IRepSet[] = [];
 
   ngOnInit(): void {
-    // this.startWorkout();
+    this.startWorkout();
     this.getWorkoutType();
   }
 
