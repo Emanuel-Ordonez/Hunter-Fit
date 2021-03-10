@@ -6,6 +6,9 @@ import { ListPicker } from '@nativescript/core/ui/list-picker';
 import { WorkoutsComponent } from '../navigation/workouts/workouts.component';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
+import { path } from '@nativescript/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-start-workout',
@@ -23,7 +26,7 @@ export class StartWorkoutComponent {
   public status = true;
   public prevWorkoutType: any;
 
-  constructor(private routerExtensions: RouterExtensions, private workoutStorageService: WorkoutStorageService) { }
+  constructor(private routerExtensions: RouterExtensions, private activeRoute: ActivatedRoute, private workoutStorageService: WorkoutStorageService) { }
 
   public onSelectedIndexChanged(args: EventData) {
     const picker = <ListPicker>args.object;
@@ -56,6 +59,7 @@ export class StartWorkoutComponent {
   public pauseTimer(pauseButton: any) {
     if (pauseButton.object.text=="Resume"){
       pauseButton.object.text="Pause";
+      pauseButton.object.backgroundColor = "#00658A";
       this.interval = setInterval(() => {
         this.currentTime++;
         this.display = this.formatTime(this.currentTime);
@@ -63,6 +67,7 @@ export class StartWorkoutComponent {
     }
     else{
       pauseButton.object.text="Resume";
+      pauseButton.object.backgroundColor = "#499c5c";
       clearInterval(this.interval);
     }
   }
@@ -118,5 +123,6 @@ export class StartWorkoutComponent {
     setNumber("workoutTime", this.currentTime);
     this.workoutStorageService.saveWorkout(getNumber("workoutTime"), getString("workoutTypeId"));
     this.currentTime = 0;
+    this.routerExtensions.navigate(['/navigation']);
   }
 }
