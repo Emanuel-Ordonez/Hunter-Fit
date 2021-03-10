@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { GridLayout, ItemSpec} from '@nativescript/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { GridLayout, ItemSpec, TextField, TextView } from '@nativescript/core';
+import { IRepSet } from '@src/app/services/IRepSet';
 
 @Component({
   selector: 'app-add-rep',
@@ -7,30 +8,41 @@ import { GridLayout, ItemSpec} from '@nativescript/core';
   styleUrls: ['./add-rep.component.css']
 })
 export class AddRepComponent implements OnInit {
-  repSets: RepSet[] = [];
+  repSets: IRepSet[] = [];
   setNumberCounter = 1;
+  setRepsInput;
+  setWeightInput;
+  @Output() newRepSetEvent = new EventEmitter<IRepSet>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public addRep(){
-    const rep = new RepSet();
-    rep.setNumber = this.setNumberCounter++;
-    rep.setReps = 10;
-    rep.setWeight = 110;
-    this.repSets.push(rep);
+  public repsInput(args) {
+    const tvrep = args.object as TextView;
+    this.setRepsInput = tvrep.text;
   }
 
-  public deleteRep(){
-    alert("delete");
+  public weightInput(args) {
+    const tvwt = args.object as TextView;
+    this.setWeightInput = tvwt.text;
+  }
+  
+  public addRep() {
+    const repSet: IRepSet = {
+      setNumber: this.setNumberCounter,
+      setReps: this.setRepsInput,
+      setWeight: this.setWeightInput
+    };
+    console.log(this.setNumberCounter);
+    this.setNumberCounter++;
+    this.repSets.push(repSet);
+    this.newRepSetEvent.emit(repSet);
   }
 
-}
-
-class RepSet{
-  setNumber: number;
-  setReps: number;
-  setWeight: number;
+  public deleteRow() {
+    this.repSets.pop();
+    this.setNumberCounter--;
+  }
 }

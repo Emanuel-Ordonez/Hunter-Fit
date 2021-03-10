@@ -8,10 +8,10 @@
         </GridLayout>
         <ScrollView class= "rep-details">
             <StackLayout>
-                <GridLayout *ngFor="let repSet of repSets" id="repGrid{{repSet.setNumber}}" rows = "auto" columns = "40,*,*,40">
-                    <Label col = "0" [text]="repSet.setNumber" class = "setNumber-label"></Label>
-                    <TextField col = "1" class = "reps-weight-textField" hint = "input reps" [(text)]="repSet.setReps" type="number"></TextField>
-                    <TextField col = "2" class = "reps-weight-textField" hint = "input weight"  [(text)]="repSet.setReps"></TextField>
+                <GridLayout *ngFor="let repSet of repSets" id="repGrid{{repSets.setNumber}}" rows = "auto" columns = "40,*,*,40">
+                    <Label col = "0" [text]="repSets.setNumber" class = "setNumber-label"></Label>
+                    <TextField col = "1" class = "reps-weight-textField" hint = "input reps" [text]="repSets.localSetReps" (blur)="repsInput($event)" type="number"></TextField>
+                    <TextField col = "2" class = "reps-weight-textField" hint = "input weight" [text]="repSets.localSetWeight" (blur)="weightInput($event)"></TextField>
                     <Button col = "3" class = "removeButton" text="-" (tap) = "deleteRow()"></Button>
                 </GridLayout>
             </StackLayout>

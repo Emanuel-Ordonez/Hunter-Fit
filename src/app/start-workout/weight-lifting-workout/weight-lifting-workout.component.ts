@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { getString } from '@nativescript/core/application-settings';
 import { EventData } from '@nativescript/core/data/observable';
 import { TextView } from '@nativescript/core/ui/text-view';
+import { IRepSet } from '@src/app/services/IRepSet';
 import { WorkoutsComponent } from '../../navigation/workouts/workouts.component';
 import { StartWorkoutComponent } from '../start-workout.component';
 
@@ -15,6 +16,7 @@ export class WeightLiftingWorkoutComponent extends StartWorkoutComponent impleme
 
   tvtext = "";
   currentWorkout: string;
+  repSets: IRepSet[] = [];
 
   ngOnInit(): void {
     // this.startWorkout();
@@ -29,5 +31,10 @@ export class WeightLiftingWorkoutComponent extends StartWorkoutComponent impleme
   public getWorkoutType(){
     this.currentWorkout = getString("workoutTypeId");
     console.log("WorkoutType: "+this.currentWorkout);
+  }
+
+  public addRepSet(newRepSet: IRepSet){
+    this.repSets.push(newRepSet);
+    // console.log(this.repSets);
   }
 }
