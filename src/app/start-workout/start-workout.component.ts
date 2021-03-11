@@ -121,7 +121,7 @@ export class StartWorkoutComponent {
     clearInterval(this.interval);
 
     setNumber("workoutTime", this.currentTime);
-    this.workoutStorageService.saveWorkout(getNumber("workoutTime"), getString("workoutTypeId"));
+    // this.workoutStorageService.saveWorkout(getNumber("workoutTime"), getString("workoutTypeId"));
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

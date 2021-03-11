@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GridLayout, ItemSpec, TextField, TextView } from '@nativescript/core';
+import { setNumber } from '@nativescript/core/application-settings';
 import { IRepSet } from '@src/app/services/IRepSet';
 
 @Component({
@@ -9,7 +10,7 @@ import { IRepSet } from '@src/app/services/IRepSet';
 })
 export class AddRepComponent implements OnInit {
   repSets: IRepSet[] = [];
-  setNumberCounter = 1;
+  setNumberCounter = 0;
   setRepsInput;
   setWeightInput;
   @Output() newRepSetEvent = new EventEmitter<IRepSet>();
@@ -36,9 +37,10 @@ export class AddRepComponent implements OnInit {
       setWeight: this.setWeightInput
     };
     console.log(this.setNumberCounter);
-    this.setNumberCounter++;
     this.repSets.push(repSet);
-    this.newRepSetEvent.emit(repSet);
+    if(this.setNumberCounter!=0)
+      this.newRepSetEvent.emit(repSet);
+    this.setNumberCounter++;
   }
 
   public deleteRow() {
