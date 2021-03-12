@@ -1,8 +1,7 @@
 <StackLayout>
-    <Button class="viewWorkoutButton" text="Start Workout" [nsRouterLink]="['/startWorkout']"></Button>
-    <ScrollView>
-        <StackLayout>
-            
-        </StackLayout>
-    </ScrollView>
+    <Button class="startWorkoutButton" text="Start Workout" [nsRouterLink]="['/startWorkout']"></Button>
+    
+    <label id = "workout-history-label" text = "Workout History"></label>
+
+    <router-outlet name="workoutHistory"></router-outlet>
 </StackLayout>

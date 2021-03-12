@@ -11,6 +11,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './navigation/home/home.component';
 import { ClubsComponent } from './navigation/clubs/clubs.component';
 import { WorkoutsComponent } from './navigation/workouts/workouts.component';
+  import { WorkoutHistoryComponent } from './navigation/workouts/workout-history/workout-history.component';
 import { ProfileComponent } from './navigation/profile/profile.component';
 import { SearchComponent } from './navigation/search/search.component';
 
@@ -28,6 +29,7 @@ import { WeightLiftingWorkoutComponent } from './start-workout/weight-lifting-wo
       ClubsComponent,
       SearchComponent,
       WorkoutsComponent,
+        WorkoutHistoryComponent,
       ProfileComponent,
     
     StartWorkoutComponent,

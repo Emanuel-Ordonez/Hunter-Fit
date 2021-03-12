@@ -1,37 +1,22 @@
 <StackLayout>
-        <StackLayout id = "reps-weight-stackLayout">
-            <FlexboxLayout class = "rep-topic">
-                <StackLayout class= "rep-weight-stackLayout">
-                    <Label class = "reps-weight-labels" text = "Reps"></Label>
-                </StackLayout>
-                <StackLayout class= "rep-weight-stackLayout">
-                    <Label class = "reps-weight-labels" text = "Weight"></Label>
-                </StackLayout>
-            </FlexboxLayout>
-            <ScrollView class= "rep-details">
-                <StackLayout>
-                    <FlexboxLayout>
-                        <TextField class = "reps-weight-textField" hint = "input reps"></TextField>
-                        <TextField class = "reps-weight-textField" hint = "input weight"></TextField>
-                        <Button class = "removeButton" text="-"></Button>
-                    </FlexboxLayout>
-                    <FlexboxLayout>
-                        <TextField class = "reps-weight-textField" hint = "input reps"></TextField>
-                        <TextField class = "reps-weight-textField" hint = "input weight"></TextField>
-                        <Button class = "removeButton" text="-"></Button>
-                    </FlexboxLayout>
-                    <FlexboxLayout>
-                        <TextField class = "reps-weight-textField" hint = "input reps"></TextField>
-                        <TextField class = "reps-weight-textField" hint = "input weight"></TextField>
-                        <Button class = "removeButton" text="-"></Button>
-                    </FlexboxLayout>
-                    <FlexboxLayout>
-                        <TextField class = "reps-weight-textField" hint = "input reps"></TextField>
-                        <TextField class = "reps-weight-textField" hint = "input weight"></TextField>
-                        <Button class = "removeButton" text="-"></Button>
-                    </FlexboxLayout>
-                </StackLayout>
-            </ScrollView>
-        </StackLayout>
-    <Button id = "addRepButton" text="Add Set"></Button>
+    <StackLayout id = "reps-weight-stackLayout">
+        <GridLayout rows = "auto" columns = "50,*,*">
+            <Label col = "0" text = "Set #" class = "center-Text"></Label>
+            <Label col = "1" text = "Reps" class = "center-Text"></Label>
+            <Label col = "2" text = "Weight" class = "center-Text"></Label>
+        </GridLayout>
+        <ScrollView class= "rep-details">
+            <StackLayout>
+                <GridLayout *ngFor="let repSet of repSets" id="repGrid{{repSets.setNumber}}" rows = "auto" columns = "50,*,*">
+                    <Label col = "0" [text]="setNumberCounter" class = "center-Text"></Label>
+                    <TextField col = "1" class = "reps-weight-textField" hint = "input reps" [text]="repSets.localSetReps" (textChange)="repsInput($event)" type="number"></TextField>
+                    <TextField col = "2" class = "reps-weight-textField" hint = "input weight" [text]="repSets.localSetWeight" (textChange)="weightInput($event)"></TextField>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    <GridLayout width="60%"rows="auto"columns = "*,*">
+        <Button col="0" id = "addRepButton" class = "setButtons" text="Add Set" (tap) = "addRep()"></Button>
+        <Button col="1" id = "removeRepButton" class = "setButtons" text="Remove Set" (tap) = "deleteRow()"></Button>
+    </GridLayout>
 </StackLayout>

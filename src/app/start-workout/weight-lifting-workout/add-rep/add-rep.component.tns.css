@@ -1,29 +1,25 @@
 /* Add mobile styles for the component here.  */
 
-#reps-weight-stackLayout {
-    margin-top: 10em;
-    width: 100%;
-}
-
-#remove-stackLayout {
-    width: 10%;
-}
-
 #addRepButton {
-    margin-top: 10em;
-    height: 23em;
     background-color: aliceblue;
     color: black;
-    width: 100em;
+}
+
+#removeRepButton {
+    background-color: #C00000;
 }
 
 .rep-details {
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
     width: 100%;
-    height: 100;
+    height: 50%;
 }
 
-.rep-weight-stackLayout {
-    width: 45%;
+.setNumber-label {
+    text-align: center;
 }
 
 .reps-weight-labels {
@@ -35,18 +31,13 @@
 }
 
 .reps-weight-textField {
-    background-color: cyan;
-    width: 100%;
-    height: 100%;
+    background-color: #eeeeee;
+    border-radius: 10px;
     text-align: center;
-    color: red;
 }
 
-.removeButton {
-    background-color: #C00000;
-    color: white;
-    border-radius: 50%;
-    font-weight: bold;
-    height: 15em;
-    width: 15em;
+.setButtons {
+    margin-top: 10em;
+    height: 23em;
+    width: 100em;
 }
