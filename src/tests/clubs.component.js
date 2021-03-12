@@ -1,12 +1,12 @@
 var reflect = require("reflect-metadata");
-var comp = require("../app/navigation/navigation.component");
+var comp = require("../app/navigation/clubs/clubs.component");
 
 // A sample Jasmine test
-describe("A suite Navigation Component:", function() {
+describe("A suite Clubs Component:", function() {
     var component;
 
     beforeEach(function() {
-        component = new comp.NavigationComponent();
+        component = new comp.ClubsComponent();
     });
 
     it("Initialization", function() {
