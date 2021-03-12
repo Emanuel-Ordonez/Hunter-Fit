@@ -91,7 +91,6 @@ export class WeightLiftingWorkoutComponent implements OnInit {
   }
 
   public stopWorkoutWeightLifting() {
-
     this.status = true;
     clearInterval(this.interval);
 

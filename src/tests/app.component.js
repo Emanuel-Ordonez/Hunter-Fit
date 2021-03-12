@@ -10,11 +10,6 @@ describe("A suite", function() {
         appComponent = new component.AppComponent();
     });
 
-    it("Verify default message", function() {
-        expect(appComponent.message).toBe("hello");
-        //expect(<componentname>.<functionName>).toBe(<comparingStatement>);
-    });
-
     it("Something", function() {
         expect("hello").toBe("hello");
     });
