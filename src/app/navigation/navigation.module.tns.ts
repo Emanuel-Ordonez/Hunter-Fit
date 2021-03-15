@@ -6,6 +6,7 @@ import { ProfileComponent } from '@src/app/navigation/profile/profile.component'
 import { SearchComponent } from '@src/app/navigation/search/search.component';
 import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
 import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
+// import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
 
 
 

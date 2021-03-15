@@ -14,6 +14,10 @@ Button {
     width: 35%;
 }
 
+Label {
+    font-size: larger;
+}
+
 .center-Text {
     text-align: center;
 }

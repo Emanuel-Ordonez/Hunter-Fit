@@ -1,21 +1,15 @@
 var reflect = require("reflect-metadata");
-var component = require("../app/app.component");
+var comp = require("../app/app.component");
 
 // A sample Jasmine test
-describe("A suite", function() {
-
-    var appComponent;
+describe("A suite App Component:", function() {
+    var component;
 
     beforeEach(function() {
-        appComponent = new component.AppComponent();
+        component = new comp.AppComponent();
     });
 
-    it("Verify default message", function() {
-        expect(appComponent.message).toBe("hello");
-        //expect(<componentname>.<functionName>).toBe(<comparingStatement>);
-    });
-
-    it("Something", function() {
-        expect("hello").toBe("hello");
+    it("Initialization", function() {
+        expect(component).toBeTruthy();
     });
 });
