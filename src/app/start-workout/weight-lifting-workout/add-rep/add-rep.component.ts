@@ -10,7 +10,7 @@ import { IRepSet } from '@src/app/services/IRepSet';
 })
 export class AddRepComponent implements OnInit {
   repSets: IRepSet[] = [];
-  setNumberCounter = 0;
+  setNumberCounter = 1;
   setRepsInput;
   setWeightInput;
   @Output() newRepSetEvent = new EventEmitter<IRepSet>();
@@ -39,7 +39,7 @@ export class AddRepComponent implements OnInit {
     console.log(this.setNumberCounter);
     this.repSets.push(repSet);
     if(this.setNumberCounter!=0)
-      this.newRepSetEvent.emit(repSet);
+      this.newRepSetEvent.emit(repSet);//should be implemented with finish button somehow
     this.setNumberCounter++;
   }
 
