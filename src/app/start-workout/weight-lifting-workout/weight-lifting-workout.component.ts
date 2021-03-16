@@ -19,15 +19,15 @@ export class WeightLiftingWorkoutComponent implements OnInit {
 
   public workoutType: any;
   public workoutTypeClass: string;
-  currentTime: number = 0;
+  private currentTime: number = 0;
   display;
-  interval;
-  public status = true;
-  public prevWorkoutType: any;
+  private interval;
+  private status = true;
+  private prevWorkoutType: any;
 
   tvtext = "";
   currentWorkout: string;
-  repSets: IRepSet[] = [];
+  private repSets: IRepSet[] = [];
 
   constructor(private routerExtensions: RouterExtensions, 
     private activeRoute: ActivatedRoute, 
@@ -81,8 +81,11 @@ export class WeightLiftingWorkoutComponent implements OnInit {
   }
 
   public formatTime(value: number): string {
+    const hours: number = Math.floor(value/3600);
+    value-=(hours*3600);
     const minutes: number = Math.floor(value/60);
-    return minutes + ':' + String(value - minutes * 60).padStart(2, '0');
+    value-=(minutes*60);
+    return String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(value).padStart(2, '0');
   }
 
   public addRepSet(newRepSet: IRepSet){
