@@ -41,7 +41,6 @@ export class AddRepComponent implements OnInit {
     if(this.setNumberCounter!=0)
       this.newRepSetEvent.emit(repSet);//should be implemented with finish button somehow
     this.setNumberCounter++;
-    alert(repSet.setNumber);
   }
 
   public deleteRow() {
