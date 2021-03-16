@@ -14,7 +14,7 @@ import { WeightLiftingWorkoutComponent } from './start-workout/weight-lifting-wo
   import { AddRepComponent } from './start-workout/weight-lifting-workout/add-rep/add-rep.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "workouts", pathMatch: "full" },
+  { path: "", redirectTo: "navigation", pathMatch: "full" },
   { path: "navigation", component: NavigationComponent,
     children: [
       { path: "", component: HomeComponent, outlet: 'home' },

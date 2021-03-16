@@ -21,5 +21,7 @@ export class WorkoutStorageService {
     // console.log("allWorkouts: " + this.allWorkouts[0].workoutType, this.allWorkouts[0].totalWorkoutTime);
   }
 
-
+  getWorkouts(){
+    return this.allWorkouts;
+  }
 }
