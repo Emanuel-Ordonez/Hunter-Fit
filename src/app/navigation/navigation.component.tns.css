@@ -1,5 +1,9 @@
 /* Add mobile styles for the component here.  */
 
+Button {
+    color: white;
+}
+
 TabStrip {
     background-color: #047493;
 }

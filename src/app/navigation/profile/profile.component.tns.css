@@ -1,4 +1,9 @@
 /* Add mobile styles for the component here.  */
+
+Button {
+    color: white;
+}
+
 #profile-info-flexbox {
     height: 26%;
     background-color: #047493;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Color, Dialogs } from "@nativescript/core";
 
 @Component({
   selector: 'app-workout-history',
@@ -13,10 +14,21 @@ export class WorkoutHistoryComponent implements OnInit {
   }
 
   public displayStats(){
-    alert("Your stats for this workout")
+    Dialogs.alert({
+      title: "Workout Stats",
+      message: "Data Will go here",
+      okButtonText: "Done"
+    }).then(() => {
+        console.log("Dialog closed!");
+    });
   }
   public displayNotes(){
-    alert("Your notes for this workout")
+    Dialogs.alert({
+      title: "Workout Notes",
+      message: "Notes Will go here",
+      okButtonText: "Done"
+    }).then(() => {
+        console.log("Dialog closed!");
+    });
   }
-
 }

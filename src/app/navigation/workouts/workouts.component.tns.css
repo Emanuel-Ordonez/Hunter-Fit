@@ -1,21 +1,20 @@
 /* Add mobile styles for the component here.  */
-.startWorkoutButton{
+
+Button {
+    color: white;
+}
+
+.startWorkoutButton {
     background-color: #00658A;
     margin-top: 10em;
     border-radius: 15px;
     border-style: outset;
     border-width: 5px;
-    color: white;
     margin-bottom: 2%;
     width: 35%;
 }
 
-.workout-history-flexbox{
-    background-color: blue;
-    align-items: center;
-}
-
-#workout-history-label{
+#workout-history-label {
     margin-top: 45em;
     margin-left: auto;
     margin-right: auto;
