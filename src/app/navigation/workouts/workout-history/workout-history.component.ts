@@ -11,55 +11,55 @@ import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-
   styleUrls: ['./workout-history.component.css']
 })
 export class WorkoutHistoryComponent implements OnInit {
-  repNumber: number=1;
-  x: number=10;
-  weight: number=100;
+  repNumber: number = 1;
+  x: number = 10;
+  weight: number = 100;
   public allWorkouts: Workout[];
 
   constructor(private workoutStorageService: WorkoutStorageService) { }
 
   ngOnInit(): void {
-    this.allWorkouts=this.workoutStorageService.getWorkouts();
+    this.allWorkouts = this.workoutStorageService.getWorkouts();
   }
 
-  public displayStats(){
+  public displayStats() {
     console.log("################# WORKOUT(S) ####################");
-    // for(let i = 0; i < this.allWorkouts.length; i++){
+    for (let i = 0; i < this.allWorkouts.length; i++) {
       console.log()
-      console.log("Workout Type: ",this.allWorkouts[i].workoutType);
-      console.log("Workout Time: ",this.allWorkouts[i].totalWorkoutTime);
-      
-      const temp=this.allWorkouts[i].totalRepSets;
+      console.log("Workout Type: ", this.allWorkouts[i].workoutType);
+      console.log("Workout Time: ", this.allWorkouts[i].totalWorkoutTime);
 
-      for(let j = 0; j < temp.length; j++){
+      const temp = this.allWorkouts[i].totalRepSets;
+
+      for (let j = 0; j < temp.length; j++) {
 
         console.log("Workout set #" + temp[j].setNumber + ": ");
         console.log("\tSet Reps: ", temp[j].setReps);
         console.log("\tSet Weight: ", temp[j].setWeight);
       }
-    
+    }
 
     console.log("displayState() allWorkouts: " + this.allWorkouts[0].workoutType, this.allWorkouts[0].totalWorkoutTime);
 
-    const statsTopic=`Workout: ${this.allWorkouts[0].workoutType}\nTotal Time: ${this.allWorkouts[0].totalWorkoutTime}\nRep# Reps Weight\n`;
-    const stats=`${this.repNumber}     ${this.x}       ${this.weight}\n`;
+    const statsTopic = `Workout: ${this.allWorkouts[0].workoutType}\nTotal Time: ${this.allWorkouts[0].totalWorkoutTime}\nRep# Reps Weight\n`;
+    const stats = `${this.repNumber}     ${this.x}       ${this.weight}\n`;
 
     Dialogs.alert({
       title: "Workout Stats",
-      message: statsTopic+stats,
+      message: statsTopic + stats,
       okButtonText: "Done"
     }).then(() => {
-        console.log("Dialog closed!");
+      console.log("Dialog closed!");
     });
   }
 
-  public displayNotes(){
+  public displayNotes() {
     Dialogs.alert({
       title: "Workout Notes",
       message: "Notes Will go here",
       okButtonText: "Done"
     }).then(() => {
-        console.log("Dialog closed!");
+      console.log("Dialog closed!");
     });
   }
 }
