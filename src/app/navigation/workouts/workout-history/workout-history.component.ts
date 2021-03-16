@@ -7,6 +7,9 @@ import { Color, Dialogs } from "@nativescript/core";
   styleUrls: ['./workout-history.component.css']
 })
 export class WorkoutHistoryComponent implements OnInit {
+  repNumber: number=1;
+  x: number=10;
+  weight: number=100;
 
   constructor() { }
 
@@ -14,14 +17,18 @@ export class WorkoutHistoryComponent implements OnInit {
   }
 
   public displayStats(){
+    const statsTopic=`Rep# Reps Weight\n`;
+    const stats=`${this.repNumber}     ${this.x}       ${this.weight}\n`;
+
     Dialogs.alert({
       title: "Workout Stats",
-      message: "Data Will go here",
+      message: statsTopic+stats,
       okButtonText: "Done"
     }).then(() => {
         console.log("Dialog closed!");
     });
   }
+  
   public displayNotes(){
     Dialogs.alert({
       title: "Workout Notes",
