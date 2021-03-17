@@ -19,34 +19,37 @@ export class WorkoutHistoryComponent implements OnInit {
   constructor(private workoutStorageService: WorkoutStorageService) { }
 
   ngOnInit(): void {
-    this.allWorkouts=this.workoutStorageService.getWorkouts();
   }
 
-  public displayStats(){
-    console.log("################# WORKOUT(S) ####################");
-    // for(let i = 0; i < this.allWorkouts.length; i++){
-      console.log()
-      console.log("Workout Type: ",this.allWorkouts[i].workoutType);
-      console.log("Workout Time: ",this.allWorkouts[i].totalWorkoutTime);
+  public displayStats(workout: any){
+     console.log("################# WORKOUT(S) ####################");
+     //console.log(workout.workoutType);
+    // // for(let i = 0; i < this.allWorkouts.length; i++){
+    //   console.log()
+    //   console.log("Workout Type: ",this.allWorkouts[i].workoutType);
+    //   console.log("Workout Time: ",this.allWorkouts[i].totalWorkoutTime);
       
-      const temp=this.allWorkouts[i].totalRepSets;
+    const allSets = workout.totalRepSets;
+    let temp:string=``;
 
-      for(let j = 0; j < temp.length; j++){
-
-        console.log("Workout set #" + temp[j].setNumber + ": ");
-        console.log("\tSet Reps: ", temp[j].setReps);
-        console.log("\tSet Weight: ", temp[j].setWeight);
-      }
+    for(let j = 0; j < allSets.length; j++){
+      temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
+      temp+=`\n\tSet Reps: ${allSets[j].setReps}`;
+      temp+=`\n\tSet Weight: ${allSets[j].setWeight}`;
+      // console.log("Workout set #" + allSets[j].setNumber + ": ");
+      // console.log("\tSet Reps: ", allSets[j].setReps);
+      // console.log("\tSet Weight: ", allSets[j].setWeight);
+    }
     
+    //console.log("displayState() allWorkouts: " + this.allWorkouts[0].workoutType, this.allWorkouts[0].totalWorkoutTime);
 
-    console.log("displayState() allWorkouts: " + this.allWorkouts[0].workoutType, this.allWorkouts[0].totalWorkoutTime);
-
-    const statsTopic=`Workout: ${this.allWorkouts[0].workoutType}\nTotal Time: ${this.allWorkouts[0].totalWorkoutTime}\nRep# Reps Weight\n`;
-    const stats=`${this.repNumber}     ${this.x}       ${this.weight}\n`;
+    //const statsTopic=`Workout: ${this.allWorkouts[0].workoutType}\nTotal Time: ${this.allWorkouts[0].totalWorkoutTime}\nRep# Reps Weight\n`;
+    // const stats=`${this.repNumber}     ${this.x}       ${this.weight}\n`;
+    const stats=temp;
 
     Dialogs.alert({
       title: "Workout Stats",
-      message: statsTopic+stats,
+      message: stats,
       okButtonText: "Done"
     }).then(() => {
         console.log("Dialog closed!");
