@@ -10,7 +10,7 @@ import { IRepSet } from '@src/app/services/IRepSet';
 })
 export class AddRepComponent implements OnInit {
   repSets: IRepSet[] = [];
-  setNumberCounter = 1;
+  setNumberCounter = 0;
   setRepsInput;
   setWeightInput;
   @Output() newRepSetEvent = new EventEmitter<IRepSet>();
@@ -31,16 +31,20 @@ export class AddRepComponent implements OnInit {
   }
   
   public addRep() {
-    const repSet: IRepSet = {
+    const repSet = this.getRepSet();
+    this.repSets.push(repSet);
+    if(this.setNumberCounter!=1)
+      this.newRepSetEvent.emit(repSet);//should be implemented with finish button somehow
+    this.setNumberCounter++;
+  }
+
+  private getRepSet(){
+    const newRepSet: IRepSet = {
       setNumber: this.setNumberCounter,
       setReps: this.setRepsInput,
       setWeight: this.setWeightInput
     };
-    console.log(this.setNumberCounter);
-    this.repSets.push(repSet);
-    if(this.setNumberCounter!=0)
-      this.newRepSetEvent.emit(repSet);//should be implemented with finish button somehow
-    this.setNumberCounter++;
+    return newRepSet;
   }
 
   public deleteRow() {

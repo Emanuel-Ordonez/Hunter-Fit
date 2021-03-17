@@ -12,7 +12,7 @@ export class WorkoutStorageService {
 
   constructor() { }
 
-  saveWorkout(totalTime: number, type: any, repSets: IRepSet[]) {
+  saveWorkout(totalTime: string, type: any, repSets: IRepSet[]) {
     // construct workout object:
     const workoutToSave : Workout = {totalWorkoutTime: totalTime, workoutType: type, totalRepSets: repSets};
     // store workout object:
