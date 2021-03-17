@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
   import { HomeComponent } from './navigation/home/home.component';
   import { ClubsComponent } from './navigation/clubs/clubs.component';
@@ -14,7 +15,8 @@ import { WeightLiftingWorkoutComponent } from './start-workout/weight-lifting-wo
   import { AddRepComponent } from './start-workout/weight-lifting-workout/add-rep/add-rep.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "workouts", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "login", component: LoginComponent},
   { path: "navigation", component: NavigationComponent,
     children: [
       { path: "", component: HomeComponent, outlet: 'home' },

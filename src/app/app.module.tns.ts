@@ -4,13 +4,14 @@ import { NativeScriptModule } from '@nativescript/angular';
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
 
+import { LoginComponent } from '@src/app/login/login.component';
 import { NavigationComponent } from '@src/app/navigation/navigation.component';
 
 //children of NavigationComponent
 import { HomeComponent } from '@src/app/navigation/home/home.component';
 import { ClubsComponent } from '@src/app/navigation/clubs/clubs.component';
 import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
-  import { WorkoutHistoryComponent } from './navigation/workouts/workout-history/workout-history.component';
+  import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
 import { ProfileComponent } from '@src/app/navigation/profile/profile.component';
 import { SearchComponent } from '@src/app/navigation/search/search.component';
 
@@ -27,21 +28,22 @@ import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lif
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    
     NavigationComponent,
+      HomeComponent,
+      ClubsComponent,
+      SearchComponent,
+      WorkoutsComponent,
+        WorkoutHistoryComponent,
+      ProfileComponent,
 
-    HomeComponent,
-    ClubsComponent,
-    SearchComponent,
-    WorkoutsComponent,
-      WorkoutHistoryComponent,
-    ProfileComponent,
     
     StartWorkoutComponent,
     
     CardioWorkoutComponent,
     WeightLiftingWorkoutComponent,
-
-    AddRepComponent,
+      AddRepComponent,
   ],
   imports: [
     NativeScriptModule,
