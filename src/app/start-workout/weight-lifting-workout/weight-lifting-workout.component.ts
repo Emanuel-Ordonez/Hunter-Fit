@@ -97,8 +97,9 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     this.status = true;
     clearInterval(this.interval);
 
-    setNumber("workoutTime", this.currentTime);
-    this.workoutStorageService.saveWorkout(getNumber("workoutTime"), getString("workoutTypeId"), this.repSets);
+    //setNumber("workoutTime", this.currentTime);
+    const formatedTime: string = this.formatTime(this.currentTime);
+    this.workoutStorageService.saveWorkout(formatedTime, getString("workoutTypeId"), this.repSets);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

@@ -9,17 +9,12 @@
 
     <ScrollView class= "workout-info-scrollview">
         <StackLayout>
-            <GridLayout  *ngFor="let workout of allWokouts"  rows = "auto" columns = "*,*,90,90">
+            <GridLayout  *ngFor="let workout of getAllWorkouts()"  rows = "auto" columns = "*,*,90,90">
                 <Label col = "0" [text]="workout.workoutType" class = "type-duration-label"></Label>
-                <Label col = "1" text = "1h 24m 34s" class = "type-duration-label"></Label>
-                <Button col = "2" text = "Stats" class = "stats-notes-button" (tap) = "displayStats()"></Button>
-                <Button col = "3" text = "Notes" class = "stats-notes-button" (tap) = "displayNotes()"></Button>
+                <Label col = "1" [text]="workout.totalWorkoutTime" class = "type-duration-label"></Label>
+                <Button col = "2" text = "Stats" class = "stats-notes-button" (tap) = "displayStats(workout)"></Button>
+                <Button col = "3" text = "Notes" class = "stats-notes-button" (tap) = "displayNotes(workout)"></Button>
             </GridLayout>
-                <!--<GridLayoutid="repGrid{{repSets.setNumber}}" rows = "auto" columns = "50,*,*">
-                    <Label col = "0" [text]="allWorkouts[]" class = "center-Text"></Label>
-                    <TextField col = "1" class = "reps-weight-textField" hint = "input reps" (textChange)="repsInput($event)" type="number"></TextField>
-                    <TextField col = "2" class = "reps-weight-textField" hint = "input weight" (textChange)="weightInput($event)"></TextField>
-                </GridLayout>-->
         </StackLayout>
     </ScrollView>
 

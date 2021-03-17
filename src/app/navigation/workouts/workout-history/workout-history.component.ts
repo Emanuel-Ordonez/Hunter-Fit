@@ -7,8 +7,8 @@ import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-
 
 @Component({
   selector: 'app-workout-history',
-  templateUrl: './workout-history.component.html',
-  styleUrls: ['./workout-history.component.css']
+  templateUrl: './workout-history.component.tns.html',
+  styleUrls: ['./workout-history.component.tns.css']
 })
 export class WorkoutHistoryComponent implements OnInit {
   repNumber: number = 1;
@@ -19,44 +19,41 @@ export class WorkoutHistoryComponent implements OnInit {
   constructor(private workoutStorageService: WorkoutStorageService) { }
 
   ngOnInit(): void {
-    this.allWorkouts = this.workoutStorageService.getWorkouts();
   }
 
-  public displayStats() {
-    console.log("################# WORKOUT(S) ####################");
-    for (let i = 0; i < this.allWorkouts.length; i++) {
-      console.log()
-      console.log("Workout Type: ", this.allWorkouts[i].workoutType);
-      console.log("Workout Time: ", this.allWorkouts[i].totalWorkoutTime);
+  public getAllWorkouts(){
+    return this.reverseArray(this.workoutStorageService.getWorkouts());
+  }
 
-      const temp = this.allWorkouts[i].totalRepSets;
+  private reverseArray(array: Workout[]){
+    return array.reverse();
+  }
 
-      for (let j = 0; j < temp.length; j++) {
-
-        console.log("Workout set #" + temp[j].setNumber + ": ");
-        console.log("\tSet Reps: ", temp[j].setReps);
-        console.log("\tSet Weight: ", temp[j].setWeight);
-      }
-    }
-
-    console.log("displayState() allWorkouts: " + this.allWorkouts[0].workoutType, this.allWorkouts[0].totalWorkoutTime);
-
-    const statsTopic = `Workout: ${this.allWorkouts[0].workoutType}\nTotal Time: ${this.allWorkouts[0].totalWorkoutTime}\nRep# Reps Weight\n`;
-    const stats = `${this.repNumber}     ${this.x}       ${this.weight}\n`;
-
+  public displayStats(workout: Workout){
     Dialogs.alert({
       title: "Workout Stats",
-      message: statsTopic + stats,
+      message: this.getWorkoutStats(workout.totalRepSets),
       okButtonText: "Done"
     }).then(() => {
       console.log("Dialog closed!");
     });
   }
 
-  public displayNotes() {
+  private getWorkoutStats(allSets: IRepSet[]){
+    let temp:string=``;
+
+    for(let j = 0; j < allSets.length; j++){
+      temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
+      temp+=`\nSet Reps: ${allSets[j].setReps}`;
+      temp+=`\nSet Weight: ${allSets[j].setWeight}`;
+    }
+    return temp;
+  }
+
+  public displayNotes(workout: Workout){
     Dialogs.alert({
       title: "Workout Notes",
-      message: "Notes Will go here",
+      //message: workout.notes,
       okButtonText: "Done"
     }).then(() => {
       console.log("Dialog closed!");
