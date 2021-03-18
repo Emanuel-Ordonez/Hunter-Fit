@@ -4,5 +4,7 @@ export interface Workout {
 
     workoutType: string;
     totalWorkoutTime: string; 
+    workoutDate: string;
     totalRepSets: IRepSet[];
+    workoutNotes: string;
 }
