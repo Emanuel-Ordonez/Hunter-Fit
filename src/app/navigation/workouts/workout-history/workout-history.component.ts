@@ -22,17 +22,19 @@ export class WorkoutHistoryComponent implements OnInit {
   }
 
   public getAllWorkouts(){
+    //console.log(this.reverseArray(this.workoutStorageService.getWorkouts()));
     return this.reverseArray(this.workoutStorageService.getWorkouts());
   }
 
   private reverseArray(array: Workout[]){
-    return array.reverse();
+    return array.slice().reverse();
   }
 
   public displayStats(workout: Workout){
+    const duration =`Elapsed Time: ${workout.totalWorkoutTime}\n`; 
     Dialogs.alert({
-      title: "Workout Stats",
-      message: this.getWorkoutStats(workout.totalRepSets),
+      title: "Workout Stats:",
+      message: duration+this.getWorkoutStats(workout.totalRepSets),
       okButtonText: "Done"
     }).then(() => {
       console.log("Dialog closed!");
@@ -53,7 +55,7 @@ export class WorkoutHistoryComponent implements OnInit {
   public displayNotes(workout: Workout){
     Dialogs.alert({
       title: "Workout Notes",
-      //message: workout.notes,
+      message: workout.workoutNotes,
       okButtonText: "Done"
     }).then(() => {
       console.log("Dialog closed!");

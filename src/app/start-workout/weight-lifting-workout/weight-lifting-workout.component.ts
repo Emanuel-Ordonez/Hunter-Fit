@@ -24,6 +24,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
   private interval;
   private status = true;
   private prevWorkoutType: any;
+  private workoutNotes: string;
 
   tvtext = "";
   currentWorkout: string;
@@ -40,6 +41,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
 
   onTextChange(args: EventData) {
     const tv = args.object as TextView;
+    this.workoutNotes = tv.text;
     // console.log(tv.text);
   }
 
@@ -97,10 +99,18 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     this.status = true;
     clearInterval(this.interval);
 
-    //setNumber("workoutTime", this.currentTime);
+    const endDate = this.getCurrentDate();
+
     const formatedTime: string = this.formatTime(this.currentTime);
-    this.workoutStorageService.saveWorkout(formatedTime, getString("workoutTypeId"), this.repSets);
+    this.workoutStorageService.saveWorkout(formatedTime, getString("workoutTypeId"), endDate, this.repSets, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
+  }
+
+  private getCurrentDate(){
+    const currentDay = new Date().getDate();
+    const currentMonth = new Date().getMonth() + 1;
+    const currentYear = new Date().getFullYear();
+    return `${currentMonth}-${currentDay}-${currentYear}`;
   }
 }
