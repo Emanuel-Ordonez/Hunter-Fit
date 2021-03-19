@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GridLayout, ItemSpec, TextField, TextView } from '@nativescript/core';
-import { setNumber } from '@nativescript/core/application-settings';
 import { IRepSet } from '@src/app/services/IRepSet';
 
 @Component({
@@ -9,11 +8,13 @@ import { IRepSet } from '@src/app/services/IRepSet';
   styleUrls: ['./add-rep.component.css']
 })
 export class AddRepComponent implements OnInit {
+  
   repSets: IRepSet[] = [];
+  repSet: IRepSet;
   setNumberCounter = 1;
   setRepsInput;
   setWeightInput;
-  @Output() newRepSetEvent = new EventEmitter<IRepSet>();
+  @Output() emitAllRepSetsEvent = new EventEmitter<IRepSet[]>();
 
   constructor() { }
 
@@ -21,24 +22,38 @@ export class AddRepComponent implements OnInit {
   }
 
   public repsInput(args) {
-    const tvrep = args.object as TextView;
-    this.setRepsInput = tvrep.text;
+    const repTextView = args.object as TextView;
+    this.setRepsInput = repTextView.text;
+    let repId = Number(args.object.id.replace("reps-textField-", ""));
+
+    console.log("this.setRepsInput = ", this.setRepsInput);
+    console.log("repId = ", repId);
+    this.repSets[repId - 1].setReps = Number(this.setRepsInput);
+    this.emitAllRepSets();
   }
 
   public weightInput(args) {
-    const tvwt = args.object as TextView;
-    this.setWeightInput = tvwt.text;
+    const weightTextView = args.object as TextView;
+    this.setWeightInput= weightTextView.text;
+    let weightId = Number(args.object.id.replace("weight-textField-", ""));
+    console.log("this.setWeightInput = ", this.setWeightInput);
+    console.log("weightId = ", weightId);
+    this.repSets[weightId - 1].setWeight = Number(this.setWeightInput);
+    this.emitAllRepSets();
   }
-  
-  public addRep() {
-    const repSet = this.getRepSet();
-    this.repSets.push(repSet);
-    if(this.setNumberCounter!=0)
-      this.newRepSetEvent.emit(repSet);//should be implemented with finish button somehow
+
+  public emitAllRepSets() {
+    if (this.setNumberCounter != 0)
+      this.emitAllRepSetsEvent.emit(this.repSets);
+  }
+
+  public addRepSetToRepSetsArray() {
+    this.repSet = this.getRepSet();
+    this.repSets.push(this.repSet);
     this.setNumberCounter++;
   }
 
-  private getRepSet(){
+  private getRepSet() {
     const newRepSet: IRepSet = {
       setNumber: this.setNumberCounter,
       setReps: this.setRepsInput,

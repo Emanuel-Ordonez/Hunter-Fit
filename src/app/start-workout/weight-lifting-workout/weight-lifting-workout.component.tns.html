@@ -2,22 +2,19 @@
 <StackLayout height="100%">
     <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
         <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
-        <!-- viewModel.get("workoutTypeId") -->
 
         <Label class="timeLabel" text="Elapsed Time: {{ display }}" textWrap="true"></Label>
-        <!-- currentTime displays here -->
 
         <Label text="Rep Sets:"></Label>
-        <app-add-rep (newRepSetEvent)="addRepSet($event)"></app-add-rep>
+        <app-add-rep (emitAllRepSetsEvent)="addAllRepSets($event)"></app-add-rep>
 
         <Label text="Notes: "></Label>
-        <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)">
-        </TextView>
-        <!-- Research user input to go in here? -->
+        <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)"></TextView>
+        
     </StackLayout>
 
     <FlexboxLayout class="buttonFlexLayout-weightLifting">
-        <Button text="Pause" class="pause-button" id = "pauseButton" (tap)="pauseTimer($event)"></Button> <!-- needs to route to a pause function-->
+        <Button text="Pause" class="pause-button" id = "pauseButton" (tap)="pauseTimer($event)"></Button> 
         <Button text="Finish" class="stop-button" (tap)="stopWorkoutWeightLifting()"></Button>
     </FlexboxLayout>
 </StackLayout>
