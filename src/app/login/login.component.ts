@@ -15,35 +15,35 @@ export class LoginComponent implements OnInit {
     isLoggingIn = true;
   
     constructor(private router: Router, private userService: UserService) {
-      this.user = new User();
-      this.user.email = "my.test.account@nativescript.org"; //FOR TESTING ONLY
-      this.user.password = "mypassword"; //FOR TESTING ONLY
+        this.user = new User();
+        this.user.email = "my.test.account@nativescript.org"; //FOR TESTING ONLY
+        this.user.password = "mypassword"; //FOR TESTING ONLY
     }
   
     ngOnInit(): void {
     }
+    
+    submit() {
+        if (this.isLoggingIn) {
+            this.login();
+        } else {
+            this.signUp();
+        }
+    }
 
-    // submit() {
-    //     if (this.isLoggingIn) {
-    //         this.login();
-    //     } else {
-    //         this.signUp();
-    //     }
-    // }
-
-    // login() {
-    //     this.userService.login(this.user)
-    //       .subscribe(
-    //         () => this.router.navigate(["/home"]),
-    //         (exception) => {
-    //             if(exception.error && exception.error.description) {
-    //                 alert(exception.error.description);
-    //             } else {
-    //                 alert(exception)
-    //             }
-    //         }
-    //       );
-    //   }
+    login() {
+        this.userService.login(this.user)
+          .subscribe(
+            () => this.router.navigate(["/navigation"]),
+            (exception) => {
+                if(exception.error && exception.error.description) {
+                    alert(exception.error.description);
+                } else {
+                    alert(exception)
+                }
+            }
+          );
+      }
 
     signUp() {
         this.userService.register(this.user)

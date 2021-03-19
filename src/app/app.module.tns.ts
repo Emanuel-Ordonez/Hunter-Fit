@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptModule } from '@nativescript/angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
@@ -48,6 +49,7 @@ import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lif
   imports: [
     NativeScriptModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

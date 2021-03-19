@@ -1,40 +1,34 @@
 /* Add mobile styles for the component here.  */
 
-Button {
-    color: white;
-}
-
 FlexboxLayout {
     justify-content: center;
     align-items: center;
     background-size: cover;
     /* background-image: url("~/images/background.jpg"); */
-    background-color: rgb(136, 164, 188);
+    background-color: red;
 }
 
-StackLayout {
-    width: 300;
-    padding: 10 16;
+.form {
+    margin-bottom: 5%;
     background-color: #f0f0f0;
+    /* height: 15%; */
+    padding: 10 16;
+    /* opacity: 0.5; */
+    width: 80%;
 }
 
 Image {
     margin-bottom: 20;
-    height: 70;
+    width: 100%;
 }
 
-Button,
-TextField {
+Button {
     margin-bottom: 10;
 }
 
 .btn-primary {
+    color: white;
     background-color: rgb(0, 101, 138);
-    margin-left: 0;
-    margin-right: 0;
-}
-
-TextField {
-    /* placeholder-color: #C4AFB4; */
-    color: black;
+    /* margin-left: 0; */
+    /* margin-right: 0; */
 }
