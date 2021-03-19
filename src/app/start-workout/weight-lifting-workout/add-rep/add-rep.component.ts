@@ -22,16 +22,23 @@ export class AddRepComponent implements OnInit {
   }
 
   public repsInput(args) {
-    this.setRepsInput = args.object as TextView;
+    const repTextView = args.object as TextView;
+    this.setRepsInput = repTextView.text;
     let repId = Number(args.object.id.replace("reps-textField-", ""));
+
+    console.log("this.setRepsInput = ", this.setRepsInput);
+    console.log("repId = ", repId);
     this.repSets[repId - 1].setReps = Number(this.setRepsInput);
     this.emitAllRepSets();
   }
 
   public weightInput(args) {
-    this.setWeightInput= args.object as TextView;
+    const weightTextView = args.object as TextView;
+    this.setWeightInput= weightTextView.text;
     let weightId = Number(args.object.id.replace("weight-textField-", ""));
-    this.repSets[weightId - 1].setReps = Number(this.setWeightInput);
+    console.log("this.setWeightInput = ", this.setWeightInput);
+    console.log("weightId = ", weightId);
+    this.repSets[weightId - 1].setWeight = Number(this.setWeightInput);
     this.emitAllRepSets();
   }
 
