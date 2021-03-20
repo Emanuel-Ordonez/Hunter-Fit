@@ -11,9 +11,9 @@ import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-
   styleUrls: ['./workout-history.component.tns.css']
 })
 export class WorkoutHistoryComponent implements OnInit {
-  repNumber: number=1;
-  x: number=10;
-  weight: number=100;
+  repNumber: number = 1;
+  x: number = 10;
+  weight: number = 100;
   public allWorkouts: Workout[];
 
   constructor(private workoutStorageService: WorkoutStorageService) { }
@@ -37,7 +37,7 @@ export class WorkoutHistoryComponent implements OnInit {
       message: duration+this.getWorkoutStats(workout.totalRepSets),
       okButtonText: "Done"
     }).then(() => {
-        console.log("Dialog closed!");
+      console.log("Dialog closed!");
     });
   }
 
@@ -58,7 +58,7 @@ export class WorkoutHistoryComponent implements OnInit {
       message: workout.workoutNotes,
       okButtonText: "Done"
     }).then(() => {
-        console.log("Dialog closed!");
+      console.log("Dialog closed!");
     });
   }
 }

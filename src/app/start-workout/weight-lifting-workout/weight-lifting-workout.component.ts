@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterExtensions } from '@nativescript/angular';
 import { getNumber, getString, setNumber } from '@nativescript/core/application-settings';
-import { EventData } from '@nativescript/core/data/observable';
+import { EventData, Observable } from '@nativescript/core/data/observable';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { IRepSet } from '@src/app/services/IRepSet';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
@@ -90,10 +90,15 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     return String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(value).padStart(2, '0');
   }
 
-  public addRepSet(newRepSet: IRepSet){
-    this.repSets.push(newRepSet);
+  
+  public addAllRepSets(newRepSet: IRepSet[]){
+    this.repSets = newRepSet;
     console.log(this.repSets);
   }
+  // public addRepSet(newRepSet: IRepSet){
+  //   this.repSets.push(newRepSet);
+  //   console.log(this.repSets);
+  // }
 
   public stopWorkoutWeightLifting() {
     this.status = true;
@@ -101,8 +106,9 @@ export class WeightLiftingWorkoutComponent implements OnInit {
 
     const endDate = this.getCurrentDate();
 
-    const formatedTime: string = this.formatTime(this.currentTime);
-    this.workoutStorageService.saveWorkout(formatedTime, getString("workoutTypeId"), endDate, this.repSets, this.workoutNotes);
+    const formattedTime: string = this.formatTime(this.currentTime);
+    console.log("StopWorkoutWeightlifting():", this.repSets);
+    this.workoutStorageService.saveWorkout(formattedTime, getString("workoutTypeId"), endDate, this.repSets, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }
