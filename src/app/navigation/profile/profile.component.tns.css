@@ -6,7 +6,7 @@ Button {
 
 .profile-info-gridbox {
     height: 25%;
-    background-color: #047493;
+    background-color: aqua;
 }
 
 .profile-tabs {
@@ -14,6 +14,14 @@ Button {
 }
 
 .profile-picture {
-    width: 25%;
     background-color: white;
+    border-radius: 100%;
+}
+
+.profile-username {
+    font-weight: bold;
+}
+
+.personal-goal {
+    background-color: blanchedalmond;
 }
