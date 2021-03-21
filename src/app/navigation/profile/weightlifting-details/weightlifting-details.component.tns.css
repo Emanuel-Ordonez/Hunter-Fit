@@ -4,7 +4,6 @@ Button {
     color: white;
 }
 
-SearchBar {
-    height: 8%;
-    font-size: x-large;
+.table-section {
+    border-width: .5;
 }

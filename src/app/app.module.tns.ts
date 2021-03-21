@@ -21,6 +21,8 @@ import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.comp
 import { CardioWorkoutComponent } from '@src/app/start-workout/cardio-workout/cardio-workout.component';
 import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lifting-workout/weight-lifting-workout.component';
   import { AddRepComponent } from '@src/app/start-workout/weight-lifting-workout/add-rep/add-rep.component';
+import { CardioDetailsComponent } from './navigation/profile/cardio-details/cardio-details.component';
+import { WeightliftingDetailsComponent } from './navigation/profile/weightlifting-details/weightlifting-details.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
@@ -33,12 +35,13 @@ import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lif
     
     NavigationComponent,
       HomeComponent,
-      ClubsComponent,
       SearchComponent,
+      ClubsComponent,
       WorkoutsComponent,
         WorkoutHistoryComponent,
       ProfileComponent,
-
+        CardioDetailsComponent,
+        WeightliftingDetailsComponent,
     
     StartWorkoutComponent,
     

@@ -20,3 +20,8 @@ Label {
 .center-Text {
     text-align: center;
 }
+
+.page {
+    height: 100%;
+    width: 100%;
+}

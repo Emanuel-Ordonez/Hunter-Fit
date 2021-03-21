@@ -6,48 +6,51 @@
     <BottomNavigation id="bottomNavBar">
         <!-- <Tabs> -->
         <TabStrip>
+            <!--<TabStripItem>
+                <Label text="Home" class="nav-label" id="nav-home"></Label>
+            </TabStripItem>-->
+
             <TabStripItem>
-                <Label text="Home" class="nav-label" id="nav-home">
-                    </Label>
+                <Label text="Search" class="nav-label" id="nav-search"></Label>
             </TabStripItem>
+            
+            <!--<TabStripItem>
+                <Label text="Clubs" class="nav-label" id="nav-clubs"></Label>
+            </TabStripItem>-->
+            
             <TabStripItem>
-                <Label text="Search" class="nav-label" id="nav-search">
-                    </Label>
+                <Label text="Workouts" class="nav-label" id="nav-workouts"></Label>
             </TabStripItem>
+            
             <TabStripItem>
-                <Label text="Clubs" class="nav-label" id="nav-clubs">
-                    </Label>
-            </TabStripItem>
-            <TabStripItem>
-                <Label text="Workouts" class="nav-label" id="nav-workouts">
-                    </Label>
-            </TabStripItem>
-            <TabStripItem>
-                <Label text="Profile" class="nav-label" id="nav-profile">
-                    </Label>
+                <Label text="Profile" class="nav-label" id="nav-profile"></Label>
             </TabStripItem>
         </TabStrip>
 
-        <TabContentItem>
+        <!--<TabContentItem>
             <GridLayout>
                 <router-outlet name="home"></router-outlet>
             </GridLayout>
-        </TabContentItem>
+        </TabContentItem>-->
+
         <TabContentItem>
             <GridLayout>
                 <router-outlet name="search"></router-outlet>
             </GridLayout>
         </TabContentItem>
-        <TabContentItem>
+        
+        <!--<TabContentItem>
             <GridLayout>
                 <router-outlet name="clubs"></router-outlet>
             </GridLayout>
-        </TabContentItem>
+        </TabContentItem>-->
+        
         <TabContentItem>
             <GridLayout>
                 <router-outlet name="workouts"></router-outlet>
             </GridLayout>
         </TabContentItem>
+        
         <TabContentItem>
             <GridLayout>
                 <router-outlet name="profile"></router-outlet>

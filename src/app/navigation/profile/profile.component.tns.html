@@ -1,1 +1,29 @@
+<StackLayout>
+    <GridLayout class="profile-info-gridbox" rows = "auto" columns = "auto">
+        
+    </GridLayout>
 
+    <StackLayout class="profile-tabs">
+        <Tabs>
+            <TabStrip>
+                <TabStripItem>
+                    <Label text="Cardio"></Label>
+                </TabStripItem>
+                <TabStripItem>
+                    <Label text="Weightlifting"></Label>
+                </TabStripItem>
+            </TabStrip>
+
+            <TabContentItem>
+                <GridLayout>
+                    <router-outlet name="cardioDetails"></router-outlet>
+                </GridLayout>
+            </TabContentItem>
+            <TabContentItem>
+                <GridLayout>
+                    <router-outlet name="weightliftingDetails"></router-outlet>
+                </GridLayout>
+            </TabContentItem>
+        </Tabs>
+    </StackLayout>
+</StackLayout>

@@ -5,6 +5,8 @@ import { NavigationComponent } from './navigation/navigation.component';
   import { HomeComponent } from './navigation/home/home.component';
   import { ClubsComponent } from './navigation/clubs/clubs.component';
   import { ProfileComponent } from './navigation/profile/profile.component';
+    import { CardioDetailsComponent } from './navigation/profile/cardio-details/cardio-details.component';
+    import { WeightliftingDetailsComponent } from './navigation/profile/weightlifting-details/weightlifting-details.component';
   import { SearchComponent } from './navigation/search/search.component';
   import { WorkoutsComponent } from './navigation/workouts/workouts.component';
     import { WorkoutHistoryComponent } from './navigation/workouts/workout-history/workout-history.component';
@@ -15,7 +17,7 @@ import { WeightLiftingWorkoutComponent } from './start-workout/weight-lifting-wo
   import { AddRepComponent } from './start-workout/weight-lifting-workout/add-rep/add-rep.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "startWorkout", pathMatch: "full" },
+  { path: "", redirectTo: "navigation", pathMatch: "full" },
   { path: "login", component: LoginComponent},
   { path: "navigation", component: NavigationComponent,
     children: [
@@ -27,7 +29,12 @@ export const routes: Routes = [
            { path: "", component: WorkoutHistoryComponent, outlet: 'workoutHistory'},
         ]
       },
-      { path: "", component: ProfileComponent, outlet: 'profile' },
+      { path: "", component: ProfileComponent, outlet: 'profile',
+        children:[
+          { path: "", component: CardioDetailsComponent, outlet: 'cardioDetails'},
+          { path: "", component: WeightliftingDetailsComponent, outlet: 'weightliftingDetails'},
+        ]
+      },
     ]
   },
 
@@ -40,9 +47,10 @@ export const routes: Routes = [
   },
 
   //temporary
-  { path: "workouts", component: WorkoutsComponent,
+  { path: "profile", component: ProfileComponent,
     children:[
-      { path: "", component: WorkoutHistoryComponent, outlet: 'workoutHistory'},
+      { path: "", component: CardioDetailsComponent, outlet: 'cardioDetails'},
+      { path: "", component: WeightliftingDetailsComponent, outlet: 'weightliftingDetails'},
     ]
   },
 ];
