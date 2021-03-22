@@ -22,7 +22,6 @@ export class WorkoutHistoryComponent implements OnInit {
   }
 
   public getAllWorkouts(){
-    //console.log(this.reverseArray(this.workoutStorageService.getWorkouts()));
     return this.reverseArray(this.workoutStorageService.getWorkouts());
   }
 

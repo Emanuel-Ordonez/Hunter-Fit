@@ -1,6 +1,10 @@
 @import '~@nativescript/theme/css/core.css';
 @import '~@nativescript/theme/css/blue.css';
-ActionBar {
+.ns-light ActionBar {
+    background-color: #00658A;
+}
+
+.ns-dark ActionBar {
     background-color: #00658A;
 }
 
@@ -9,8 +13,15 @@ Button {
     border-radius: 15px;
     border-style: outset;
     border-width: 5px;
-    margin-bottom: 2%;
     width: 35%;
+}
+
+.ns-light Button {
+    background-color: #00658A;
+}
+
+.ns-dark Button {
+    background-color: #00658A;
 }
 
 Label {

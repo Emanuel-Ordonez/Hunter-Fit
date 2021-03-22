@@ -31,6 +31,10 @@
     text-align: center;
 }
 
+.ns-dark TextField {
+    background-color: olive;
+}
+
 .reps-weight-textField {
     background-color: #eeeeee;
     border-radius: 10px;

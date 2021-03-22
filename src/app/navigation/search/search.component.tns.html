@@ -1,11 +1,11 @@
 <StackLayout>
     <SearchBar hint="Search Clubs/Users/Workouts"></SearchBar>
     
-    <ScrollView class= "workout-info-scrollview">
+    <ScrollView class= "search-scrollview">
         <StackLayout>
-            <GridLayout rows = "auto" columns = "*,90">
-                <Label col = "0" text="workout.workoutType"></Label>
-                <Button col = "1" text = "Start"></Button>
+            <GridLayout *ngFor="let workout of workoutList" class="table-section" rows="auto" columns = "10,*,120,10">
+                <Label col = "1" [text]="workout"></Label>
+                <Button col = "2" text = "Start Workout" (tap)="startWorkout(workout)"></Button>
             </GridLayout>
         </StackLayout>
     </ScrollView>
