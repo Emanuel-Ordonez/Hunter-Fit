@@ -1,11 +1,11 @@
 <StackLayout>
-    <SearchBar hint="Search Clubs/Users/Workouts"></SearchBar>
+    <SearchBar hint="Search Clubs/Users/Workouts" (clear)="onClear()" (textChange)="onTextChange($event)"></SearchBar>
     
     <ScrollView class= "search-scrollview">
         <StackLayout>
-            <GridLayout *ngFor="let workout of workoutList" class="table-section" rows="auto" columns = "10,*,120,10">
-                <Label col = "1" [text]="workout"></Label>
-                <Button col = "2" text = "Start Workout" (tap)="startWorkout(workout)"></Button>
+            <GridLayout *ngFor="let workout of searchList" class="table-section" rows="auto" columns="10,*,120,10">
+                <Label col="1" [text]="workout"></Label>
+                <Button col="2" text="Start Workout" (tap)="startWorkout(workout)"></Button>
             </GridLayout>
         </StackLayout>
     </ScrollView>
