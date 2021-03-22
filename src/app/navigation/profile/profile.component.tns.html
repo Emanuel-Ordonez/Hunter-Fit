@@ -1,1 +1,34 @@
+<StackLayout>
+    <GridLayout class="profile-info-gridbox" rows = "60,60,*" columns = "10,120,auto,*,10">
+        <Label row="0" col="1" rowSpan="2" class="profile-picture" text="Image Here"></Label>
+        <Label row="0" col="2" class="profile-username" text="Username"></Label>
+        <Button row="0" col="3" text="Settings"></Button>
+        <Button row="1" col="3" text="Goals"></Button>
+        <Label row="2" col="1" class="personal-goal" text="Personal Goal:"></Label>
+        <Label row="2" col="2" colSpan="2" class="personal-goal"></Label>
+    </GridLayout>
 
+    <StackLayout class="profile-tabs">
+        <Tabs>
+            <TabStrip>
+                <TabStripItem>
+                    <Label text="Cardio"></Label>
+                </TabStripItem>
+                <TabStripItem>
+                    <Label text="Weightlifting"></Label>
+                </TabStripItem>
+            </TabStrip>
+
+            <TabContentItem>
+                <GridLayout>
+                    <router-outlet name="cardioDetails"></router-outlet>
+                </GridLayout>
+            </TabContentItem>
+            <TabContentItem>
+                <GridLayout>
+                    <router-outlet name="weightliftingDetails"></router-outlet>
+                </GridLayout>
+            </TabContentItem>
+        </Tabs>
+    </StackLayout>
+</StackLayout>

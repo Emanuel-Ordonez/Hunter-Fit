@@ -4,22 +4,24 @@ Button {
     color: white;
 }
 
-#profile-info-flexbox {
-    height: 26%;
-    background-color: #047493;
+.profile-info-gridbox {
+    height: 25%;
+    background-color: aqua;
 }
 
-#profile-tabs {
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(0, 68, 255);
+.profile-tabs {
+    height: 74.9%;
 }
 
-#profile-picture {
+.profile-picture {
     background-color: white;
+    border-radius: 100%;
 }
 
-#second-Stack {
-    height: 92%;
+.profile-username {
+    font-weight: bold;
+}
+
+.personal-goal {
+    background-color: blanchedalmond;
 }
