@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { setNumber } from '@nativescript/core/application-settings';
+import { DateService } from './services/date/date.service';
 import { IRepSet } from './services/IRepSet';
 import { Workout } from './services/workout';
 import { WorkoutStorageService } from './services/workout-storage.service';
@@ -15,10 +16,11 @@ export class AppComponent implements OnInit {
   public repSets: IRepSet[] = [{setWorkoutType: "deadlifts", setNumber: 1, setReps: 3, setWeight: 50}, 
     {setWorkoutType: "benchpress", setNumber: 2, setReps: 2, setWeight: 100}];
 
-  constructor(private workoutStorageService: WorkoutStorageService) { }
+  constructor(private workoutStorageService: WorkoutStorageService, private dateService: DateService) { }
 
   ngOnInit(){
-    this.workoutStorageService.saveWorkout(200, "3-22-2021", this.repSets, "fake notes");
+    this.dateService.setDate(22,3,2021);
+    this.workoutStorageService.saveWorkout(200, this.dateService, this.repSets, "fake notes");
   }
 
 

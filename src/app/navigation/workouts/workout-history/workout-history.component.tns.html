@@ -11,7 +11,7 @@
         <StackLayout>
             <GridLayout  *ngFor="let workout of getAllWorkouts()"  rows = "auto" columns = "*,*,90,90">
                 <Label col = "0" text="Weightlifting" class = "type-duration-label"></Label>
-                <Label col = "1" [text] = "workout.workoutDate" class = "type-duration-label"></Label>
+                <Label col = "1" [text] = "workout.workoutDate.getFormattedDate()" class = "type-duration-label"></Label>
                 <Button col = "2" text = "Stats" class = "stats-notes-button" (tap) = "displayStats(workout)"></Button>
                 <Button col = "3" text = "Notes" class = "stats-notes-button" (tap) = "displayNotes(workout)"></Button>
             </GridLayout>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DateService } from './date/date.service';
 import { IRepSet } from './IRepSet';
 import { Workout } from './workout';
 
@@ -12,7 +13,7 @@ export class WorkoutStorageService {
 
   constructor() { }
 
-  saveWorkout(totalTime: number, date: string, repSets: IRepSet[], notes: string) {
+  saveWorkout(totalTime: number, date: DateService, repSets: IRepSet[], notes: string) {
     // construct workout object:
     const workoutToSave : Workout = {totalWorkoutTime: totalTime, workoutDate: date, totalRepSets: repSets, workoutNotes: notes};
     // store workout object:
