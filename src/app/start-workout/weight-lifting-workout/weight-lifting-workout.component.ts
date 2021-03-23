@@ -117,7 +117,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
 
     const endDate = this.getCurrentDate();
 
-    const formattedTime: string = this.formatTime(this.currentTime);
+    // const formattedTime: string = this.formatTime(this.currentTime);
     console.log("StopWorkoutWeightlifting():", this.repSets);
     this.workoutStorageService.saveWorkout(formattedTime, endDate, this.repSets, this.workoutNotes);
     this.currentTime = 0;

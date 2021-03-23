@@ -5,7 +5,7 @@ Button {
 }
 
 .workout-info-scrollview {
-    height: 60%;
+    height: auto;
 }
 
 .workout-info-headers {

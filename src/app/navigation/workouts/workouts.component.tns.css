@@ -6,7 +6,7 @@ Button {
 
 .startWorkoutButton {
     background-color: #00658A;
-    margin-top: 10em;
+    margin-top: 30em;
     border-radius: 15px;
     border-style: outset;
     border-width: 5px;
@@ -15,7 +15,7 @@ Button {
 }
 
 #workout-history-label {
-    margin-top: 45em;
+    margin-top: 10em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
