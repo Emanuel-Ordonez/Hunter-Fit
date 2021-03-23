@@ -6,6 +6,7 @@ import { EventData, Observable } from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { IRepSet } from '@src/app/services/IRepSet';
+import { TimerService } from '@src/app/services/timer.service';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 import { WorkoutsComponent } from '../../navigation/workouts/workouts.component';
@@ -35,7 +36,8 @@ export class WeightLiftingWorkoutComponent implements OnInit {
 
   constructor(private routerExtensions: RouterExtensions,
     private activeRoute: ActivatedRoute,
-    private workoutStorageService: WorkoutStorageService) { }
+    private workoutStorageService: WorkoutStorageService,
+    private timerService: TimerService) { }
 
   ngOnInit(): void {
     this.startWorkout();
@@ -67,7 +69,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
       pauseButton.object.backgroundColor = "#00658A";
       this.interval = setInterval(() => {
         this.currentTime++;
-        this.display = this.formatTime(this.currentTime);
+        this.display = this.timerService.formatTime(this.currentTime);
       }, 1000)
     }
     else {
@@ -84,7 +86,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
       this.status = false;
       this.interval = setInterval(() => {
         this.currentTime++;
-        this.display = this.formatTime(this.currentTime);
+        this.display = this.timerService.formatTime(this.currentTime);
       }, 1000)
     }
     else {
@@ -92,15 +94,6 @@ export class WeightLiftingWorkoutComponent implements OnInit {
       console.log("in startWorkout() else");
     }
   }
-
-  public formatTime(value: number): string {
-    const hours: number = Math.floor(value / 3600);
-    value -= (hours * 3600);
-    const minutes: number = Math.floor(value / 60);
-    value -= (minutes * 60);
-    return String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(value).padStart(2, '0');
-  }
-
 
   public addAllRepSets(newRepSet: IRepSet[]) {
     this.repSets = newRepSet;

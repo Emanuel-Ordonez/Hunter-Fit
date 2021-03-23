@@ -4,6 +4,7 @@ import { Workout } from '@src/app/services/workout';
 import { IRepSet } from '@src/app/services/IRepSet';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-picker';
+import { TimerService } from '@src/app/services/timer.service';
 
 @Component({
   selector: 'app-workout-history',
@@ -16,7 +17,7 @@ export class WorkoutHistoryComponent implements OnInit {
   weight: number = 100;
   public allWorkouts: Workout[];
 
-  constructor(private workoutStorageService: WorkoutStorageService) { }
+  constructor(private workoutStorageService: WorkoutStorageService, private timerService: TimerService) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +31,7 @@ export class WorkoutHistoryComponent implements OnInit {
   }
 
   public displayStats(workout: Workout){
-    const duration =`Elapsed Time: ${workout.totalWorkoutTime}\n`; 
+    const duration =`Elapsed Time: ${this.timerService.formatTime(workout.totalWorkoutTime)}\n`; 
     Dialogs.alert({
       title: "Workout Stats:",
       message: duration+this.getWorkoutStats(workout.totalRepSets),
@@ -45,8 +46,10 @@ export class WorkoutHistoryComponent implements OnInit {
 
     for(let j = 0; j < allSets.length; j++){
       temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
+      temp+=`\nType: ${allSets[j].setWorkoutType}`
       temp+=`\nSet Reps: ${allSets[j].setReps}`;
       temp+=`\nSet Weight: ${allSets[j].setWeight}`;
+      temp+='\n';
     }
     return temp;
   }
