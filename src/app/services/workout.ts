@@ -2,7 +2,7 @@ import { IRepSet } from "./IRepSet";
 
 export interface Workout {
 
-    workoutType: string;
+    // workoutType: string;
     totalWorkoutTime: number; 
     workoutDate: string;
     totalRepSets: IRepSet[];

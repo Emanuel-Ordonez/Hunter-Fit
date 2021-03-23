@@ -12,11 +12,16 @@
                     columns="50,*,*">
                     <Label col="0" [text]="repSet.setNumber" class="center-Text"></Label>
 
-                    <TextField col="1" id="reps-textField-{{repSet.setNumber}}" class="reps-weight-textField" hint="input reps" type="number"
-                        (textChange)="repsInput($event, repSet)" ></TextField>
+                    <ListPicker  id="workoutType-textField-{{repSet.setNumber}}" class="reps-workoutType-listPicker"
+                        [items]="weight_lifting_workouts" selectedIndex="0"
+                        (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker>
 
-                    <TextField col="2" id="weight-textField-{{repSet.setNumber}}" class="reps-weight-textField" hint="input weight"
-                        (textChange)="weightInput($event, repSet)" ></TextField>
+                    <TextField col="1" id="reps-textField-{{repSet.setNumber}}" class="reps-weight-textField"
+                        hint="input reps" type="number" (textChange)="repsInput($event, repSet)"></TextField>
+
+                    <TextField col="2" id="weight-textField-{{repSet.setNumber}}" class="reps-weight-textField"
+                        hint="input weight" (textChange)="weightInput($event, repSet)"></TextField>
+
                 </GridLayout>
             </StackLayout>
         </ScrollView>

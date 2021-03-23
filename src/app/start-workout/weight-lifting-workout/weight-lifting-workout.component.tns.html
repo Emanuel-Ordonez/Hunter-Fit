@@ -1,8 +1,9 @@
 <ActionBar title="Weightlifting Workout"></ActionBar>
 <StackLayout height="100%">
     <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
-        <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
-
+        <Label class="currentWorkoutLabel" text="Current Workout: {{ currentWorkout }}"></Label>
+        <!-- <ListPicker [items]="weight_lifting_workouts" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker> -->
+           
         <Label class="timeLabel" text="Elapsed Time: {{ display }}" textWrap="true"></Label>
 
         <Label text="Rep Sets:"></Label>

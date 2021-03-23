@@ -42,7 +42,7 @@ export class StartWorkoutComponent {
 
     this.workoutTypeClass = workoutTypeButton.object.class;
     this.workoutType = workoutTypeButton.object.id;
-    setString("workoutTypeId", this.workoutType);
+    // setString("workoutTypeId", this.workoutType);
 
     for (var button in WorkoutConstants.buttons) {
       if (this.workoutType === WorkoutConstants.buttons[button]) {
