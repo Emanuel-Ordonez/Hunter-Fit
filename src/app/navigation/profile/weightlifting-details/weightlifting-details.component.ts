@@ -22,7 +22,7 @@ export class WeightliftingDetailsComponent implements OnInit {
     this.allWorkouts = this.workoutStorageService.getWorkouts();
 
     this.allWorkouts.forEach(workout => { 
-      console.log("workoutType = ", workout.workoutType);
+      // console.log("workoutType = ", workout.workoutType);
       console.log("totalWorkoutTime = ", this.timerService.formatTime(workout.totalWorkoutTime));
       console.log("workoutDate = ", workout.workoutDate);
       console.log("totalRepSet = ", workout.totalRepSets);
