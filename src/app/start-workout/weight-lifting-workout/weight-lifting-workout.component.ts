@@ -27,7 +27,6 @@ export class WeightLiftingWorkoutComponent implements OnInit {
   display;
   private interval;
   private status = true;
-  private prevWorkoutType: any;
   private workoutNotes: string;
   public weight_lifting_workouts: Array<string> = WorkoutConstants.weight_lifting_workouts;
 
@@ -42,12 +41,10 @@ export class WeightLiftingWorkoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.startWorkout();
-    // this.getWorkoutType();
   }
 
   public onSelectedIndexChanged(args: EventData) {
     const picker = <ListPicker>args.object;
-    // console.log(`index: ${picker.selectedIndex}; item ${this.weight_lifting_workouts[picker.selectedIndex]}`);
     this.currentWorkout = `${this.weight_lifting_workouts[picker.selectedIndex]}`;
     setString("workoutTypeId", this.currentWorkout);
     console.log("WorkoutType: " + this.currentWorkout);
@@ -56,7 +53,6 @@ export class WeightLiftingWorkoutComponent implements OnInit {
   onTextChange(args: EventData) {
     const tv = args.object as TextView;
     this.workoutNotes = tv.text;
-    // console.log(tv.text);
   }
 
   public getWorkoutType() {
@@ -80,8 +76,6 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     }
   }
 
-  ///////////
-
   public startWorkout() {
     if (this.status) {
       this.status = false;
@@ -100,27 +94,15 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     this.repSets = newRepSet;
     console.log(this.repSets);
   }
-  // public addRepSet(newRepSet: IRepSet){
-  //   this.repSets.push(newRepSet);
-  //   console.log(this.repSets);
-  // }
 
   public stopWorkoutWeightLifting() {
     this.status = true;
     clearInterval(this.interval);
 
     let todaysDate = new DateService();
-    // const formattedTime: string = this.formatTime(this.currentTime);
     console.log("StopWorkoutWeightlifting():", this.repSets);
     this.workoutStorageService.saveWorkout(this.currentTime, todaysDate, this.repSets, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }
-
-  // private getCurrentDate() {
-  //   const currentDay = new Date().getDate();
-  //   const currentMonth = new Date().getMonth() + 1;
-  //   const currentYear = new Date().getFullYear();
-  //   return `${currentMonth}-${currentDay}-${currentYear}`;
-  // }
 }

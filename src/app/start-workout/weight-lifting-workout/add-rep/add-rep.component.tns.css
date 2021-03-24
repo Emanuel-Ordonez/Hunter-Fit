@@ -23,13 +23,13 @@
     background-color: olive;
 }
 
-.reps-weight-textField {
+.set-textField {
     background-color: #eeeeee;
     border-radius: 10px;
     text-align: center;
     margin-left: .5%;
     margin-right: .5%;
-    height: 60px;
+    height: 80px;
 }
 
 .setButtons {

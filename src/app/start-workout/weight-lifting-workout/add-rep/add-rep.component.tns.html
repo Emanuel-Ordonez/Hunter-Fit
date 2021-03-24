@@ -17,10 +17,10 @@
                         [items]="weight_lifting_workouts" selectedIndex="0"
                         (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker>
 
-                    <TextField col="2" id="reps-textField-{{repSet.setNumber}}" class="reps-weight-textField"
+                    <TextField col="2" id="reps-textField-{{repSet.setNumber}}" class="set-textField"
                         hint="input reps" type="number" (textChange)="repsInput($event, repSet)"></TextField>
 
-                    <TextField col="3" id="weight-textField-{{repSet.setNumber}}" class="reps-weight-textField"
+                    <TextField col="3" id="weight-textField-{{repSet.setNumber}}" class="set-textField"
                         hint="input weight" (textChange)="weightInput($event, repSet)"></TextField>
 
                 </GridLayout>

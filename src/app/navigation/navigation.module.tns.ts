@@ -8,8 +8,6 @@ import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.compone
 import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
 import { CardioDetailsComponent } from '@src/app/navigation/profile/cardio-details/cardio-details.component';
 import { WeightliftingDetailsComponent } from '@src/app/navigation/profile/weightlifting-details/weightlifting-details.component';
-// import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
-
 
 
 @NgModule({

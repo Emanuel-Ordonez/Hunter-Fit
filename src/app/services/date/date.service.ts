@@ -4,9 +4,9 @@ import { Injectable, ɵCodegenComponentFactoryResolver } from '@angular/core';
   providedIn: 'root'
 })
 export class DateService {
-  public day: number;
-  public month: number;
-  public year: number;
+  private day: number;
+  private month: number;
+  private year: number;
 
   constructor() {
     this.day = new Date().getDate();
@@ -19,10 +19,6 @@ export class DateService {
   }
 
   public checkSameDay(checkDate: DateService): boolean{
-    console.log("===========CheckSameDay==================");
-    console.log(this);
-    console.log(checkDate);
-    console.log("=========================================");
     if ((this.day==checkDate.day)&&(this.month==checkDate.month)&&(this.year==checkDate.year))
       return true;
     else
