@@ -72,7 +72,6 @@ export class StartWorkoutComponent {
     }
   }
 
-  ///////////
 
   public startWorkout() {
     if (this.status) {
