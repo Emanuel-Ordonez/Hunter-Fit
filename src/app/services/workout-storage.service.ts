@@ -9,7 +9,7 @@ import { Workout } from './workout';
 
 export class WorkoutStorageService {
 
-  public allWorkouts: Workout[] = [];
+  public allWorkouts: any[] = [];
 
   constructor() { }
 

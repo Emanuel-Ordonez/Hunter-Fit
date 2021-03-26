@@ -15,7 +15,7 @@ export class DateService {
   }
 
   public getFormattedDate(): string {
-    return `${this.day}-${this.day}-${this.year}`;
+    return `${this.month}-${this.day}-${this.year}`;
   }
 
   public checkSameDay(checkDate: DateService): boolean{
