@@ -13,7 +13,7 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             'src/tests/**/*.js',
-            'src/app/**/*.spec.ts'
+            //'src/app/**/*.spec.ts'
         ],
 
 
