@@ -42,7 +42,7 @@ export class StartWorkoutComponent {
 
     this.workoutTypeClass = workoutTypeButton.object.class;
     this.workoutType = workoutTypeButton.object.id;
-    setString("workoutTypeId", this.workoutType);
+    // setString("workoutTypeId", this.workoutType);
 
     for (var button in WorkoutConstants.buttons) {
       if (this.workoutType === WorkoutConstants.buttons[button]) {
@@ -72,7 +72,6 @@ export class StartWorkoutComponent {
     }
   }
 
-  ///////////
 
   public startWorkout() {
     if (this.status) {
@@ -121,7 +120,6 @@ export class StartWorkoutComponent {
     clearInterval(this.interval);
 
     setNumber("workoutTime", this.currentTime);
-    // this.workoutStorageService.saveWorkout(getNumber("workoutTime"), getString("workoutTypeId"));
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

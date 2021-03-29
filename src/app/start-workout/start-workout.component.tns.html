@@ -19,9 +19,13 @@
             </FlexboxLayout>
 
 
-            <Label class="weightLiftingLabel" text="Weightlifting:"></Label>
-            <FlexboxLayout class="weightLifting-flexbox">
+            <Label class="otherLabel" text="Other: "></Label>
+            
 
+             <FlexboxLayout class="weightLifting-flexbox">
+                <Button class="wlWorkoutButton" id="weightlifting" text="Weightlifting"
+                (tap)="selectWorkoutType($event)"></Button>
+<!-- 
                 <Button class="wlWorkoutButton" id="benchpress" text="Bench Press"
                     (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="squats" text="Squats" 
@@ -42,8 +46,8 @@
                     (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="powerclean" text="Powerclean"
                     (tap)="selectWorkoutType($event)"></Button>
-
-            </FlexboxLayout>
+ -->
+            </FlexboxLayout> 
 
             <div>
                 <Button text="Start" class="start-button" (tap)="callCurrentWorkout()"></Button>

@@ -16,6 +16,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
+Run `tns test ios` to execute unit tests for NativeScript
+Run `tns test android` to execute unit tests for NativeScript
+
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
