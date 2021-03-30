@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterExtensions } from '@nativescript/angular';
 import { getString, setString } from '@nativescript/core/application-settings';
-import { EventData } from '@nativescript/core/data/observable';
+import { EventData} from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { DateService } from '@src/app/services/date/date.service';
@@ -12,13 +12,11 @@ import { WorkoutStorageService } from '@src/app/services/workout-storage.service
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({
-  selector: 'app-weight-lifting-workout',
-  moduleId: module.id,
-  templateUrl: './weight-lifting-workout.component.tns.html',
-  styleUrls: ['./weight-lifting-workout.component.tns.css']
+  selector: 'app-extreme-workout',
+  templateUrl: './extreme-workout.component.html',
+  styleUrls: ['./extreme-workout.component.css']
 })
-export class WeightLiftingWorkoutComponent implements OnInit {
-
+export class ExtremeWorkoutComponent implements OnInit {
   public workoutType: any;
   public workoutTypeClass: string;
   private currentTime: number = 0;
@@ -26,6 +24,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
   private interval;
   private status = true;
   private workoutNotes: string;
+  public weight_lifting_workouts: Array<string> = WorkoutConstants.weight_lifting_workouts;
 
   tvtext = "";
   currentWorkout: string;
@@ -37,8 +36,14 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     private timerService: TimerService) { }
 
   ngOnInit(): void {
-    this.getWorkoutType();
     this.startWorkout();
+  }
+
+  public onSelectedIndexChanged(args: EventData) {
+    const picker = <ListPicker>args.object;
+    this.currentWorkout = `${this.weight_lifting_workouts[picker.selectedIndex]}`;
+    setString("workoutTypeId", this.currentWorkout);
+    console.log("WorkoutType: " + this.currentWorkout);
   }
 
   onTextChange(args: EventData) {
@@ -77,6 +82,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     }
     else {
       this.status = true;
+      console.log("in startWorkout() else");
     }
   }
 

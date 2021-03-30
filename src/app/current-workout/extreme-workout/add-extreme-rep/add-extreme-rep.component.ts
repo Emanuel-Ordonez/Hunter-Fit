@@ -5,12 +5,11 @@ import { IRepSet } from '@src/app/services/IRepSet';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({
-  selector: 'app-add-rep',
-  templateUrl: './add-rep.component.html',
-  styleUrls: ['./add-rep.component.css']
+  selector: 'app-add-extreme-rep',
+  templateUrl: './add-extreme-rep.component.html',
+  styleUrls: ['./add-extreme-rep.component.css']
 })
-export class AddRepComponent implements OnInit {
-  
+export class AddExtremeRepComponent implements OnInit {
   repSets: IRepSet[] = [];
   repSet: IRepSet;
   setNumberCounter = 1;
@@ -18,10 +17,22 @@ export class AddRepComponent implements OnInit {
   setWeightInput;
   setWorkoutType = "";
   @Output() emitAllRepSetsEvent = new EventEmitter<IRepSet[]>();
+  public weight_lifting_workouts: Array<string> = WorkoutConstants.weight_lifting_workouts;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  public onSelectedIndexChanged(args: EventData) {
+    const picker = <ListPicker>args.object;
+    this.setWorkoutType = this.weight_lifting_workouts[picker.selectedIndex];
+    let typeId = Number(<ListPicker>args.object.get("id").replace("workoutType-textField-", ""));
+
+    setString("workoutTypeId", this.setWorkoutType);
+    // console.log(`index: ${picker.selectedIndex}; item ${this.weight_lifting_workouts[picker.selectedIndex]}`);
+    this.repSets[typeId - 1].setWorkoutType = this.setWorkoutType;
+    this.emitAllRepSets();
   }
 
   public repsInput(args) {

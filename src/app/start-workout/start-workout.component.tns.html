@@ -6,7 +6,6 @@
 
             <Label class="cardioLabel" text="Cardio:"></Label>
             <FlexboxLayout class="cardio-flexbox">
-
                 <Button class="cardioWorkoutButton" id="walking" text="Walking"
                     (tap)="selectWorkoutType($event)"></Button>
                 <Button class="cardioWorkoutButton" id="running" text="Running"
@@ -15,17 +14,12 @@
                     (tap)="selectWorkoutType($event)"></Button>
                 <Button class="cardioWorkoutButton" id="biking" text="Biking"
                     (tap)="selectWorkoutType($event)"></Button>
-
             </FlexboxLayout>
 
 
-            <Label class="otherLabel" text="Other: "></Label>
+            <Label class="otherLabel" text="Weightlifting: "></Label>
             
-
-             <FlexboxLayout class="weightLifting-flexbox">
-                <Button class="wlWorkoutButton" id="weightlifting" text="Weightlifting"
-                (tap)="selectWorkoutType($event)"></Button>
-<!-- 
+            <FlexboxLayout class="middle-flexbox">
                 <Button class="wlWorkoutButton" id="benchpress" text="Bench Press"
                     (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="squats" text="Squats" 
@@ -46,9 +40,14 @@
                     (tap)="selectWorkoutType($event)"></Button>
                 <Button class="wlWorkoutButton" id="powerclean" text="Powerclean"
                     (tap)="selectWorkoutType($event)"></Button>
- -->
-            </FlexboxLayout> 
+            </FlexboxLayout>
 
+            <Label class="otherLabel" text="Other: "></Label>
+
+            <FlexboxLayout class="middle-flexbox">
+                <Button class="extremeWorkoutButton" id="extreme" text="Extreme Workout"
+                    (tap)="selectWorkoutType($event)"></Button>
+            </FlexboxLayout>
             <div>
                 <Button text="Start" class="start-button" (tap)="callCurrentWorkout()"></Button>
                 <Button text="Cancel" class="cancel-button" (tap)="goBack()" pageTransition="slide"></Button>

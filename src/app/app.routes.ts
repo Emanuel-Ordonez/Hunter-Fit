@@ -15,9 +15,11 @@ import { StartWorkoutComponent } from './start-workout/start-workout.component';
 import { CardioWorkoutComponent } from './start-workout/cardio-workout/cardio-workout.component';
 import { WeightLiftingWorkoutComponent } from './start-workout/weight-lifting-workout/weight-lifting-workout.component';
 import { AddRepComponent } from './start-workout/weight-lifting-workout/add-rep/add-rep.component';
+import { ExtremeWorkoutComponent } from './current-workout/extreme-workout/extreme-workout.component';
+import { AddExtremeRepComponent } from './current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "navigation", pathMatch: "full" },
+  { path: "", redirectTo: "startWorkout", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   {
     path: "navigation", component: NavigationComponent,
@@ -49,7 +51,13 @@ export const routes: Routes = [
       { path: "", component: AddRepComponent, outlet: 'addRep' },
     ]
   },
-
+  {
+    path: "extremeWorkout", component: ExtremeWorkoutComponent,
+    children: [
+      { path: "", component: AddExtremeRepComponent, outlet: 'addextremeRep' },
+    ]
+  },
+  
   //temporary
   { path: "search", component: SearchComponent },
   {
