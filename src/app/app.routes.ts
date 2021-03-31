@@ -19,7 +19,7 @@ import { ExtremeWorkoutComponent } from './current-workout/extreme-workout/extre
 import { AddExtremeRepComponent } from './current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "startWorkout", pathMatch: "full" },
+  { path: "", redirectTo: "navigation", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   {
     path: "navigation", component: NavigationComponent,

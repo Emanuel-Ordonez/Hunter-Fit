@@ -9,6 +9,7 @@
 }
 
 Button {
+    color: #eeeeee;
     background-color: #00658A;
     border-radius: 15px;
     border-style: outset;
