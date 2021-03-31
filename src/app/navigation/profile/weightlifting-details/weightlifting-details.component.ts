@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSet } from '@src/app/services/IRepSet';
+import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
 import { Workout } from '@src/app/services/workout';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';

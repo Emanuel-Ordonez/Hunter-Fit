@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EventData, GridLayout, ItemSpec, ListPicker, TextField, TextView } from '@nativescript/core';
 import { getString, setString } from '@nativescript/core/application-settings';
-import { IRepSet } from '@src/app/services/IRepSet';
+import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({

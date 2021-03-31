@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Dialogs } from "@nativescript/core";
 import { Workout } from '@src/app/services/workout';
-import { IRepSet } from '@src/app/services/IRepSet';
+import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-picker';
 import { TimerService } from '@src/app/services/timer.service';

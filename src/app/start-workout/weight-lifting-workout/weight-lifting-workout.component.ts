@@ -6,7 +6,7 @@ import { EventData } from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSet } from '@src/app/services/IRepSet';
+import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
