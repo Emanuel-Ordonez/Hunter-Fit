@@ -5,7 +5,6 @@ import { getString } from '@nativescript/core/application-settings';
 import { EventData } from '@nativescript/core/data/observable';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { WorkoutsComponent } from '../../navigation/workouts/workouts.component';
@@ -26,10 +25,10 @@ export class CardioWorkoutComponent implements OnInit {
   private interval;
   private status = true;
   private workoutNotes: string;
+  private distance: number = 0;
 
   tvtext = "";
   currentWorkout: string;
-  private repSets: IRepSet[] = [];
 
   constructor(private routerExtensions: RouterExtensions,
     private activeRoute: ActivatedRoute,
@@ -48,7 +47,6 @@ export class CardioWorkoutComponent implements OnInit {
 
   public getWorkoutType() {
     this.currentWorkout = getString("workoutTypeId");
-    console.log("WorkoutType: " + this.currentWorkout);
   }
 
   public pauseTimer(pauseButton: any) {
@@ -80,18 +78,12 @@ export class CardioWorkoutComponent implements OnInit {
     }
   }
 
-  public addAllRepSets(newRepSet: IRepSet[]) {
-    this.repSets = newRepSet;
-    console.log(this.repSets);
-  }
-
-  public stopWorkoutWeightLifting() {
+  public stopCardioWorkout() {
     this.status = true;
     clearInterval(this.interval);
 
     let todaysDate = new DateService();
-    console.log("StopWorkoutWeightlifting():", this.repSets);
-    this.workoutStorageService.saveWorkout(this.currentTime, todaysDate, this.repSets, this.workoutNotes);
+    this.workoutStorageService.saveCardioWorkout(this.currentTime, todaysDate, this.distance, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

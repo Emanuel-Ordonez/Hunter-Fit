@@ -22,7 +22,6 @@ export class WorkoutStorageService {
     const workoutToSave : CardioWorkout = {totalWorkoutTime: totalTime, workoutDate: date, distanceTraveled: distance, workoutNotes: notes};
     // store workout object:
     this.allWorkouts.push(workoutToSave);
-    // for (let data of this.allWorkouts){console.log("Data: ", data);}
   }
 
   saveWeightliftingWorkout(totalTime: number, date: DateService, repSets: IRepSetWl[], notes: string) {
@@ -30,7 +29,6 @@ export class WorkoutStorageService {
     const workoutToSave : WeightLiftingWorkout = {totalWorkoutTime: totalTime, workoutDate: date, totalRepSets: repSets, workoutNotes: notes};
     // store workout object:
     this.allWorkouts.push(workoutToSave);
-    // for (let data of this.allWorkouts){console.log("Data: ", data);}
   }
 
   saveExtremeWorkout(totalTime: number, date: DateService, repSets: IRepSetE[], notes: string) {
@@ -38,7 +36,6 @@ export class WorkoutStorageService {
     const workoutToSave : ExtremeWorkout = {totalWorkoutTime: totalTime, workoutDate: date, totalRepSets: repSets, workoutNotes: notes};
     // store workout object:
     this.allWorkouts.push(workoutToSave);
-    // for (let data of this.allWorkouts){console.log("Data: ", data);}
   }
 
   getWorkouts(){

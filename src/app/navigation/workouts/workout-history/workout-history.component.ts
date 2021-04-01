@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Dialogs } from "@nativescript/core";
 import { Workout } from '@src/app/services/workout';
-import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-picker';
 import { TimerService } from '@src/app/services/timer.service';
+import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
+import { WeightLiftingWorkout } from '@src/app/services/weightlifting-workout';
 
 @Component({
   selector: 'app-workout-history',
@@ -34,23 +35,24 @@ export class WorkoutHistoryComponent implements OnInit {
     const duration =`Elapsed Time: ${this.timerService.formatTime(workout.totalWorkoutTime)}\n`; 
     Dialogs.alert({
       title: "Workout Stats:",
-      message: duration+this.getWorkoutStats(workout.totalRepSets),
+      message: duration+this.getWorkoutStats(workout),
       okButtonText: "Done"
     }).then(() => {
       console.log("Dialog closed!");
     });
   }
 
-  private getWorkoutStats(allSets: IRepSet[]){
-    let temp:string=``;
+  private getWorkoutStats(workout: Workout){
+    //allSets: IRepSetWl[]
+    let temp: String=``;
+    console.log(typeof(workout as WeightLiftingWorkout));
 
-    for(let j = 0; j < allSets.length; j++){
-      temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
-      temp+=`\nType: ${allSets[j].setWorkoutType}`
-      temp+=`\nSet Reps: ${allSets[j].setReps}`;
-      temp+=`\nSet Weight: ${allSets[j].setWeight}`;
-      temp+='\n';
-    }
+    // for(let j = 0; j < allSets.length; j++){
+    //   temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
+    //   temp+=`\nSet Reps: ${allSets[j].setReps}`;
+    //   temp+=`\nSet Weight: ${allSets[j].setWeight}`;
+    //   temp+='\n';
+    // }
     return temp;
   }
 

@@ -6,7 +6,7 @@ import { EventData} from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSet } from '@src/app/services/IRepSet-extreme';
+import { IRepSetE } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
@@ -28,7 +28,7 @@ export class ExtremeWorkoutComponent implements OnInit {
 
   tvtext = "";
   currentWorkout: string;
-  private repSets: IRepSet[] = [];
+  private repSets: IRepSetE[] = [];
 
   constructor(private routerExtensions: RouterExtensions,
     private activeRoute: ActivatedRoute,
@@ -86,7 +86,7 @@ export class ExtremeWorkoutComponent implements OnInit {
     }
   }
 
-  public addAllRepSets(newRepSet: IRepSet[]) {
+  public addAllRepSets(newRepSet: IRepSetE[]) {
     this.repSets = newRepSet;
     console.log(this.repSets);
   }
@@ -96,8 +96,7 @@ export class ExtremeWorkoutComponent implements OnInit {
     clearInterval(this.interval);
 
     let todaysDate = new DateService();
-    console.log("StopWorkoutWeightlifting():", this.repSets);
-    this.workoutStorageService.saveWorkout(this.currentTime, todaysDate, this.repSets, this.workoutNotes);
+    this.workoutStorageService.saveExtremeWorkout(this.currentTime, todaysDate, this.repSets, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

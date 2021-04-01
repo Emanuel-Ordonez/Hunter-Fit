@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { setNumber } from '@nativescript/core/application-settings';
 import { DateService } from './services/date/date.service';
-import { IRepSet } from './services/IRepSet-extreme';
+import { IRepSetE } from './services/IRepSet-extreme';
 import { Workout } from './services/workout';
 import { WorkoutStorageService } from './services/workout-storage.service';
 
@@ -13,7 +13,7 @@ import { WorkoutStorageService } from './services/workout-storage.service';
 export class AppComponent implements OnInit {
 
   public allWorkouts: Workout[] = [];
-  public repSets: IRepSet[] = [{setWorkoutType: "deadlifts", setNumber: 1, setReps: 3, setWeight: 50}, 
+  public repSets: IRepSetE[] = [{setWorkoutType: "deadlifts", setNumber: 1, setReps: 3, setWeight: 50}, 
     {setWorkoutType: "benchpress", setNumber: 2, setReps: 2, setWeight: 100}];
 
   constructor(private workoutStorageService: WorkoutStorageService) { }
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     const day = new DateService();
     //day.setDate(23,2,2021);
-    //this.workoutStorageService.saveWorkout(200, day, this.repSets, "fake notes");
+    //this.workoutStorageService.saveExtremeWorkout(200, day, this.repSets, "fake notes");
   }
 
 

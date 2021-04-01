@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EventData, GridLayout, ItemSpec, ListPicker, TextField, TextView } from '@nativescript/core';
 import { getString, setString } from '@nativescript/core/application-settings';
-import { IRepSet } from '@src/app/services/IRepSet-extreme';
+import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({
@@ -11,13 +11,13 @@ import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 })
 export class AddRepComponent implements OnInit {
   
-  repSets: IRepSet[] = [];
-  repSet: IRepSet;
+  repSets: IRepSetWl[] = [];
+  repSet: IRepSetWl;
   setNumberCounter = 1;
   setRepsInput;
   setWeightInput;
   setWorkoutType = "";
-  @Output() emitAllRepSetsEvent = new EventEmitter<IRepSet[]>();
+  @Output() emitAllRepSetsEvent = new EventEmitter<IRepSetWl[]>();
 
   constructor() { }
 
@@ -58,8 +58,7 @@ export class AddRepComponent implements OnInit {
   }
 
   private getRepSet() {
-    const newRepSet: IRepSet = {
-      setWorkoutType: getString("workoutTypeId"), 
+    const newRepSet: IRepSetWl = {
       setNumber: this.setNumberCounter,
       setReps: this.setRepsInput,
       setWeight: this.setWeightInput
