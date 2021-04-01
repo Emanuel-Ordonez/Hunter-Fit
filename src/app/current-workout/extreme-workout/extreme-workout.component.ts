@@ -51,11 +51,6 @@ export class ExtremeWorkoutComponent implements OnInit {
     this.workoutNotes = tv.text;
   }
 
-  public getWorkoutType() {
-    this.currentWorkout = getString("workoutTypeId");
-    console.log("WorkoutType: " + this.currentWorkout);
-  }
-
   public pauseTimer(pauseButton: any) {
     if (pauseButton.object.text == "Resume") {
       pauseButton.object.text = "Pause";

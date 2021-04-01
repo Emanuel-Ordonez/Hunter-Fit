@@ -34,8 +34,8 @@ export class StartWorkoutComponent {
 
   public selectWorkoutType(workoutTypeButton: any) {
     this.workoutTypeClass = workoutTypeButton.object.class;
-    this.workoutType = workoutTypeButton.object.id;
-    setString("workoutTypeId", this.workoutType);
+    this.workoutType = workoutTypeButton.object.text;
+    setString("workoutType", this.workoutType);
 
     workoutTypeButton.object.backgroundColor = "#787774";
 

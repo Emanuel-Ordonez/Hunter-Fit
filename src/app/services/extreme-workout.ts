@@ -3,5 +3,5 @@ import { Workout } from "./workout";
 
 export interface ExtremeWorkout extends Workout{
     //repSet
-    totalRepSets: IRepSetE[];
+    totalERepSets: IRepSetE[];
 }

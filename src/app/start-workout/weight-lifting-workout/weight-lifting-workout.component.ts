@@ -19,7 +19,7 @@ import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 })
 export class WeightLiftingWorkoutComponent implements OnInit {
 
-  public workoutType: any;
+  public workoutType: string;
   public workoutTypeClass: string;
   private currentTime: number = 0;
   display;
@@ -47,8 +47,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
   }
 
   public getWorkoutType() {
-    this.currentWorkout = getString("workoutTypeId");
-    console.log("WorkoutType: " + this.currentWorkout);
+    this.currentWorkout = getString("workoutType");
   }
 
   public pauseTimer(pauseButton: any) {
@@ -91,7 +90,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
 
     let todaysDate = new DateService();
     console.log("StopWorkoutWeightlifting():", this.repSets);
-    this.workoutStorageService.saveWeightliftingWorkout(this.currentTime, todaysDate, this.repSets, this.workoutNotes);
+    this.workoutStorageService.saveWeightliftingWorkout(this.currentWorkout, this.currentTime, todaysDate, this.repSets, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

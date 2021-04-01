@@ -46,7 +46,7 @@ export class CardioWorkoutComponent implements OnInit {
   }
 
   public getWorkoutType() {
-    this.currentWorkout = getString("workoutTypeId");
+    this.currentWorkout = getString("workoutType");
   }
 
   public pauseTimer(pauseButton: any) {
@@ -83,7 +83,7 @@ export class CardioWorkoutComponent implements OnInit {
     clearInterval(this.interval);
 
     let todaysDate = new DateService();
-    this.workoutStorageService.saveCardioWorkout(this.currentTime, todaysDate, this.distance, this.workoutNotes);
+    this.workoutStorageService.saveCardioWorkout(this.currentWorkout, this.currentTime, todaysDate, this.distance, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

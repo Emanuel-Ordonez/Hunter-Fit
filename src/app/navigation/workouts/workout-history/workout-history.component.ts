@@ -6,6 +6,9 @@ import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-
 import { TimerService } from '@src/app/services/timer.service';
 import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
 import { WeightLiftingWorkout } from '@src/app/services/weightlifting-workout';
+import { ExtremeWorkout } from '@src/app/services/extreme-workout';
+import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lifting-workout/weight-lifting-workout.component';
+import { isObject } from '@nativescript/core/utils/types';
 
 @Component({
   selector: 'app-workout-history',
@@ -43,9 +46,30 @@ export class WorkoutHistoryComponent implements OnInit {
   }
 
   private getWorkoutStats(workout: Workout){
-    //allSets: IRepSetWl[]
+    
     let temp: String=``;
-    console.log(typeof(workout as WeightLiftingWorkout));
+    //let somehint: WeightLiftingWorkout;
+    if(workout.hasOwnProperty('totalWRepSets')){
+      let wlWorkout = workout as WeightLiftingWorkout;
+      let allSets = wlWorkout.totalWRepSets;
+      for(let j = 0; j < allSets.length; j++){
+        temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
+        temp+=`\nSet Reps: ${allSets[j].setReps}`;
+        temp+=`\nSet Weight: ${allSets[j].setWeight}`;
+        temp+='\n';
+      }
+    }
+    else if(workout.hasOwnProperty('totalERepSets')){
+      let eWorkout = workout as ExtremeWorkout;
+      let allSets = eWorkout.totalERepSets;
+      for(let j = 0; j < allSets.length; j++){
+        temp+=`\nWorkout Type: ${allSets[j].setWorkoutType}`;
+        temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
+        temp+=`\nSet Reps: ${allSets[j].setReps}`;
+        temp+=`\nSet Weight: ${allSets[j].setWeight}`;
+        temp+='\n';
+      }
+    }
 
     // for(let j = 0; j < allSets.length; j++){
     //   temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
@@ -66,3 +90,4 @@ export class WorkoutHistoryComponent implements OnInit {
     });
   }
 }
+
