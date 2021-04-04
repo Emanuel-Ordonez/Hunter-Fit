@@ -1,27 +1,37 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EventData, GridLayout, ItemSpec, ListPicker, TextField, TextView } from '@nativescript/core';
 import { getString, setString } from '@nativescript/core/application-settings';
-import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
+import { IRepSetE } from '@src/app/services/IRepSet-extreme';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({
-  selector: 'app-add-rep',
-  templateUrl: './add-rep.component.html',
-  styleUrls: ['./add-rep.component.css']
+  selector: 'app-add-extreme-rep',
+  templateUrl: './add-extreme-rep.component.html',
+  styleUrls: ['./add-extreme-rep.component.css']
 })
-export class AddRepComponent implements OnInit {
-  
-  repSets: IRepSetWl[] = [];
-  repSet: IRepSetWl;
+export class AddExtremeRepComponent implements OnInit {
+  repSets: IRepSetE[] = [];
+  repSet: IRepSetE;
   setNumberCounter = 1;
   setRepsInput;
   setWeightInput;
   setWorkoutType = "";
-  @Output() emitAllRepSetsEvent = new EventEmitter<IRepSetWl[]>();
+  @Output() emitAllRepSetsEvent = new EventEmitter<IRepSetE[]>();
+  public weight_lifting_workouts: Array<string> = WorkoutConstants.weight_lifting_workouts;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  public onSelectedIndexChanged(args: EventData) {
+    const picker = <ListPicker>args.object;
+    this.setWorkoutType = this.weight_lifting_workouts[picker.selectedIndex];
+    let typeId = Number(<ListPicker>args.object.get("id").replace("workoutType-textField-", ""));
+
+    setString("workoutTypeId", this.setWorkoutType);
+    this.repSets[typeId - 1].setWorkoutType = this.setWorkoutType;
+    this.emitAllRepSets();
   }
 
   public repsInput(args) {
@@ -29,8 +39,6 @@ export class AddRepComponent implements OnInit {
     this.setRepsInput = repTextView.text;
     let repId = Number(args.object.id.replace("reps-textField-", ""));
 
-    // console.log("this.setRepsInput = ", this.setRepsInput);
-    // console.log("repId = ", repId);
     this.repSets[repId - 1].setReps = Number(this.setRepsInput);
     this.emitAllRepSets();
   }
@@ -40,8 +48,6 @@ export class AddRepComponent implements OnInit {
     this.setWeightInput= weightTextView.text;
     let weightId = Number(args.object.id.replace("weight-textField-", ""));
 
-    // console.log("this.setWeightInput = ", this.setWeightInput);
-    // console.log("weightId = ", weightId);
     this.repSets[weightId - 1].setWeight = Number(this.setWeightInput);
     this.emitAllRepSets();
   }
@@ -58,7 +64,8 @@ export class AddRepComponent implements OnInit {
   }
 
   private getRepSet() {
-    const newRepSet: IRepSetWl = {
+    const newRepSet: IRepSetE = {
+      setWorkoutType: getString("workoutTypeId"), 
       setNumber: this.setNumberCounter,
       setReps: this.setRepsInput,
       setWeight: this.setWeightInput

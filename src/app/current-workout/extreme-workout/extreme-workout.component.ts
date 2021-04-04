@@ -2,34 +2,33 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouterExtensions } from '@nativescript/angular';
 import { getString, setString } from '@nativescript/core/application-settings';
-import { EventData } from '@nativescript/core/data/observable';
+import { EventData} from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
+import { IRepSetE } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
 import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({
-  selector: 'app-weight-lifting-workout',
-  moduleId: module.id,
-  templateUrl: './weight-lifting-workout.component.tns.html',
-  styleUrls: ['./weight-lifting-workout.component.tns.css']
+  selector: 'app-extreme-workout',
+  templateUrl: './extreme-workout.component.html',
+  styleUrls: ['./extreme-workout.component.css']
 })
-export class WeightLiftingWorkoutComponent implements OnInit {
-
-  public workoutType: string;
+export class ExtremeWorkoutComponent implements OnInit {
+  public workoutType: any;
   public workoutTypeClass: string;
   private currentTime: number = 0;
   display;
   private interval;
   private status = true;
   private workoutNotes: string;
+  public weight_lifting_workouts: Array<string> = WorkoutConstants.weight_lifting_workouts;
 
   tvtext = "";
   currentWorkout: string;
-  private repSets: IRepSetWl[] = [];
+  private repSets: IRepSetE[] = [];
 
   constructor(private routerExtensions: RouterExtensions,
     private activeRoute: ActivatedRoute,
@@ -37,17 +36,19 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     private timerService: TimerService) { }
 
   ngOnInit(): void {
-    this.getWorkoutType();
     this.startWorkout();
+  }
+
+  public onSelectedIndexChanged(args: EventData) {
+    const picker = <ListPicker>args.object;
+    this.currentWorkout = `${this.weight_lifting_workouts[picker.selectedIndex]}`;
+    setString("workoutTypeId", this.currentWorkout);
+    console.log("WorkoutType: " + this.currentWorkout);
   }
 
   onTextChange(args: EventData) {
     const tv = args.object as TextView;
     this.workoutNotes = tv.text;
-  }
-
-  public getWorkoutType() {
-    this.currentWorkout = getString("workoutType");
   }
 
   public pauseTimer(pauseButton: any) {
@@ -76,10 +77,11 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     }
     else {
       this.status = true;
+      console.log("in startWorkout() else");
     }
   }
 
-  public addAllRepSets(newRepSet: IRepSetWl[]) {
+  public addAllRepSets(newRepSet: IRepSetE[]) {
     this.repSets = newRepSet;
     console.log(this.repSets);
   }
@@ -89,8 +91,7 @@ export class WeightLiftingWorkoutComponent implements OnInit {
     clearInterval(this.interval);
 
     let todaysDate = new DateService();
-    console.log("StopWorkoutWeightlifting():", this.repSets);
-    this.workoutStorageService.saveWeightliftingWorkout(this.currentWorkout, this.currentTime, todaysDate, this.repSets, this.workoutNotes);
+    this.workoutStorageService.saveExtremeWorkout(this.currentTime, todaysDate, this.repSets, this.workoutNotes);
     this.currentTime = 0;
     this.routerExtensions.navigate(['/navigation']);
   }

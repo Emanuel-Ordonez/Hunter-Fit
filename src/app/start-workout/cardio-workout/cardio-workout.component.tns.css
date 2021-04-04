@@ -1,20 +1,21 @@
 /* Add mobile styles for the component here.  */
 
-.cardioWorkoutLabel-stackLayout,
-.cardioNotes-stackLayout {
+Button {
     color: white;
-    margin: 50px 15px auto 15px;
-    border-radius: 15px;
-    border-width: 5px;
-    background-color: #00658A;
 }
 
 Label {
-    margin-left: 3%;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin-left: 1%;
     font-size: 20%;
-    padding-top: 15%;
+}
+
+.cardioWorkout-stackLayout {
+    color: white;
+    margin: 30px 15px auto 15px;
+    border-radius: 15px;
+    border-width: 5px;
+    background-color: #00658A;
+    height: 87%;
 }
 
 .workoutNotes {
@@ -23,7 +24,6 @@ Label {
     padding-left: 20px;
     border-style: outset;
     border-width: 5px;
-    margin-bottom: 50px;
 }
 
 .buttonFlexLayout-cardio {
@@ -46,8 +46,4 @@ Label {
     font-weight: bold;
     width: 40%;
     background-color: #C00000
-}
-
-.start-button:active {
-    background-color: orange;
 }

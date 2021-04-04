@@ -61,3 +61,7 @@ Label {
     width: 40%;
     background-color: #C00000
 }
+
+.start-button:active {
+    background-color: orange;
+}

@@ -1,10 +1,9 @@
-<ActionBar title="Weightlifting Workout"></ActionBar>
+<ActionBar title="Extreme Workout"></ActionBar>
 <StackLayout height="100%">
     <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
-        <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
         <Label class="timeLabel" text="Elapsed Time: {{ display }}" textWrap="true"></Label>
 
-        <app-add-rep class="add-set-area" (emitAllRepSetsEvent)="addAllRepSets($event)"></app-add-rep>
+        <app-add-extreme-rep class="add-set-area" (emitAllRepSetsEvent)="addAllRepSets($event)"></app-add-extreme-rep>
 
         <Label text="Notes: "></Label>
         <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)"></TextView>

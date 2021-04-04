@@ -15,14 +15,16 @@ import { ClubsComponent } from '@src/app/navigation/clubs/clubs.component';
 import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
   import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
 import { ProfileComponent } from '@src/app/navigation/profile/profile.component';
-  import { CardioDetailsComponent } from './navigation/profile/cardio-details/cardio-details.component';
-  import { WeightliftingDetailsComponent } from './navigation/profile/weightlifting-details/weightlifting-details.component';
+  import { CardioDetailsComponent } from '@src/app/navigation/profile/cardio-details/cardio-details.component';
+  import { WeightliftingDetailsComponent } from '@src/app/navigation/profile/weightlifting-details/weightlifting-details.component';
 
 //StartWorkoutsComponent components
 import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.component';
 import { CardioWorkoutComponent } from '@src/app/start-workout/cardio-workout/cardio-workout.component';
 import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lifting-workout/weight-lifting-workout.component';
   import { AddRepComponent } from '@src/app/start-workout/weight-lifting-workout/add-rep/add-rep.component';
+import { ExtremeWorkoutComponent } from '@src/app/current-workout/extreme-workout/extreme-workout.component';
+import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lif
     CardioWorkoutComponent,
     WeightLiftingWorkoutComponent,
       AddRepComponent,
+    ExtremeWorkoutComponent,
+      AddExtremeRepComponent,
   ],
   imports: [
     BrowserModule,

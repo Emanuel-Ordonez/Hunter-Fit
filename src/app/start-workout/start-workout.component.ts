@@ -28,70 +28,22 @@ export class StartWorkoutComponent {
 
   constructor(private routerExtensions: RouterExtensions, private activeRoute: ActivatedRoute, private workoutStorageService: WorkoutStorageService) { }
 
-  public onSelectedIndexChanged(args: EventData) {
-    const picker = <ListPicker>args.object;
-  }
-
   public goBack(): void {
     this.routerExtensions.back();
   }
 
-  //////////////////////////////////////////
-
-  public selectWorkoutType(workoutTypeButton: any) { //workoutTypeButton: HTMLButtonElement
-
+  public selectWorkoutType(workoutTypeButton: any) {
     this.workoutTypeClass = workoutTypeButton.object.class;
-    this.workoutType = workoutTypeButton.object.id;
-    // setString("workoutTypeId", this.workoutType);
+    this.workoutType = workoutTypeButton.object.text;
+    setString("workoutType", this.workoutType);
 
-    for (var button in WorkoutConstants.buttons) {
-      if (this.workoutType === WorkoutConstants.buttons[button]) {
-        workoutTypeButton.object.backgroundColor = "#787774";
-      }
-    }
+    workoutTypeButton.object.backgroundColor = "#787774";
 
     if (this.prevWorkoutType) {
       this.prevWorkoutType.object.backgroundColor = "#00658A";
     }
     this.prevWorkoutType = workoutTypeButton;
   }
-  
-  public pauseTimer(pauseButton: any) {
-    if (pauseButton.object.text=="Resume"){
-      pauseButton.object.text="Pause";
-      pauseButton.object.backgroundColor = "#00658A";
-      this.interval = setInterval(() => {
-        this.currentTime++;
-        this.display = this.formatTime(this.currentTime);
-      }, 1000)
-    }
-    else{
-      pauseButton.object.text="Resume";
-      pauseButton.object.backgroundColor = "#499c5c";
-      clearInterval(this.interval);
-    }
-  }
-
-
-  public startWorkout() {
-    if (this.status) {
-      this.status = false;
-      this.interval = setInterval(() => {
-        this.currentTime++;
-        this.display = this.formatTime(this.currentTime);
-      }, 1000)
-    }
-    else {
-      this.status = true;
-      console.log("in startWorkout() else");
-    }
-  }
-
-  public formatTime(value: number): string {
-    const minutes: number = Math.floor(value/60);
-    return minutes + ':' + String(value - minutes * 60).padStart(2, '0');
-  }
-  
 
   public callCurrentWorkout() {
     switch (this.workoutTypeClass) {
@@ -104,6 +56,11 @@ export class StartWorkoutComponent {
         this.routerExtensions.navigate(['/weightLiftingWorkout']);
         this.status = true;
         break;
+        
+      case 'extremeWorkoutButton':
+        this.routerExtensions.navigate(['/extremeWorkout']);
+        this.status = true;
+        break;
 
       default:
         this.status = false;
@@ -113,14 +70,12 @@ export class StartWorkoutComponent {
     }
   }
 
-  ///////////
-
   public stopWorkout() {
     this.status = true;
     clearInterval(this.interval);
 
     setNumber("workoutTime", this.currentTime);
     this.currentTime = 0;
-    this.routerExtensions.navigate(['/navigation']);
+    this.routerExtensions.back();
   }
 }

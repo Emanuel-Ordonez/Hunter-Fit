@@ -36,7 +36,7 @@ Button {
     border-radius: 25px;
 }
 
-.weightLifting-flexbox {
+.middle-flexbox {
     padding-left: 12px;
     display: flex;
     flex-wrap: wrap;

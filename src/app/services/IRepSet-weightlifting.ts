@@ -1,6 +1,4 @@
-export interface IRepSet {
-
-  setWorkoutType: string;
+export interface IRepSetWl {
   setNumber: number;
   setReps: number;
   setWeight: number;

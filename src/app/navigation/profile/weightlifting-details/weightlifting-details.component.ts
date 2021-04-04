@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSet } from '@src/app/services/IRepSet';
+//import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
 import { Workout } from '@src/app/services/workout';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
@@ -54,37 +54,37 @@ export class WeightliftingDetailsComponent implements OnInit {
     let tempYearReps=0;
     let tempYearWeight=0;
 
-    this.allWorkouts.forEach(workout => {
-        if(todaysDate.checkSameDay(workout.workoutDate)){
-          tempDayTime+=workout.totalWorkoutTime;
+    // this.allWorkouts.forEach(workout => {
+    //     if(todaysDate.checkSameDay(workout.workoutDate)){
+    //       tempDayTime+=workout.totalWorkoutTime;
           
-          let workoutSets: IRepSet[] = workout.totalRepSets;
-            workoutSets.forEach(set => {
-            tempDayReps+=set.setReps;
-            tempDayWeight+=set.setWeight;
-          });
-        }
+    //       let workoutSets: IRepSet[] = workout.totalRepSets;
+    //         workoutSets.forEach(set => {
+    //         tempDayReps+=set.setReps;
+    //         tempDayWeight+=set.setWeight;
+    //       });
+    //     }
 
-        if(todaysDate.checkSameMonth(workout.workoutDate)){
-          tempMonthTime+=workout.totalWorkoutTime;
+    //     if(todaysDate.checkSameMonth(workout.workoutDate)){
+    //       tempMonthTime+=workout.totalWorkoutTime;
           
-          let workoutSets: IRepSet[] = workout.totalRepSets;
-            workoutSets.forEach(set => {
-            tempMonthReps+=set.setReps;
-            tempMonthWeight+=set.setWeight;
-          });
-        }
+    //       let workoutSets: IRepSet[] = workout.totalRepSets;
+    //         workoutSets.forEach(set => {
+    //         tempMonthReps+=set.setReps;
+    //         tempMonthWeight+=set.setWeight;
+    //       });
+    //     }
 
-        if(todaysDate.checkSameYear(workout.workoutDate)){
-          tempYearTime+=workout.totalWorkoutTime;
+    //     if(todaysDate.checkSameYear(workout.workoutDate)){
+    //       tempYearTime+=workout.totalWorkoutTime;
           
-          let workoutSets: IRepSet[] = workout.totalRepSets;
-            workoutSets.forEach(set => {
-            tempYearReps+=set.setReps;
-            tempYearWeight+=set.setWeight;
-          });
-        }
-    });
+    //       let workoutSets: IRepSet[] = workout.totalRepSets;
+    //         workoutSets.forEach(set => {
+    //         tempYearReps+=set.setReps;
+    //         tempYearWeight+=set.setWeight;
+    //       });
+    //     }
+    // });
     this.formattedDailyTime = this.timerService.formatTime(tempDayTime);
     this.dailyReps = tempDayReps;
     this.dailyWeight = tempDayWeight;
