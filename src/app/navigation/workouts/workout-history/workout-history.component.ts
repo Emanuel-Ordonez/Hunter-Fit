@@ -70,13 +70,6 @@ export class WorkoutHistoryComponent implements OnInit {
         temp+='\n';
       }
     }
-
-    // for(let j = 0; j < allSets.length; j++){
-    //   temp+=`\nWorkout set # ${allSets[j].setNumber}: `;
-    //   temp+=`\nSet Reps: ${allSets[j].setReps}`;
-    //   temp+=`\nSet Weight: ${allSets[j].setWeight}`;
-    //   temp+='\n';
-    // }
     return temp;
   }
 

@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DateService } from '@src/app/services/date/date.service';
+import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
 //import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
 import { Workout } from '@src/app/services/workout';
 import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
+import { WeightLiftingWorkout } from '@src/app/services/weightlifting-workout'
+import { ExtremeWorkout } from '@src/app/services/extreme-workout';
+import { IRepSetE } from '@src/app/services/IRepSet-extreme';
 
 @Component({
   selector: 'app-weightlifting-details',
@@ -13,13 +17,10 @@ import { WorkoutStorageService } from '@src/app/services/workout-storage.service
 export class WeightliftingDetailsComponent implements OnInit {
 
   public allWorkouts: Workout[] = [];
-  public formattedAllTime: string;
-  public allReps: number;
-  public allWeight: number;
 
-  public formattedDailyTime: string = "";
-  public dailyReps: number = 0;
-  public dailyWeight: number = 0;
+  public formattedDailyTime: string;
+  public dailyReps: number;
+  public dailyWeight: number;
 
   public formattedMonthlyTime: string;
   public monthlyReps: number;
@@ -54,47 +55,110 @@ export class WeightliftingDetailsComponent implements OnInit {
     let tempYearReps=0;
     let tempYearWeight=0;
 
-    // this.allWorkouts.forEach(workout => {
-    //     if(todaysDate.checkSameDay(workout.workoutDate)){
-    //       tempDayTime+=workout.totalWorkoutTime;
+    //Parses through for Weightlifting workouts and add info
+    this.allWorkouts.forEach(workout => {
+      //Adds Weightlifting workout into profile weightlifting
+      if(workout.hasOwnProperty('totalWRepSets')){
+        let tempWorkout = workout as WeightLiftingWorkout;
+
+        if(todaysDate.checkSameYear(workout.workoutDate)){
+          tempYearTime+=tempWorkout.totalWorkoutTime;
+
+
+          if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
+            tempMonthTime+=tempWorkout.totalWorkoutTime;
+
+            if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
+              tempDayTime+=tempWorkout.totalWorkoutTime;
+            }
+
+          }
           
-    //       let workoutSets: IRepSet[] = workout.totalRepSets;
-    //         workoutSets.forEach(set => {
-    //         tempDayReps+=set.setReps;
-    //         tempDayWeight+=set.setWeight;
-    //       });
-    //     }
 
-    //     if(todaysDate.checkSameMonth(workout.workoutDate)){
-    //       tempMonthTime+=workout.totalWorkoutTime;
+          let workoutSets: IRepSetWl[] = tempWorkout.totalWRepSets;
+          workoutSets.forEach(set => {
+            tempYearReps+=set.setReps;
+            tempYearWeight+=set.setWeight;
+
+
+            if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
+              tempMonthReps+=set.setReps;
+              tempMonthWeight+=set.setWeight;
+
+
+              if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
+                tempDayReps+=set.setReps;
+                tempDayWeight+=set.setWeight;
+              }
+
+            }
+          });
+
+        }
+      }
+
+      //Adds Extreme workout into profile weightlifting
+      else if(workout.hasOwnProperty('totalERepSets')){
+        let tempWorkout = workout as ExtremeWorkout;
+
+        if(todaysDate.checkSameYear(workout.workoutDate)){
+          tempYearTime+=tempWorkout.totalWorkoutTime;
+
+
+          if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
+            tempMonthTime+=tempWorkout.totalWorkoutTime;
+
+            if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
+              tempDayTime+=tempWorkout.totalWorkoutTime;
+            }
+
+          }
           
-    //       let workoutSets: IRepSet[] = workout.totalRepSets;
-    //         workoutSets.forEach(set => {
-    //         tempMonthReps+=set.setReps;
-    //         tempMonthWeight+=set.setWeight;
-    //       });
-    //     }
 
-    //     if(todaysDate.checkSameYear(workout.workoutDate)){
-    //       tempYearTime+=workout.totalWorkoutTime;
-          
-    //       let workoutSets: IRepSet[] = workout.totalRepSets;
-    //         workoutSets.forEach(set => {
-    //         tempYearReps+=set.setReps;
-    //         tempYearWeight+=set.setWeight;
-    //       });
-    //     }
-    // });
-    this.formattedDailyTime = this.timerService.formatTime(tempDayTime);
-    this.dailyReps = tempDayReps;
-    this.dailyWeight = tempDayWeight;
+          let workoutSets: IRepSetE[] = tempWorkout.totalERepSets;
+          workoutSets.forEach(set => {
+            tempYearReps+=set.setReps;
+            tempYearWeight+=set.setWeight;
 
-    this.formattedMonthlyTime = this.timerService.formatTime(tempMonthTime);
-    this.monthlyReps = tempMonthReps;
-    this.monthlyWeight = tempMonthWeight;
 
-    this.formattedYearlyTime = this.timerService.formatTime(tempYearTime);
-    this.yearlyReps = tempYearReps;
-    this.yearlyWeight = tempYearWeight;
+            if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
+              tempMonthReps+=set.setReps;
+              tempMonthWeight+=set.setWeight;
+
+
+              if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
+                tempDayReps+=set.setReps;
+                tempDayWeight+=set.setWeight;
+              }
+
+            }
+          });
+        }
+      }
+    });
+
+    this.setDayStats(tempDayTime, tempDayReps, tempDayWeight);
+
+    this.setMonthStats(tempMonthTime, tempMonthReps, tempMonthWeight);
+
+    this.setYearStats(tempYearTime, tempYearReps, tempYearWeight);
+  }
+
+  private setDayStats(time: number, reps: number, weight: number){
+    this.formattedDailyTime = this.timerService.formatTime(time);
+    this.dailyReps = reps;
+    this.dailyWeight = weight;
+  }
+
+  private setMonthStats(time: number, reps: number, weight: number){
+    this.formattedMonthlyTime = this.timerService.formatTime(time);
+    this.monthlyReps = reps;
+    this.monthlyWeight = weight;
+  }
+
+  private setYearStats(time: number, reps: number, weight: number){
+    this.formattedYearlyTime = this.timerService.formatTime(time);
+    this.yearlyReps = reps;
+    this.yearlyWeight = weight;
   }
 }
