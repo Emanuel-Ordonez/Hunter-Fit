@@ -25,6 +25,8 @@ import { CardioDetailsComponent } from '@src/app/navigation/profile/cardio-detai
 import { WeightliftingDetailsComponent } from '@src/app/navigation/profile/weightlifting-details/weightlifting-details.component';
 import { ExtremeWorkoutComponent } from '@src/app/current-workout/extreme-workout/extreme-workout.component';
 import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
+import { EditProfileComponent } from '@src/app/profile-info/edit-profile/edit-profile.component';
+import { GoalsComponent } from '@src/app/profile-info/goals/goals.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
@@ -52,6 +54,9 @@ import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout
       AddRepComponent,
       ExtremeWorkoutComponent,
       AddExtremeRepComponent,
+      
+    EditProfileComponent,
+    GoalsComponent,
   ],
   imports: [
     NativeScriptModule,

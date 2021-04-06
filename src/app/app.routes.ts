@@ -17,6 +17,8 @@ import { WeightLiftingWorkoutComponent } from './start-workout/weight-lifting-wo
 import { AddRepComponent } from './start-workout/weight-lifting-workout/add-rep/add-rep.component';
 import { ExtremeWorkoutComponent } from './current-workout/extreme-workout/extreme-workout.component';
 import { AddExtremeRepComponent } from './current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
+import { EditProfileComponent } from './profile-info/edit-profile/edit-profile.component';
+import { GoalsComponent } from './profile-info/goals/goals.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "navigation", pathMatch: "full" },
@@ -57,6 +59,9 @@ export const routes: Routes = [
       { path: "", component: AddExtremeRepComponent, outlet: 'addextremeRep' },
     ]
   },
+
+  { path: "editProfile", component: EditProfileComponent },
+  { path: "goals", component: GoalsComponent },
   
   //temporary
   { path: "search", component: SearchComponent },
