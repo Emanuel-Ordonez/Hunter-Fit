@@ -5,12 +5,12 @@
         <GridLayout row="1" rows="*,*"columns="*,*">
             <StackLayout class="table-section" col="0" rowSpan="2">
                 <Label row="0" col="0" text=" Time:"></Label>
-                <Label class="center-Text" row="1" col="0" text="0"></Label>
+                <Label class="center-Text" row="1" col="0" text="{{ formattedDailyTime }}"></Label>
             </StackLayout>
 
             <StackLayout class="table-section" col="1" rowSpan="2">
                 <Label row="0" col="0" text=" Miles:"></Label>
-                <Label class="center-Text" row="1" col="0" text="0"></Label>
+                <Label class="center-Text" row="1" col="0" text="{{ dailyDistance }}"></Label>
             </StackLayout>
         </GridLayout>
 
@@ -19,12 +19,12 @@
         <GridLayout row="3" rows="auto,*"columns="*,*">
             <StackLayout class="table-section" col="0" rowSpan="2">
                 <Label row="0" col="0" text=" Time:"></Label>
-                <Label class="center-Text" row="1" col="0" text="0"></Label>
+                <Label class="center-Text" row="1" col="0" text="{{ formattedMonthlyTime }}"></Label>
             </StackLayout>
 
             <StackLayout class="table-section" col="1" rowSpan="2">
                 <Label row="0" col="0" text=" Miles:"></Label>
-                <Label class="center-Text" row="1" col="0" text="0"></Label>
+                <Label class="center-Text" row="1" col="0" text="{{ monthlyDistance }}"></Label>
             </StackLayout>
         </GridLayout>
 
@@ -33,12 +33,12 @@
         <GridLayout row="5" rows="auto,*"columns="*,*">
             <StackLayout class="table-section" col="0" rowSpan="2">
                 <Label row="0" col="0" text=" Time:"></Label>
-                <Label class="center-Text" row="1" col="0" text="0"></Label>
+                <Label class="center-Text" row="1" col="0" text="{{ formattedYearlyTime }}"></Label>
             </StackLayout>
 
             <StackLayout class="table-section" col="1" rowSpan="2">
                 <Label row="0" col="0" text=" Miles:"></Label>
-                <Label class="center-Text" row="1" col="0" text="0"></Label>
+                <Label class="center-Text" row="1" col="0" text="{{ yearlyDistance }}"></Label>
             </StackLayout>
         </GridLayout>
 

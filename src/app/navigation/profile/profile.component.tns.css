@@ -1,16 +1,17 @@
 /* Add mobile styles for the component here.  */
 
 Button {
-    color: white;
+    color: black;
+    background-color: white;
 }
 
-.profile-info-gridbox {
-    height: 40%;
-    background-color: aqua;
+.profile-info-stacklayout {
+    height: 35%;
+    background-color: #00658A;
 }
 
 .profile-tabs {
-    height: 59.9%;
+    height: 64.9%;
 }
 
 .profile-picture {
@@ -19,9 +20,11 @@ Button {
 }
 
 .profile-username {
+    color: white;
     font-weight: bold;
 }
 
 .personal-goal {
-    background-color: blanchedalmond;
+    color: white;
+    font-weight: bold;
 }

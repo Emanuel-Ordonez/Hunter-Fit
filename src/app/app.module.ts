@@ -25,6 +25,8 @@ import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lif
   import { AddRepComponent } from '@src/app/start-workout/weight-lifting-workout/add-rep/add-rep.component';
 import { ExtremeWorkoutComponent } from '@src/app/current-workout/extreme-workout/extreme-workout.component';
 import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
+import { EditProfileComponent } from '@src/app/profile-info/edit-profile/edit-profile.component';
+import { GoalsComponent } from '@src/app/profile-info/goals/goals.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,9 @@ import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout
       AddRepComponent,
     ExtremeWorkoutComponent,
       AddExtremeRepComponent,
+    
+    EditProfileComponent,
+    GoalsComponent,
   ],
   imports: [
     BrowserModule,
