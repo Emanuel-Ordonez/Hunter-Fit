@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { GridLayout, ItemSpec, TextField, TextView } from '@nativescript/core';
-import { IRepSet } from '@src/app/services/IRepSet';
+import { EventData, GridLayout, ItemSpec, ListPicker, TextField, TextView } from '@nativescript/core';
+import { getString, setString } from '@nativescript/core/application-settings';
+import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
+import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
 
 @Component({
   selector: 'app-add-rep',
@@ -9,12 +11,13 @@ import { IRepSet } from '@src/app/services/IRepSet';
 })
 export class AddRepComponent implements OnInit {
   
-  repSets: IRepSet[] = [];
-  repSet: IRepSet;
+  repSets: IRepSetWl[] = [];
+  repSet: IRepSetWl;
   setNumberCounter = 1;
   setRepsInput;
   setWeightInput;
-  @Output() emitAllRepSetsEvent = new EventEmitter<IRepSet[]>();
+  setWorkoutType = "";
+  @Output() emitAllRepSetsEvent = new EventEmitter<IRepSetWl[]>();
 
   constructor() { }
 
@@ -26,8 +29,8 @@ export class AddRepComponent implements OnInit {
     this.setRepsInput = repTextView.text;
     let repId = Number(args.object.id.replace("reps-textField-", ""));
 
-    console.log("this.setRepsInput = ", this.setRepsInput);
-    console.log("repId = ", repId);
+    // console.log("this.setRepsInput = ", this.setRepsInput);
+    // console.log("repId = ", repId);
     this.repSets[repId - 1].setReps = Number(this.setRepsInput);
     this.emitAllRepSets();
   }
@@ -36,8 +39,9 @@ export class AddRepComponent implements OnInit {
     const weightTextView = args.object as TextView;
     this.setWeightInput= weightTextView.text;
     let weightId = Number(args.object.id.replace("weight-textField-", ""));
-    console.log("this.setWeightInput = ", this.setWeightInput);
-    console.log("weightId = ", weightId);
+
+    // console.log("this.setWeightInput = ", this.setWeightInput);
+    // console.log("weightId = ", weightId);
     this.repSets[weightId - 1].setWeight = Number(this.setWeightInput);
     this.emitAllRepSets();
   }
@@ -54,7 +58,7 @@ export class AddRepComponent implements OnInit {
   }
 
   private getRepSet() {
-    const newRepSet: IRepSet = {
+    const newRepSet: IRepSetWl = {
       setNumber: this.setNumberCounter,
       setReps: this.setRepsInput,
       setWeight: this.setWeightInput

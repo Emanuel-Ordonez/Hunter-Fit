@@ -1,7 +1,7 @@
 <StackLayout>
     <StackLayout id="reps-weight-stackLayout">
-        <GridLayout rows="auto" columns="50,*,*">
-            <Label col="0" text="Set #" class="center-Text"></Label>
+        <GridLayout rows="auto" columns="30,*,*">
+            <Label col="0" text="Set" class="center-Text"></Label>
             <Label col="1" text="Reps" class="center-Text"></Label>
             <Label col="2" text="Weight" class="center-Text"></Label>
         </GridLayout>
@@ -9,14 +9,15 @@
         <ScrollView class="rep-details">
             <StackLayout>
                 <GridLayout *ngFor="let repSet of repSets" id="repGrid{{repSet.setNumber}}" rows="auto"
-                    columns="50,*,*">
+                    columns="30,*,*">
                     <Label col="0" [text]="repSet.setNumber" class="center-Text"></Label>
 
-                    <TextField col="1" id="reps-textField-{{repSet.setNumber}}" class="reps-weight-textField" hint="input reps" type="number"
-                        (textChange)="repsInput($event, repSet)" ></TextField>
+                    <TextField col="1" id="reps-textField-{{repSet.setNumber}}" class="set-textField"
+                        hint="input reps" type="number" (textChange)="repsInput($event, repSet)"></TextField>
 
-                    <TextField col="2" id="weight-textField-{{repSet.setNumber}}" class="reps-weight-textField" hint="input weight"
-                        (textChange)="weightInput($event, repSet)" ></TextField>
+                    <TextField col="2" id="weight-textField-{{repSet.setNumber}}" class="set-textField"
+                        hint="input weight" (textChange)="weightInput($event, repSet)"></TextField>
+
                 </GridLayout>
             </StackLayout>
         </ScrollView>

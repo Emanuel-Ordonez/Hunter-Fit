@@ -1,0 +1,39 @@
+/* Add mobile styles for the component here.  */
+
+#addRepButton {
+    background-color: aliceblue;
+    color: black;
+}
+
+#removeRepButton {
+    background-color: #C00000;
+    color: white;
+}
+
+.rep-details {
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    height: 67%;
+}
+
+.ns-dark TextField {
+    background-color: olive;
+}
+
+.set-textField {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: .5%;
+    margin-right: .5%;
+    height: 80px;
+}
+
+.setButtons {
+    margin-top: 10em;
+    height: 23em;
+    width: 100em;
+}

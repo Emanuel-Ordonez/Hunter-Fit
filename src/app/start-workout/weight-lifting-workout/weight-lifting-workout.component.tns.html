@@ -2,11 +2,9 @@
 <StackLayout height="100%">
     <StackLayout class="weightLiftingWorkoutLabel-stackLayout">
         <Label class="currentWorkoutLabel" text="Current Workout:  {{ currentWorkout }}"></Label>
-
         <Label class="timeLabel" text="Elapsed Time: {{ display }}" textWrap="true"></Label>
 
-        <Label text="Rep Sets:"></Label>
-        <app-add-rep (emitAllRepSetsEvent)="addAllRepSets($event)"></app-add-rep>
+        <app-add-rep class="add-set-area" (emitAllRepSetsEvent)="addAllRepSets($event)"></app-add-rep>
 
         <Label text="Notes: "></Label>
         <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)"></TextView>
