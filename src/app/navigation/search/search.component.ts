@@ -15,19 +15,25 @@ export class SearchComponent implements OnInit {
   searchList: Array<string>;
 
   constructor(private routerExtensions: RouterExtensions) { 
-    this.workoutList = WorkoutConstants.buttons;
-    this.searchList = WorkoutConstants.buttons;
+    this.workoutList = WorkoutConstants.list_workouts;
+    this.searchList = WorkoutConstants.list_workouts;
   }
 
   ngOnInit(): void {
   }
 
-  public getWorkouts(){
-  }
-
   public startWorkout(workout: string){
-    setString("workoutTypeId", workout);
-    this.routerExtensions.navigate(['/weightLiftingWorkout']);
+    setString("workoutType", workout);
+    if(WorkoutConstants.list_cardio_workouts.find(element => element.match(workout))){
+      this.routerExtensions.navigate(['/cardioWorkout']);
+    }
+    else if(WorkoutConstants.list_weight_lifting_workouts.find(element => element.match(workout))){
+      this.routerExtensions.navigate(['/weightLiftingWorkout']);
+    }
+    if(workout.match("Extreme")){
+      this.routerExtensions.navigate(['/extremeWorkout']);
+    }
+    
   }
 
   public onTextChange(args: EventData){

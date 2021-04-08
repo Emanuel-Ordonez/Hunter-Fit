@@ -17,7 +17,7 @@ export class AddExtremeRepComponent implements OnInit {
   setWeightInput;
   setWorkoutType = "";
   @Output() emitAllRepSetsEvent = new EventEmitter<IRepSetE[]>();
-  public weight_lifting_workouts: Array<string> = WorkoutConstants.weight_lifting_workouts;
+  public weight_lifting_workouts: Array<string> = WorkoutConstants.list_weight_lifting_workouts;
 
   constructor() { }
 

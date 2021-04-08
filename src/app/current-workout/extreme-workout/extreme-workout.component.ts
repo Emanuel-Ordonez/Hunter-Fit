@@ -24,7 +24,7 @@ export class ExtremeWorkoutComponent implements OnInit {
   private interval;
   private status = true;
   private workoutNotes: string;
-  public weight_lifting_workouts: Array<string> = WorkoutConstants.weight_lifting_workouts;
+  public weight_lifting_workouts: Array<string> = WorkoutConstants.list_weight_lifting_workouts;
 
   tvtext = "";
   currentWorkout: string;
