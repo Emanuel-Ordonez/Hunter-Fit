@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
   selector: 'app-goals',
-  templateUrl: './goals.component.html',
-  styleUrls: ['./goals.component.css']
+  templateUrl: './goals.component.tns.html',
+  styleUrls: ['./goals.component.tns.css']
 })
 export class GoalsComponent implements OnInit {
 
-  constructor() { }
+  public allGoals: String[] = [];
+
+  public dailyGoal: string;
+  public monthlyGoal: string;
+  public yearlyGoal: string;
+  public goalDate: number;
+
+  constructor(private routerExtensions: RouterExtensions) { }
 
   ngOnInit(): void {
   }
 
+  public goBack(): void {
+    this.routerExtensions.back();
+  }
 }
