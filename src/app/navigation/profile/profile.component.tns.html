@@ -8,8 +8,8 @@
         </GridLayout>
 
         <GridLayout columns = "*,auto,10,auto,*">
-            <Button row="0" col="1" text="Edit Profile" [nsRouterLink]="['/editProfile']"></Button>
-            <Button row="0" col="3" text="Goals" [nsRouterLink]="['/goals']"></Button>
+            <Button row="0" col="1" text="Edit Profile" ></Button>
+            <Button row="0" col="3" text="Goals" (tap)="navigateToGoals()"></Button>
         </GridLayout>
     </StackLayout>
 

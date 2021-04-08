@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routerExtensions: RouterExtensions) { }
 
   ngOnInit(): void {
+  }
+
+  public navigateToGoals(){
+    this.routerExtensions.navigate(['/goal']);
   }
 
 }

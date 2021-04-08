@@ -27,6 +27,7 @@ import { ExtremeWorkoutComponent } from '@src/app/current-workout/extreme-workou
 import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
 import { EditProfileComponent } from '@src/app/profile-info/edit-profile/edit-profile.component';
 import { GoalsComponent } from '@src/app/profile-info/goals/goals.component';
+import { SetGoalComponent } from '@src/app/profile-info/goals/set-goal/set-goal.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { GoalsComponent } from '@src/app/profile-info/goals/goals.component';
     
     EditProfileComponent,
     GoalsComponent,
+    SetGoalComponent,
   ],
   imports: [
     BrowserModule,

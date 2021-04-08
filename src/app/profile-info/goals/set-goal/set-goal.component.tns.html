@@ -1,0 +1,11 @@
+<StackLayout>
+    <Label text="Select Goal Type:"></Label>
+
+    <!-- add radio buttons for Daily, Monthly, Yearly -->
+
+    <Label text="Enter Goal: "></Label>
+    <TextView class="goalText" hint="I want to lose 15 pounds this month" [text]="tvtext" (textChange)="onTextChange($event)">
+    </TextView>
+    <Button text="Enter" class="enterGoalButton"></Button>
+
+</StackLayout>
