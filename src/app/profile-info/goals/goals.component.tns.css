@@ -1,4 +1,5 @@
 /* Add mobile styles for the component here.  */
+
 .goals {
     background-color: #eeeeee;
     border-radius: 15px;
@@ -7,11 +8,7 @@
     border-width: 5px;
 }
 
-.table-section {
-    border-width: .75 none  .75 .75;
-}
-
-.myGoalsText{
+.myGoalsText {
     margin-top: 10em;
     margin-left: auto;
     margin-right: auto;

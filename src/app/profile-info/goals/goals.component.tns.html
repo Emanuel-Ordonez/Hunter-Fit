@@ -4,18 +4,16 @@
     <Label class="myGoalsText" text="My Goals"></Label>
 
     <GridLayout rows="auto,*,auto,*,auto,*" columns="*">
-
-
         <Label class="table-section" row="0" col="0" text=" Daily Goals:"></Label>
         <GridLayout row="1" rows="*,*" columns="*,*">
             <StackLayout class="table-section" col="0" rowSpan="2">
                 <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text="{{ dailyGoal }}"></Label>
+                <Label class="center-Text" row="1" col="0" text=""></Label>
             </StackLayout>
 
             <StackLayout class="table-section" col="1" rowSpan="2">
                 <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text="{{ goalDate }}"></Label>
+                <Label class="center-Text" row="1" col="0" text=""></Label>
             </StackLayout>
         </GridLayout>
 
@@ -25,12 +23,12 @@
         <GridLayout row="3" rows="*,*" columns="*,*">
             <StackLayout class="table-section" col="0" rowSpan="2">
                 <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text="{{ monthlyGoal }}"></Label>
+                <Label class="center-Text" row="1" col="0" text=""></Label>
             </StackLayout>
 
             <StackLayout class="table-section" col="1" rowSpan="2">
                 <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text="{{ goalDate }}"></Label>
+                <Label class="center-Text" row="1" col="0" text=""></Label>
             </StackLayout>
         </GridLayout>
 
@@ -40,20 +38,14 @@
         <GridLayout row="5" rows="*,*" columns="*,*">
             <StackLayout class="table-section" col="0" rowSpan="2">
                 <Label row="0" col="0" text=" "></Label>
-                <Label class="center-Text" row="1" col="0" text="{{ yearlyGoal }}"></Label>
+                <Label class="center-Text" row="1" col="0" text=""></Label>
             </StackLayout>
 
             <StackLayout class="table-section" col="1" rowSpan="2">
                 <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text="{{ goalDate }}"></Label>
+                <Label class="center-Text" row="1" col="0" text=""></Label>
             </StackLayout>
         </GridLayout>
 
     </GridLayout>
-
-        <!-- <FlexBoxLayout>
-            <Button text="Back" class="back-button" (tap)="goBack()" pageTransition="slide" ></Button>
-            <Button class="createGoalButton" text="Set Goal" [nsRouterLink]="['/set-goal']" ></Button> -->
-        <!-- </FlexBoxLayout> -->
-    <!-- </GridLayout> -->
 </StackLayout>
