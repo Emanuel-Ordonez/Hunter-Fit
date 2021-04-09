@@ -12,7 +12,7 @@
 
         <GridLayout row="1" col="1" rows="50" columns="auto,*">
             <Label row="0" col="0" class="edit-profile-text" text="Motto:"></Label>
-            <TextField row="0" col="1" class="edit-profile-text" hint="Enter Motto"></TextField>
+            <TextField row="0" col="1" class="edit-profile-text" hint="Enter Motto" (textChange)="onPersonalMottoChange($event)"></TextField>
         </GridLayout>
 
         <Button row="3" col="1" colSpan="2" text="Done" (tap)="saveChanges($event)" ></Button>

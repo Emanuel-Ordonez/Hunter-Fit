@@ -10,19 +10,16 @@ import { getString } from '@nativescript/core/application-settings';
 })
 export class ProfileComponent implements OnInit {
   public username: String; 
+  public personalMotto: String;
 
   constructor(private routerExtensions: RouterExtensions) { }
 
   ngOnInit(): void {
-    this.username = getString("username");
-  }
-
-  public onPageLoad(){
-    this.username = getString("username");
   }
 
   public onPageLoaded(){  
     this.username = getString("username");
+    this.personalMotto = getString("personalMotto");
   }
 
   public navigateToEditProfile(){

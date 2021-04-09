@@ -17,8 +17,12 @@ export class EditProfileComponent implements OnInit {
 
   public onUsernameChange(args: EventData){
     const usernameView = args.object as TextView;
-    console.log("Username: " + usernameView.text);
     setString("username", usernameView.text);
+  }
+
+  public onPersonalMottoChange(args: EventData){
+    const personalMottoView = args.object as TextView;
+    setString("personalMotto", personalMottoView.text)
   }
 
   public saveChanges(args: EventData){
