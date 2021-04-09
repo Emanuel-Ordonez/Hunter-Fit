@@ -23,7 +23,7 @@ import { GoalsComponent } from './profile-info/goals/goals.component';
 import { SetGoalComponent } from './profile-info/goals/set-goal/set-goal.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "navigation", pathMatch: "full" },
+  { path: "", redirectTo: "goals", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   {
     path: "navigation", component: NavigationComponent,
@@ -64,7 +64,7 @@ export const routes: Routes = [
 
   { path: "editProfile", component: EditProfileComponent },
 
-  { path: "goal", component: GoalsComponent },
+  { path: "goals", component: GoalsComponent },
   { path: "setGoal", component: SetGoalComponent },
 
   //temporary vvv

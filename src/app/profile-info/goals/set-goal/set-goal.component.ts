@@ -12,4 +12,7 @@ export class SetGoalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public onTextChange(arg){
+
+  }
 }

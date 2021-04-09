@@ -1,12 +1,49 @@
+<ActionBar title="My Goals"></ActionBar>
+
 <StackLayout>
-    
-    <Button class="createGoalButton" text="Set Goal"></Button>
-    <Label class="myGoalsText" text="My Goals"></Label>
 
-    <GridLayout rows="auto,*,auto,*,auto,*" columns="*">
+    <GridLayout rows="auto,auto,*,10,auto,auto,*,auto,auto,*,auto" columns="*,*">
+    <Label class="table-section-header" row="0" col="0" colSpan="2" text=" Daily Goals:"></Label>
+    <Label class="table-section" row="1" col="0" colSpan="2" text=" Date Set:"></Label>
+    <ScrollView row="2" col="0" colSpan="2">
+        <StackLayout>
+            <GridLayout class="table-section" rows="auto" columns="auto,*,auto">
+                <Label col="0" text="Date Goes here"></Label>
+                <TextView col="1" editable="false" text="To have more than 40 reps completed"></TextView>
+                <Button col="2" text="Goal Met"></Button>
+            </GridLayout>
+            <GridLayout class="table-section" rows="auto" columns="auto,*,auto">
+                <Label col="0" text="Date Goes here"></Label>
+                <TextView col="1" editable="false" text="To lift more than 300 pounds total"></TextView>
+                <Button col="2" text="Goal Met"></Button>
+            </GridLayout>
+            <GridLayout class="table-section" rows="auto" columns="auto,*,auto">
+                <Label col="0" text="Date Goes here"></Label>
+                <TextView col="1" editable="false" text="To run more than 2 miles"></TextView>
+                <Button col="2" text="Goal Met"></Button>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
 
+    <Label class="table-section-header" row="4" col="0" colSpan="2" text=" Monthly Goals:"></Label>
+    <Label class="table-section" row="5" col="0" colSpan="2" text=" Date Set:"></Label>
+    <ScrollView class="table-section" row="6" col="0" colSpan="2">
+        <StackLayout>
+            <GridLayout rows="auto" columns="*,*,*">
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
 
-        <Label class="table-section" row="0" col="0" text=" Daily Goals:"></Label>
+    <Label class="table-section-header" row="7" col="0" colSpan="2" text=" Yearly Goals:"></Label>
+    <Label class="table-section" row="8" col="0" colSpan="2" text=" Date Set:"></Label>
+    <ScrollView class="table-section" row="9" col="0" colSpan="2">
+        <StackLayout>
+            <GridLayout rows="auto" columns="*,*,*">
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+
+        <!--<Label class="table-section" row="0" col="0" text=" Daily Goals:"></Label>
         <GridLayout row="1" rows="*,*" columns="*,*">
             <StackLayout class="table-section" col="0" rowSpan="2">
                 <Label row="0" col="0" text=""></Label>
@@ -47,13 +84,9 @@
                 <Label row="0" col="0" text=""></Label>
                 <Label class="center-Text" row="1" col="0" text="{{ goalDate }}"></Label>
             </StackLayout>
-        </GridLayout>
+        </GridLayout>-->
 
+        <Button row="10" col="0" colSpan="2" class="createGoalButton" text="Set Goal"></Button>
     </GridLayout>
 
-        <!-- <FlexBoxLayout>
-            <Button text="Back" class="back-button" (tap)="goBack()" pageTransition="slide" ></Button>
-            <Button class="createGoalButton" text="Set Goal" [nsRouterLink]="['/set-goal']" ></Button> -->
-        <!-- </FlexBoxLayout> -->
-    <!-- </GridLayout> -->
 </StackLayout>

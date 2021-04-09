@@ -18,4 +18,8 @@ export class ProfileComponent implements OnInit {
     this.routerExtensions.navigate(['/goal']);
   }
 
+  public navigateToEditProfile(){
+    this.routerExtensions.navigate(['/editProfile']);
+  }
+
 }
