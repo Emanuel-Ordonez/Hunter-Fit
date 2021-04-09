@@ -1,10 +1,10 @@
 <StackLayout (loaded)="onPageLoaded()">
     <StackLayout class="profile-info-stacklayout">
-        <GridLayout rows = "10,60,60,10,auto" columns = "10,120,10,*,10">
-            <Label row="1" col="1" rowSpan="2" class="profile-picture"></Label>
-            <Label row="1" col="3" colSpan="3" class="personal-goal" text="Personal Motto:"></Label>
-            <Label row="2" col="3" colSpan="3" class="personal-goal" text="{{ personalMotto }}"></Label>
-            <Label row="4" col="1" class="profile-username" text="{{ username }}"></Label>
+        <GridLayout rows = "10,40,20,60,10,auto" columns = "10,120,10,*,10">
+            <Label row="1" col="1" rowSpan="3" class="profile-picture"></Label>
+            <Label row="1" col="3" class="profile-username" text="{{ username }}"></Label>
+            <Label row="2" col="3" class="personal-goal" text="Personal Motto:"></Label>
+            <TextView row="3" col="3" editable="false" class="personal-goal" text="{{ personalMotto }}"></TextView>
         </GridLayout>
 
         <GridLayout columns = "*,auto,10,auto,*">

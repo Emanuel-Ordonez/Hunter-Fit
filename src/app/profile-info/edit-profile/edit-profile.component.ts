@@ -9,6 +9,8 @@ import { setString } from '@nativescript/core/application-settings';
   styleUrls: ['./edit-profile.component.tns.css']
 })
 export class EditProfileComponent implements OnInit {
+  private username: string;
+  private personalMotto: string;
 
   constructor(private routerExtensions: RouterExtensions) { }
 
@@ -17,18 +19,22 @@ export class EditProfileComponent implements OnInit {
 
   public onUsernameChange(args: EventData){
     const usernameView = args.object as TextView;
-    setString("username", usernameView.text);
+    this.username = usernameView.text;
   }
 
   public onPersonalMottoChange(args: EventData){
     const personalMottoView = args.object as TextView;
-    setString("personalMotto", personalMottoView.text)
+    this.personalMotto = personalMottoView.text;
   }
 
   public saveChanges(args: EventData){
     //In future, run some functionality to make sure username is not already taken
-    const tv = args.object as TextView;
-    // this.workoutNotes = tv.text;
+    if(this.username){
+      setString("username", this.username);
+    }
+    if(this.personalMotto){
+      setString("personalMotto", this.personalMotto);
+    }
     this.routerExtensions.back();
   }
 
