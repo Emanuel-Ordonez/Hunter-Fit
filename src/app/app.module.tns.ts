@@ -21,13 +21,15 @@ import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.comp
 import { CardioWorkoutComponent } from '@src/app/start-workout/cardio-workout/cardio-workout.component';
 import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lifting-workout/weight-lifting-workout.component';
   import { AddRepComponent } from '@src/app/start-workout/weight-lifting-workout/add-rep/add-rep.component';
-import { CardioDetailsComponent } from '@src/app/navigation/profile/cardio-details/cardio-details.component';
-import { WeightliftingDetailsComponent } from '@src/app/navigation/profile/weightlifting-details/weightlifting-details.component';
+
+import { CardioDetailsComponent } from '@src/app/navigation/profile/profile-workout-details/cardio-details/cardio-details.component';
+import { WeightliftingDetailsComponent } from '@src/app/navigation/profile/profile-workout-details/weightlifting-details/weightlifting-details.component';
 import { ExtremeWorkoutComponent } from '@src/app/current-workout/extreme-workout/extreme-workout.component';
 import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout/add-extreme-rep/add-extreme-rep.component';
 import { EditProfileComponent } from '@src/app/profile-info/edit-profile/edit-profile.component';
 import { GoalsComponent } from '@src/app/profile-info/goals/goals.component';
 import { SetGoalComponent } from '@src/app/profile-info/goals/set-goal/set-goal.component';
+import { ProfileWorkoutDetailsComponent } from './navigation/profile/profile-workout-details/profile-workout-details.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
@@ -45,8 +47,9 @@ import { SetGoalComponent } from '@src/app/profile-info/goals/set-goal/set-goal.
       WorkoutsComponent,
         WorkoutHistoryComponent,
       ProfileComponent,
-        CardioDetailsComponent,
-        WeightliftingDetailsComponent,
+        ProfileWorkoutDetailsComponent,
+          CardioDetailsComponent,
+          WeightliftingDetailsComponent,
     
     StartWorkoutComponent,
     

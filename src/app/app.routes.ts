@@ -5,8 +5,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './navigation/home/home.component';
 import { ClubsComponent } from './navigation/clubs/clubs.component';
 import { ProfileComponent } from './navigation/profile/profile.component';
-import { CardioDetailsComponent } from './navigation/profile/cardio-details/cardio-details.component';
-import { WeightliftingDetailsComponent } from './navigation/profile/weightlifting-details/weightlifting-details.component';
+import { CardioDetailsComponent } from './navigation/profile/profile-workout-details/cardio-details/cardio-details.component';
+import { WeightliftingDetailsComponent } from './navigation/profile/profile-workout-details/weightlifting-details/weightlifting-details.component';
 import { SearchComponent } from './navigation/search/search.component';
 import { WorkoutsComponent } from './navigation/workouts/workouts.component';
 import { WorkoutHistoryComponent } from './navigation/workouts/workout-history/workout-history.component';
@@ -21,6 +21,7 @@ import { AddExtremeRepComponent } from './current-workout/extreme-workout/add-ex
 import { EditProfileComponent } from './profile-info/edit-profile/edit-profile.component';
 import { GoalsComponent } from './profile-info/goals/goals.component';
 import { SetGoalComponent } from './profile-info/goals/set-goal/set-goal.component';
+import { ProfileWorkoutDetailsComponent } from './navigation/profile/profile-workout-details/profile-workout-details.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "goals", pathMatch: "full" },
@@ -28,7 +29,6 @@ export const routes: Routes = [
   {
     path: "navigation", component: NavigationComponent,
     children: [
-      { path: "", component: HomeComponent, outlet: 'home' },
       { path: "", component: SearchComponent, outlet: 'search' },
       { path: "", component: ClubsComponent, outlet: 'clubs' },
       {
@@ -40,8 +40,7 @@ export const routes: Routes = [
       {
         path: "", component: ProfileComponent, outlet: 'profile',
         children: [
-          { path: "", component: CardioDetailsComponent, outlet: 'cardioDetails' },
-          { path: "", component: WeightliftingDetailsComponent, outlet: 'weightliftingDetails' },
+          { path: "profileWorkoutDetails", component: ProfileWorkoutDetailsComponent},
         ]
       },
     ]
@@ -69,11 +68,6 @@ export const routes: Routes = [
 
   //temporary vvv
   { path: "search", component: SearchComponent },
-  {
-    path: "profile", component: ProfileComponent,
-    children: [
-      { path: "", component: CardioDetailsComponent, outlet: 'cardioDetails' },
-      { path: "", component: WeightliftingDetailsComponent, outlet: 'weightliftingDetails' },
-    ]
-  },
+  {path: "profile", component: ProfileComponent},
+  { path: "profileWorkoutDetails", component: ProfileWorkoutDetailsComponent},
 ];

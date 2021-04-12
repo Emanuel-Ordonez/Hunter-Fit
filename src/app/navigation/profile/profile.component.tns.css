@@ -3,6 +3,8 @@
 Button {
     color: black;
     background-color: white;
+    width: 250px;
+    height: 70%;
 }
 
 .profile-info-stacklayout {
@@ -22,9 +24,12 @@ Button {
 .profile-username {
     color: white;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .personal-goal {
     color: white;
     font-weight: bold;
+    height: 100%;
+    width: 100%;
 }

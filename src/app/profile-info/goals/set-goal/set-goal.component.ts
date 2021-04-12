@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-set-goal',
-  templateUrl: './set-goal.component.html',
-  styleUrls: ['./set-goal.component.css']
+  templateUrl: './set-goal.component.tns.html',
+  styleUrls: ['./set-goal.component.tns.css']
 })
 export class SetGoalComponent implements OnInit {
 

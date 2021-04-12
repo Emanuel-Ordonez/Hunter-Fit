@@ -15,8 +15,8 @@ import { ClubsComponent } from '@src/app/navigation/clubs/clubs.component';
 import { WorkoutsComponent } from '@src/app/navigation/workouts/workouts.component';
   import { WorkoutHistoryComponent } from '@src/app/navigation/workouts/workout-history/workout-history.component';
 import { ProfileComponent } from '@src/app/navigation/profile/profile.component';
-  import { CardioDetailsComponent } from '@src/app/navigation/profile/cardio-details/cardio-details.component';
-  import { WeightliftingDetailsComponent } from '@src/app/navigation/profile/weightlifting-details/weightlifting-details.component';
+  import { CardioDetailsComponent } from '@src/app/navigation/profile/profile-workout-details/cardio-details/cardio-details.component';
+  import { WeightliftingDetailsComponent } from '@src/app/navigation/profile/profile-workout-details/weightlifting-details/weightlifting-details.component';
 
 //StartWorkoutsComponent components
 import { StartWorkoutComponent } from '@src/app/start-workout/start-workout.component';
@@ -28,6 +28,7 @@ import { AddExtremeRepComponent } from '@src/app/current-workout/extreme-workout
 import { EditProfileComponent } from '@src/app/profile-info/edit-profile/edit-profile.component';
 import { GoalsComponent } from '@src/app/profile-info/goals/goals.component';
 import { SetGoalComponent } from '@src/app/profile-info/goals/set-goal/set-goal.component';
+import { ProfileWorkoutDetailsComponent } from './navigation/profile/profile-workout-details/profile-workout-details.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,9 @@ import { SetGoalComponent } from '@src/app/profile-info/goals/set-goal/set-goal.
       WorkoutsComponent,
         WorkoutHistoryComponent,
       ProfileComponent,
-        CardioDetailsComponent,
-        WeightliftingDetailsComponent,
+        ProfileWorkoutDetailsComponent,
+          CardioDetailsComponent,
+          WeightliftingDetailsComponent,
     
     StartWorkoutComponent,
     CardioWorkoutComponent,

@@ -1,0 +1,23 @@
+<StackLayout class="page">
+    <Tabs class="profile-tabs">
+        <TabStrip>
+            <TabStripItem>
+                <Label text="Cardio"></Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="Weightlifting"></Label>
+            </TabStripItem>
+        </TabStrip>
+
+        <TabContentItem>
+            <GridLayout>
+                <app-cardio-details></app-cardio-details>
+            </GridLayout>
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <app-weightlifting-details></app-weightlifting-details>
+            </GridLayout>
+        </TabContentItem>
+    </Tabs>
+</StackLayout>

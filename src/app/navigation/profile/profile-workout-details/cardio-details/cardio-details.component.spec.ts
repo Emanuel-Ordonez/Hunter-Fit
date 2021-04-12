@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardioDetailsComponent } from '@src/app/navigation/profile/cardio-details/cardio-details.component';
+import { CardioDetailsComponent } from '@src/app/navigation/profile/profile-workout-details/cardio-details/cardio-details.component';
 
 describe('CardioDetailsComponent', () => {
   let component: CardioDetailsComponent;
