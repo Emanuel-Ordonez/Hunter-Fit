@@ -1,11 +1,22 @@
-<StackLayout>
-    <Label text="What type of goal would you like to set?"></Label>
+<ActionBar title="Set Goal"></ActionBar>
+
+<GridLayout rows="*,auto,10,auto,50,auto,10,auto,20,auto,*" columns="10,*,10">
+    <Label row="1" col="1" text="What type of goal would you like to set?"></Label>
+
+    <GridLayout row="3" col="1" columns="*,80,5,80,5,80,*">
+        <Button row="0" col="1" text="Daily" (tap)="selectGoalType($event)"></Button>
+        <Button row="0" col="3" text="Monthly" (tap)="selectGoalType($event)"></Button>
+        <Button row="0" col="5" text="Yearly" (tap)="selectGoalType($event)"></Button>
+    </GridLayout> 
 
     <!-- add radio buttons for Daily, Monthly, Yearly -->
 
-    <Label text="Enter Goal: "></Label>
-    <TextView class="goalText" hint="I want to lose 15 pounds this month" text="tvtext" (textChange)="onTextChange($event)">
-    </TextView>
-    <Button text="Enter" class="enterGoalButton"></Button>
+    <Label row="5" col="1" text="What is your goal?"></Label>
+    <TextView row="7" col="1" class="goals-text" hint="I want to lose 15 pounds this month" [text]="tvtext" (textChange)="onTextChange($event)"></TextView>
+    
+    <GridLayout row="9" col="1" columns="*,auto,5,auto,*">
+        <Button row="0" col="1" class="cancelGoalButton" text="Cancel" (tap)="cancelSetGoal()"></Button>
+        <Button row="0" col="3" text="Set Goal"></Button>
+    </GridLayout>
 
-</StackLayout>
+</GridLayout>

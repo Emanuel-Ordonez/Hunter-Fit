@@ -20,7 +20,11 @@ export class GoalsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public goBack(): void {
+  public goBack(){
     this.routerExtensions.back();
+  }
+
+  public goSetGoal(){
+    this.routerExtensions.navigate(["/setGoal"]);
   }
 }

@@ -1,51 +1,45 @@
 <ActionBar title="My Goals"></ActionBar>
 
-<StackLayout>
+<GridLayout rows="auto,*,10,auto,*,10,auto,*,auto" columns="*">
+    <Label class="table-section-header" row="0" col="0" text=" Daily Goals:"></Label>
+    <ScrollView class="table-section" row="1" col="0">
+        <StackLayout>
+            <GridLayout class="table-section" rows="auto" columns="auto,*,auto">
+                <Label col="0" text="Date Goes here"></Label>
+                <TextView col="1" editable="false" text="To have more than 40 reps completed"></TextView>
+                <Button col="2" text="Goal Met"></Button>
+            </GridLayout>
+            <GridLayout class="table-section" rows="auto" columns="auto,*,auto">
+                <Label col="0" text="Date Goes here"></Label>
+                <TextView col="1" editable="false" text="To lift more than 300 pounds total"></TextView>
+                <Button col="2" text="Goal Met"></Button>
+            </GridLayout>
+            <GridLayout class="table-section" rows="auto" columns="auto,*,auto">
+                <Label col="0" text="Date Goes here"></Label>
+                <TextView col="1" editable="false" text="To run more than 2 miles"></TextView>
+                <Button col="2" text="Goal Met"></Button>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
 
-    <GridLayout rows="auto,*,auto,*,auto,*,auto" columns="*">
-        <Label class="table-section" row="0" col="0" text=" Daily Goals:"></Label>
-        <GridLayout row="1" rows="*,*" columns="*,*">
-            <StackLayout class="table-section" col="0" rowSpan="2">
-                <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text=""></Label>
-            </StackLayout>
+    <Label class="table-section-header" row="3" col="0" text=" Monthly Goals:"></Label>
+    <ScrollView class="table-section" row="4" col="0">
+        <StackLayout>
+            <GridLayout rows="auto" columns="*,*,*">
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
 
-            <StackLayout class="table-section" col="1" rowSpan="2">
-                <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text=""></Label>
-            </StackLayout>
-        </GridLayout>
+    <Label class="table-section-header" row="6" col="0" text=" Yearly Goals:"></Label>
+    <ScrollView class="table-section" row="7" col="0">
+        <StackLayout>
+            <GridLayout rows="auto" columns="*,*,*">
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
 
-
-
-        <Label class="table-section" row="2" col="0" text=" Monthly Goals:"></Label>
-        <GridLayout row="3" rows="*,*" columns="*,*">
-            <StackLayout class="table-section" col="0" rowSpan="2">
-                <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text=""></Label>
-            </StackLayout>
-
-            <StackLayout class="table-section" col="1" rowSpan="2">
-                <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text=""></Label>
-            </StackLayout>
-        </GridLayout>
-
-
-
-        <Label class="table-section" row="4" col="0" text=" Yearly Goals:"></Label>
-        <GridLayout row="5" rows="*,*" columns="*,*">
-            <StackLayout class="table-section" col="0" rowSpan="2">
-                <Label row="0" col="0" text=" "></Label>
-                <Label class="center-Text" row="1" col="0" text=""></Label>
-            </StackLayout>
-
-            <StackLayout class="table-section" col="1" rowSpan="2">
-                <Label row="0" col="0" text=""></Label>
-                <Label class="center-Text" row="1" col="0" text=""></Label>
-            </StackLayout>
-        </GridLayout>
-
-        <Button row="6" col="0" colSpan="2" class="createGoalButton" text="Set Goal"></Button>
+    <GridLayout row="8" col="0" columns="10,*,10,*,10">
+        <Button row="0" col="1" class="backGoal" text="Back" (tap)="goBack()"></Button>
+        <Button row="0" col="3" colSpan="2" text="Set Goal" (tap)="goSetGoal()"></Button>
     </GridLayout>
-</StackLayout>
+</GridLayout>
