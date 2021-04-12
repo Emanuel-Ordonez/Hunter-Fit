@@ -1,9 +1,9 @@
 <ActionBar title="Edit Profile"></ActionBar>
 
 <StackLayout>
-    <GridLayout rows="150,120,auto" columns="*,auto,*">
-        <image row="1" col="1" src="~/profile-info/edit-profile/profileImage.png" alt="" loadMode="async" stretch="aspectFit"></image>
-        <Label row="2" col="1" class="center-Text edit-profile-text" text="change image"></Label>
+    <GridLayout rows="150,120,auto" columns="10,*,10">
+        <Image row="1" col="1" src="../profileImage.png" alt="" class="profile-pic" stretch="aspectFit"></Image>
+        <Label row="2" col="1" class="center-Text change-image-text" text="Change Profile Picture" (tap)="changeProfilePic()"></Label>
     </GridLayout>
     <GridLayout rows="auto,auto,20,auto" columns="10,*,10">
         <GridLayout row="0" col="1" rows="50" columns="auto,*">

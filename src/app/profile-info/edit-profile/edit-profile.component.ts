@@ -37,11 +37,16 @@ export class EditProfileComponent implements OnInit {
     //In future, run some functionality to make sure username is not already taken
     if(this.username){
       setString("username", this.username);
-    }
-    if(this.personalMotto){
       setString("personalMotto", this.personalMotto);
+      this.routerExtensions.back();
     }
-    this.routerExtensions.back();
+    else{
+      alert("Do not leave Username blank");
+    }
+  }
+
+  public changeProfilePic(){
+    alert("Change Profile Pic");
   }
 
 }

@@ -1,5 +1,15 @@
 /* Add mobile styles for the component here.  */
 
+.profile-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.change-image-text {
+    font-size: 18px;
+    color: #0645AD;
+}
+
 .edit-profile-text {
     font-size: 18px;
     color: black;
