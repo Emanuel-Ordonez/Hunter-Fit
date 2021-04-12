@@ -27,7 +27,6 @@ export class SetGoalComponent implements OnInit {
   }
 
   public onTextChange(arg){
-
   }
   
   public cancelSetGoal(){
