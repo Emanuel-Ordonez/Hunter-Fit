@@ -1,18 +1,19 @@
 <ActionBar title="Edit Profile"></ActionBar>
 
 <StackLayout>
-    <GridLayout rows="200,auto,auto" columns="*,auto,*">
+    <GridLayout rows="150,120,auto" columns="*,auto,*">
+        <image row="1" col="1" src="~/profile-info/edit-profile/profileImage.png" alt="" loadMode="async" stretch="aspectFit"></image>
         <Label row="2" col="1" class="center-Text edit-profile-text" text="change image"></Label>
     </GridLayout>
     <GridLayout rows="auto,auto,20,auto" columns="10,*,10">
         <GridLayout row="0" col="1" rows="50" columns="auto,*">
             <Label row="0" col="0" class="edit-profile-text" text="Username:"></Label>
-            <TextField row="0" col="1" class="edit-profile-text" hint="Enter Username" (textChange)="onUsernameChange($event)"></TextField>
+            <TextField row="0" col="1" class="edit-profile-text" hint="Enter Username" text="{{ username }}" (textChange)="onUsernameChange($event)"></TextField>
         </GridLayout>
 
         <GridLayout row="1" col="1" rows="50" columns="auto,*">
             <Label row="0" col="0" class="edit-profile-text" text="Motto:"></Label>
-            <TextField row="0" col="1" class="edit-profile-text" hint="Enter Motto" (textChange)="onPersonalMottoChange($event)"></TextField>
+            <TextField row="0" col="1" class="edit-profile-text" hint="Enter Motto" text="{{ personalMotto }}" (textChange)="onPersonalMottoChange($event)"></TextField>
         </GridLayout>
 
         <Button row="3" col="1" colSpan="2" text="Done" (tap)="saveChanges($event)" ></Button>

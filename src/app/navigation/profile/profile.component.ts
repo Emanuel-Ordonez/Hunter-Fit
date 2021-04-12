@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
   }
 
   public navigateToGoals(){
-    this.routerExtensions.navigate(['/goal']);
+    this.routerExtensions.navigate(['/goals']);
   }
 
 }

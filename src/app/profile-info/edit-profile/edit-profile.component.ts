@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
 import { EventData, TextView } from '@nativescript/core';
-import { setString } from '@nativescript/core/application-settings';
+import { getString, setString } from '@nativescript/core/application-settings';
 
 @Component({
   selector: 'app-edit-profile',
@@ -9,12 +9,18 @@ import { setString } from '@nativescript/core/application-settings';
   styleUrls: ['./edit-profile.component.tns.css']
 })
 export class EditProfileComponent implements OnInit {
-  private username: string;
-  private personalMotto: string;
+  public username: string;
+  public personalMotto: string;
 
   constructor(private routerExtensions: RouterExtensions) { }
 
   ngOnInit(): void {
+    this.initiateValues()
+  }
+
+  private initiateValues(){
+    this.username = getString("username");
+    this.personalMotto = getString("personalMotto");
   }
 
   public onUsernameChange(args: EventData){
