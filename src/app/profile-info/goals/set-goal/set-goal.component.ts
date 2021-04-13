@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterExtensions } from '@nativescript/angular';
+import { RouterExtensions, TextView } from '@nativescript/angular';
+import { EventData } from '@nativescript/core';
+import { GoalsService } from '@src/app/services/goals/goals.service';
 
 @Component({
   selector: 'app-set-goal',
@@ -7,16 +9,17 @@ import { RouterExtensions } from '@nativescript/angular';
   styleUrls: ['./set-goal.component.tns.css']
 })
 export class SetGoalComponent implements OnInit {
-  public goalType: any;
-  public prevGoalType: any;
+  private goalType: any;
+  private prevGoalType: any;
+  private tvText: string;
 
-  constructor(private routerExtensions: RouterExtensions) { }
+  constructor(private routerExtensions: RouterExtensions, private goalService: GoalsService) { }
 
   ngOnInit(): void {
   }
 
   public selectGoalType(goalTypeButton: any) {
-    this.goalType = goalTypeButton.object.text;
+    this.goalType = goalTypeButton.object.text as string;
 
     goalTypeButton.object.backgroundColor = "#787774";
 
@@ -26,10 +29,30 @@ export class SetGoalComponent implements OnInit {
     this.prevGoalType = goalTypeButton;
   }
 
-  public onTextChange(arg){
+  public onTextChange(arg: EventData){
+    const temp = arg.object as TextView;
+    this.tvText = temp.text;
   }
   
   public cancelSetGoal(){
     this.routerExtensions.back();
+  }
+
+  public setGoal(){
+    if(this.goalType == "Daily"){
+      this.goalService.saveDailyGoal(this.tvText);
+      this.routerExtensions.back();
+    }
+    else if(this.goalType == "Monthly"){
+      this.goalService.saveMonthlyGoal(this.tvText);
+      this.routerExtensions.back();
+    }
+    else if(this.goalType == "Yearly"){
+      this.goalService.saveYearlyGoal(this.tvText);
+      this.routerExtensions.back();
+    }
+    else{
+      alert("Must selected goal type!");
+    }
   }
 }

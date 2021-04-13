@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
+import { GoalsService } from '@src/app/services/goals/goals.service';
+import { IGoal } from '@src/app/services/goals/goalTypes/IGoal';
 
 @Component({
   selector: 'app-goals',
@@ -8,16 +10,19 @@ import { RouterExtensions } from '@nativescript/angular';
 })
 export class GoalsComponent implements OnInit {
 
-  public allGoals: String[] = [];
+  public allDailyGoals: IGoal[] = [];
+  public allMonthlyGoals: IGoal[] = [];
+  public allYearlyGoals: IGoal[] = [];
 
-  public dailyGoal: string;
-  public monthlyGoal: string;
-  public yearlyGoal: string;
-  public goalDate: number;
-
-  constructor(private routerExtensions: RouterExtensions) { }
+  constructor(private routerExtensions: RouterExtensions, private goalService: GoalsService) { }
 
   ngOnInit(): void {
+  }
+
+  public setValues(){
+    this.allDailyGoals = this.goalService.getDailyGoals();
+    this.allMonthlyGoals = this.goalService.getMonthlyGoals();
+    this.allYearlyGoals = this.goalService.getYearlyGoals();
   }
 
   public goBack(){

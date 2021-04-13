@@ -16,6 +16,8 @@
 .table-section-header {
     font-size: large;
     font-weight: bold;
+    background-color: #00658A;
+    color: white;
 }
 
 .myGoalsText {
@@ -25,4 +27,13 @@
     text-align: center;
     font-size: large;
     font-weight: bold;
+}
+
+.goal-details {
+    height: 100px;
+}
+
+.goal-met-button {
+    width: 100%;
+    background-color: #499c5c;
 }
