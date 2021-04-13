@@ -31,6 +31,8 @@
 
 .goal-details {
     height: 100px;
+    width: 100%;
+    background-color: #ddded9;
 }
 
 .goal-met-button {

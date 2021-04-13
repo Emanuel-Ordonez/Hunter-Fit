@@ -4,10 +4,10 @@
     <Label class="table-section-header" row="0" col="0" text=" Daily Goals:"></Label>
     <ScrollView class="table-section" row="1" col="0">
         <StackLayout>
-            <GridLayout *ngFor="let goal of allDailyGoals" class="table-section" rows="auto,auto" columns="10,*,100,10">
+            <GridLayout *ngFor="let goal of allDailyGoals" class="table-section" rows="auto,auto" columns="10,*,10,100,10">
                 <Label row="0" col="1" [text]="goal.goalDate.getFormattedDate()"></Label>
                 <TextView row="1" col="1" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
-                <Button row="0" col="2" rowSpan="2" class="goal-met-button" text="Goal Met"></Button>
+                <Button row="0" col="3" rowSpan="2" class="goal-met-button" text="Goal Met"></Button>
             </GridLayout>
         </StackLayout>
     </ScrollView>
@@ -15,10 +15,10 @@
     <Label class="table-section-header" row="2" col="0" text=" Monthly Goals:"></Label>
     <ScrollView class="table-section" row="3" col="0">
         <StackLayout>
-            <GridLayout *ngFor="let goal of allMonthlyGoals" class="table-section" rows="auto,auto" columns="10,*,100,10">
+            <GridLayout *ngFor="let goal of allMonthlyGoals" class="table-section" rows="auto,auto" columns="10,*,10,100,10">
                 <Label row="0" col="1" [text]="goal.goalDate.getFormattedDate()"></Label>
                 <TextView row="1" col="1" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
-                <Button row="0" col="2" rowSpan="2" class="goal-met-button" text="Goal Met"></Button>
+                <Button row="0" col="3" rowSpan="2" class="goal-met-button" text="Goal Met"></Button>
             </GridLayout>
         </StackLayout>
     </ScrollView>
@@ -26,10 +26,10 @@
     <Label class="table-section-header" row="4" col="0" text=" Yearly Goals:"></Label>
     <ScrollView class="table-section" row="5" col="0">
         <StackLayout>
-            <GridLayout *ngFor="let goal of allYearlyGoals" class="table-section" rows="auto,auto" columns="10,*,100,10">
+            <GridLayout *ngFor="let goal of allYearlyGoals" class="table-section" rows="auto,auto" columns="10,*,10,100,10">
                 <Label row="0" col="1" [text]="goal.goalDate.getFormattedDate()"></Label>
                 <TextView row="1" col="1" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
-                <Button row="0" col="2" rowSpan="2" class="goal-met-button" text="Goal Met"></Button>
+                <Button row="0" col="3" rowSpan="2" class="goal-met-button" text="Goal Met"></Button>
             </GridLayout>
         </StackLayout>
     </ScrollView>
