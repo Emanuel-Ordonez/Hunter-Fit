@@ -24,7 +24,7 @@ import { SetGoalComponent } from './profile-info/goals/set-goal/set-goal.compone
 import { ProfileWorkoutDetailsComponent } from './navigation/profile/profile-workout-details/profile-workout-details.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "goals", pathMatch: "full" },
+  { path: "", redirectTo: "navigation", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   {
     path: "navigation", component: NavigationComponent,
