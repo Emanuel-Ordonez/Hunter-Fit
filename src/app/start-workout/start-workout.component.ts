@@ -35,29 +35,41 @@ export class StartWorkoutComponent {
   public selectWorkoutType(workoutTypeButton: any) {
     this.workoutTypeClass = workoutTypeButton.object.class;
     this.workoutType = workoutTypeButton.object.text;
-    setString("workoutType", this.workoutType);
 
     workoutTypeButton.object.backgroundColor = "#787774";
 
     if (this.prevWorkoutType) {
       this.prevWorkoutType.object.backgroundColor = "#00658A";
+      if(this.prevWorkoutType.object.text == this.workoutType){
+        this.workoutTypeClass = null;
+        this.workoutType = null;
+        this.prevWorkoutType = null;
+      }
+      else{
+        this.prevWorkoutType = workoutTypeButton;
+      }
     }
-    this.prevWorkoutType = workoutTypeButton;
+    else{
+      this.prevWorkoutType = workoutTypeButton;
+    }
   }
 
   public callCurrentWorkout() {
     switch (this.workoutTypeClass) {
       case 'cardioWorkoutButton':
+        setString("workoutType", this.workoutType);
         this.routerExtensions.navigate(['/cardioWorkout']);
         this.status = true;
         break;
 
       case 'wlWorkoutButton':
+        setString("workoutType", this.workoutType);
         this.routerExtensions.navigate(['/weightLiftingWorkout']);
         this.status = true;
         break;
         
       case 'extremeWorkoutButton':
+        setString("workoutType", this.workoutType);
         this.routerExtensions.navigate(['/extremeWorkout']);
         this.status = true;
         break;

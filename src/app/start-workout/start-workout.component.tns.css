@@ -4,63 +4,26 @@
     background-color: gainsboro;
     color: #C00000;
     font-weight: bold;
-    width: 40%;
+    width: 150ex;
 }
 
 .start-button {
     font-weight: bold;
-    width: 40%;
-}
-
-.stop-button {
-    font-weight: bold;
-    width: 40%;
-    background-color: #C00000
-}
-
-.start-button:active {
-    background-color: orange;
-}
-
-.cardio-flexbox {
-    padding-left: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 2%;
-    padding-bottom: 7%;
-    border-radius: 25px;
-}
-
-.middle-flexbox {
-    padding-left: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 7%;
+    width: 150ex;
 }
 
 .chooseWorkoutLabel {
-    margin: 2% auto 2% auto;
     font-size: 25%;
     text-align: center;
     text-decoration: underline;
 }
 
-.timeLabel,
-.lastWorkoutLabel {
-    margin-left: 3%;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    font-size: 20%;
-    padding-top: 15%;
+.workoutLabel {
+    font-size: 20ex;
 }
 
-.cardioLabel,
-.otherLabel {
-    margin-left: 3%;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    font-size: 20%;
-    padding-top: 15%;
+.cardioWorkoutButton,
+.wlWorkoutButton,
+.extremeWorkoutButton {
+    width: 140ex;
 }

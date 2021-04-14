@@ -20,13 +20,21 @@ export class SetGoalComponent implements OnInit {
 
   public selectGoalType(goalTypeButton: any) {
     this.goalType = goalTypeButton.object.text as string;
-
     goalTypeButton.object.backgroundColor = "#787774";
 
     if (this.prevGoalType) {
       this.prevGoalType.object.backgroundColor = "#00658A";
+      if(this.prevGoalType.object.text == this.goalType){
+        this.goalType = null;
+        this.prevGoalType = null;
+      }
+      else{
+        this.prevGoalType = goalTypeButton;
+      }
     }
-    this.prevGoalType = goalTypeButton;
+    else{
+      this.prevGoalType = goalTypeButton;
+    }
   }
 
   public onTextChange(arg: EventData){
@@ -39,20 +47,28 @@ export class SetGoalComponent implements OnInit {
   }
 
   public setGoal(){
-    if(this.goalType == "Daily"){
-      this.goalService.saveDailyGoal(this.tvText);
-      this.routerExtensions.back();
+    if(!this.goalType){
+      alert("Must selected goal type!");
     }
-    else if(this.goalType == "Monthly"){
-      this.goalService.saveMonthlyGoal(this.tvText);
-      this.routerExtensions.back();
-    }
-    else if(this.goalType == "Yearly"){
-      this.goalService.saveYearlyGoal(this.tvText);
-      this.routerExtensions.back();
+    else if(!this.tvText){
+      alert("Must enter goal!");
     }
     else{
-      alert("Must selected goal type!");
+      if(this.goalType == "Daily"){
+        this.goalService.saveDailyGoal(this.tvText);
+        this.routerExtensions.back();
+      }
+      else if(this.goalType == "Monthly"){
+        this.goalService.saveMonthlyGoal(this.tvText);
+        this.routerExtensions.back();
+      }
+      else if(this.goalType == "Yearly"){
+        this.goalService.saveYearlyGoal(this.tvText);
+        this.routerExtensions.back();
+      }
+      else{
+        alert("Must selected goal type!");
+      }
     }
   }
 }

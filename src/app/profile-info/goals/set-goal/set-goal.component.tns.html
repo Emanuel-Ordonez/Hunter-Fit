@@ -12,7 +12,7 @@
     <!-- add radio buttons for Daily, Monthly, Yearly -->
 
     <Label row="5" col="1" text="What is your goal?"></Label>
-    <TextView row="7" col="1" class="goals-text" hint="I want to lose 15 pounds this month" (textChange)="onTextChange($event)"></TextView>
+    <TextView row="7" col="1" class="goals-text" hint="Enter goal here..." (textChange)="onTextChange($event)"></TextView>
     
     <GridLayout row="9" col="1" columns="*,auto,5,auto,*">
         <Button row="0" col="1" class="cancelGoalButton" text="Cancel" (tap)="cancelSetGoal()"></Button>
