@@ -1,6 +1,7 @@
 import { DateService } from "../../date/date.service";
 
 export interface IGoal {
-    goalDate: DateService;
+    goalSetDate: DateService;
+    goalMetDate: DateService;
     goalDetails: string;
 }

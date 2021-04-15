@@ -6,9 +6,9 @@
         <StackLayout>
             <GridLayout *ngFor="let goal of getAllCompletedDailyGoals()" class="table-section" rows="auto,auto" columns="10,auto,auto,*,auto,auto,10">
                 <Label row="0" col="1" text="Date Set: "></Label>
-                <Label row="0" col="2" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <Label row="0" col="2" [text]="goal.goalSetDate.getFormattedDate()"></Label>
                 <Label row="0" col="4" text="Date Met: "></Label>
-                <Label row="0" col="5" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <Label row="0" col="5" [text]="goal.goalMetDate.getFormattedDate()"></Label>
                 <TextView row="1" col="1" colSpan="5" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
             </GridLayout>
         </StackLayout>
@@ -19,9 +19,9 @@
         <StackLayout>
             <GridLayout *ngFor="let goal of getAllCompletedMonthlyGoals()" class="table-section" rows="auto,auto" columns="10,auto,auto,*,auto,auto,10">
                 <Label row="0" col="1" text="Date Set: "></Label>
-                <Label row="0" col="2" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <Label row="0" col="2" [text]="goal.goalSetDate.getFormattedDate()"></Label>
                 <Label row="0" col="4" text="Date Met: "></Label>
-                <Label row="0" col="5" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <Label row="0" col="5" [text]="goal.goalMetDate.getFormattedDate()"></Label>
                 <TextView row="1" col="1" colSpan="5" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
             </GridLayout>
         </StackLayout>
@@ -32,9 +32,9 @@
         <StackLayout>
             <GridLayout *ngFor="let goal of getAllCompletedYearlyGoals()" class="table-section" rows="auto,auto" columns="10,auto,auto,*,auto,auto,10">
                 <Label row="0" col="1" text="Date Set: "></Label>
-                <Label row="0" col="2" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <Label row="0" col="2" [text]="goal.goalSetDate.getFormattedDate()"></Label>
                 <Label row="0" col="4" text="Date Met: "></Label>
-                <Label row="0" col="5" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <Label row="0" col="5" [text]="goal.goalMetDate.getFormattedDate()"></Label>
                 <TextView row="1" col="1" colSpan="5" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
             </GridLayout>
         </StackLayout>

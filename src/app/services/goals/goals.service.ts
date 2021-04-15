@@ -19,7 +19,7 @@ export class GoalsService {
     // construct goal object:
     const type: string = "Daily";
     let todaysDate = new DateService();
-    const goalToSave : DailyGoal = { goalDType: type, goalDetails: goal, goalDate: todaysDate};
+    const goalToSave : DailyGoal = { goalDType: type, goalDetails: goal, goalSetDate: todaysDate, goalMetDate: null };
     // store goal object:
     this.allGoals.push(goalToSave);
   }
@@ -28,7 +28,7 @@ export class GoalsService {
     // construct goal object:
     const type: string = "Monthly";
     let todaysDate = new DateService();
-    const goalToSave : MonthlyGoal = { goalMType: type, goalDetails: goal, goalDate: todaysDate};
+    const goalToSave : MonthlyGoal = { goalMType: type, goalDetails: goal, goalSetDate: todaysDate, goalMetDate: null };
     // store goal object:
     this.allGoals.push(goalToSave);
   }
@@ -37,7 +37,7 @@ export class GoalsService {
     // construct goal object:
     const type: string = "Yearly";
     let todaysDate = new DateService();
-    const goalToSave : YearlyGoal = { goalYType: type, goalDetails: goal, goalDate: todaysDate};
+    const goalToSave : YearlyGoal = { goalYType: type, goalDetails: goal, goalSetDate: todaysDate, goalMetDate: null };
     // store goal object:
     this.allGoals.push(goalToSave);
   }
@@ -65,6 +65,7 @@ export class GoalsService {
 
   completeGoal(completeGoal: IGoal){
     this.allGoals = this.allGoals.filter( goal => goal !== completeGoal);
+    completeGoal.goalMetDate = new DateService();
     this.allCompletedGoals.push(completeGoal);
   }
 
