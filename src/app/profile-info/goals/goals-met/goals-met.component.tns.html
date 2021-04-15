@@ -1,0 +1,36 @@
+<ActionBar title="Goals Met"></ActionBar>
+
+<GridLayout rows="auto,*,auto,*,auto,*,auto" columns="*">
+    <Label class="table-section-header" row="0" col="0" text=" Daily Goals Met:"></Label>
+    <ScrollView class="table-section" row="1" col="0">
+        <StackLayout>
+            <GridLayout *ngFor="let goal of getAllCompletedDailyGoals()" class="table-section" rows="auto,auto" columns="10,auto,*,10,100,10">
+                <Label row="0" col="1" text="Date Met: "></Label>
+                <Label row="0" col="2" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <TextView row="1" col="1" colSpan="2" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+
+    <Label class="table-section-header" row="2" col="0" text=" Monthly Goals Met:"></Label>
+    <ScrollView class="table-section" row="3" col="0">
+        <StackLayout>
+            <GridLayout *ngFor="let goal of getAllCompletedMonthlyGoals()" class="table-section" rows="auto,auto" columns="10,auto,*,10,100,10">
+                <Label row="0" col="1" text="Date Set: "></Label>
+                <Label row="0" col="2" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <TextView row="1" col="1" colSpan="2" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+
+    <Label class="table-section-header" row="4" col="0" text=" Yearly Goals Met:"></Label>
+    <ScrollView class="table-section" row="5" col="0">
+        <StackLayout>
+            <GridLayout *ngFor="let goal of getAllCompletedYearlyGoals()" class="table-section" rows="auto,auto" columns="10,auto,*,10,100,10">
+                <Label row="0" col="1" text="Date Set: "></Label>
+                <Label row="0" col="2" [text]="goal.goalDate.getFormattedDate()"></Label>
+                <TextView row="1" col="1" colSpan="2" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

@@ -22,11 +22,11 @@ export class ProfileComponent implements OnInit {
     this.personalMotto = getString("personalMotto");
   }
 
-  public navigateToEditProfile(){
+  public goToEditProfile(){
     this.routerExtensions.navigate(['/editProfile']);
   }
 
-  public navigateToGoals(){
+  public goToGoals(){
     this.routerExtensions.navigate(['/goals']);
   }
 

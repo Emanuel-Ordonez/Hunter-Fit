@@ -10,26 +10,36 @@ import { IGoal } from '@src/app/services/goals/goalTypes/IGoal';
 })
 export class GoalsComponent implements OnInit {
 
-  public allDailyGoals: IGoal[] = [];
+  /*public allDailyGoals: IGoal[] = [];
   public allMonthlyGoals: IGoal[] = [];
-  public allYearlyGoals: IGoal[] = [];
+  public allYearlyGoals: IGoal[] = [];*/
 
   constructor(private routerExtensions: RouterExtensions, private goalService: GoalsService) { }
 
   ngOnInit(): void {
   }
 
-  public setValues(){
-    this.allDailyGoals = this.goalService.getDailyGoals();
-    this.allMonthlyGoals = this.goalService.getMonthlyGoals();
-    this.allYearlyGoals = this.goalService.getYearlyGoals();
+  public getAllDailyGoals(){
+    return this.goalService.getDailyGoals();
   }
 
-  public goBack(){
-    this.routerExtensions.back();
+  public getAllMonthlyGoals(){
+    return this.goalService.getMonthlyGoals();
+  }
+
+  public getAllYearlyGoals(){
+    return this.goalService.getYearlyGoals();
+  }
+
+  public goToGoalsMet(){
+    this.routerExtensions.navigate(["/goalsMet"]);
   }
 
   public goSetGoal(){
     this.routerExtensions.navigate(["/setGoal"]);
+  }
+
+  public goalMet(goal: IGoal){
+    this.goalService.completeGoal(goal);
   }
 }

@@ -48,10 +48,10 @@ export class SetGoalComponent implements OnInit {
 
   public setGoal(){
     if(!this.goalType){
-      alert("Must selected goal type!");
+      alert("No goal type selected!");
     }
     else if(!this.tvText){
-      alert("Must enter goal!");
+      alert("No goal details provided!");
     }
     else{
       if(this.goalType == "Daily"){
@@ -67,7 +67,7 @@ export class SetGoalComponent implements OnInit {
         this.routerExtensions.back();
       }
       else{
-        alert("Must selected goal type!");
+        alert("No goal type selected!");
       }
     }
   }

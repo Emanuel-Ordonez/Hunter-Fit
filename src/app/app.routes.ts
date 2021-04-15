@@ -22,9 +22,10 @@ import { EditProfileComponent } from './profile-info/edit-profile/edit-profile.c
 import { GoalsComponent } from './profile-info/goals/goals.component';
 import { SetGoalComponent } from './profile-info/goals/set-goal/set-goal.component';
 import { ProfileWorkoutDetailsComponent } from './navigation/profile/profile-workout-details/profile-workout-details.component';
+import { GoalsMetComponent } from './profile-info/goals/goals-met/goals-met.component';
 
 export const routes: Routes = [
-  { path: "", redirectTo: "navigation", pathMatch: "full" },
+  { path: "", redirectTo: "goals", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   {
     path: "navigation", component: NavigationComponent,
@@ -65,6 +66,7 @@ export const routes: Routes = [
 
   { path: "goals", component: GoalsComponent },
   { path: "setGoal", component: SetGoalComponent },
+  { path: "goalsMet", component: GoalsMetComponent },
 
   //temporary vvv
   { path: "search", component: SearchComponent },

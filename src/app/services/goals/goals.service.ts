@@ -11,6 +11,7 @@ import { YearlyGoal } from './goalTypes/IGoal-yearly';
 export class GoalsService {
 
   private allGoals: IGoal[] = [];
+  private allCompletedGoals: IGoal[] = [];
 
   constructor() { }
 
@@ -41,6 +42,12 @@ export class GoalsService {
     this.allGoals.push(goalToSave);
   }
 
+  
+
+  getAllGoals(){
+    return this.allGoals;
+  }
+
   getDailyGoals(){
     return this.allGoals.filter(goal => goal.hasOwnProperty('goalDType'));
   }
@@ -53,7 +60,27 @@ export class GoalsService {
     return this.allGoals.filter(goal => goal.hasOwnProperty('goalYType'));
   }
 
-  getAllGoals(){
-    return this.allGoals;
+
+
+
+  completeGoal(completeGoal: IGoal){
+    this.allGoals = this.allGoals.filter( goal => goal !== completeGoal);
+    this.allCompletedGoals.push(completeGoal);
+  }
+
+  getAllCompletedGoals(){
+    return this.allCompletedGoals;
+  }
+
+  getDailyCompleteGoals(){
+    return this.allCompletedGoals.filter(goal => goal.hasOwnProperty('goalDType'));
+  }
+
+  getMonthlyCompleteGoals(){
+    return this.allCompletedGoals.filter(goal => goal.hasOwnProperty('goalMType'));
+  }
+
+  getYearlyCompleteGoals(){
+    return this.allCompletedGoals.filter(goal => goal.hasOwnProperty('goalYType'));
   }
 }
