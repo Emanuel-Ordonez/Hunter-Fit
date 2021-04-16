@@ -1,6 +1,7 @@
 @import '~@nativescript/theme/css/core.css';
 @import '~@nativescript/theme/css/blue.css';
 Button {
+    color: #eeeeee;
     background-color: #00658A;
     border-radius: 15px;
     border-style: outset;
@@ -36,8 +37,4 @@ Label {
 
 .ns-dark Button {
     background-color: #00658A;
-}
-
-.btn {
-    color: #eeeeee;
 }
