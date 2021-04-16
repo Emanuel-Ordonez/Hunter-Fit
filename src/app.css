@@ -1,6 +1,6 @@
 @import '~@nativescript/theme/css/core.css';
 @import '~@nativescript/theme/css/blue.css';
-Button {
+Page Button {
     color: #eeeeee;
     background-color: #00658A;
     border-radius: 15px;
@@ -13,6 +13,12 @@ Button {
 Label {
     font-size: larger;
 }
+
+
+/*Dialog {
+    color: red;
+    font-size: 24;
+}*/
 
 .ns-light ActionBar {
     background-color: #00658A;

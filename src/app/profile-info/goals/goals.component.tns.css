@@ -46,3 +46,7 @@
     color: #C00000;
     font-weight: bold;
 }
+
+Dialogs.confirm {
+    color: red;
+}
