@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
+import { Dialogs } from '@nativescript/core';
 import { GoalsService } from '@src/app/services/goals/goals.service';
 import { IGoal } from '@src/app/services/goals/goalTypes/IGoal';
 
@@ -40,6 +41,19 @@ export class GoalsComponent implements OnInit {
   }
 
   public goalMet(goal: IGoal){
-    this.goalService.completeGoal(goal);
+
+    let options = {
+      title: "Did you meet this goal?",
+      message: goal.goalDetails,
+      okButtonText: "Yes",
+      cancelButtonText: "Cancel"
+    };
+  
+    Dialogs.confirm(options).then((result: boolean) => {
+        console.log(result);
+        if(result){
+          this.goalService.completeGoal(goal);
+        }
+    });
   }
 }
