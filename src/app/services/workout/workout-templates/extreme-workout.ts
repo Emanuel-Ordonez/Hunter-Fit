@@ -1,4 +1,4 @@
-import { IRepSetE } from "./IRepSet-extreme";
+import { IRepSetE } from "./set-interface/IRepSet-extreme";
 import { Workout } from "./workout";
 
 export interface ExtremeWorkout extends Workout{

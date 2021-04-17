@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CardioWorkout } from './cardio-workout';
-import { DateService } from './date/date.service';
-import { ExtremeWorkout } from './extreme-workout';
-import { IRepSetE } from './IRepSet-extreme';
-import { IRepSetWl } from './IRepSet-weightlifting';
-import { WeightLiftingWorkout } from './weightlifting-workout';
-import { Workout } from './workout';
+import { CardioWorkout } from './workout-templates/cardio-workout';
+import { DateService } from '../date/date.service';
+import { ExtremeWorkout } from './workout-templates/extreme-workout';
+import { IRepSetE } from './workout-templates/set-interface/IRepSet-extreme';
+import { IRepSetWl } from './workout-templates/set-interface/IRepSet-weightlifting';
+import { WeightLiftingWorkout } from './workout-templates/weightlifting-workout';
+import { Workout } from './workout-templates/workout';
 
 @Injectable({
   providedIn: 'root'

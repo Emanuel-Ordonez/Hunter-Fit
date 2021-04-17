@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EventData, GridLayout, ItemSpec, ListPicker, TextField, TextView } from '@nativescript/core';
 import { getString, setString } from '@nativescript/core/application-settings';
-import { IRepSetE } from '@src/app/services/IRepSet-extreme';
-import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
+import { IRepSetE } from '@src/app/services/workout/workout-templates/set-interface/IRepSet-extreme';
+import { WorkoutConstants } from '@src/app/services/workout/WorkoutConstants';
 
 @Component({
   selector: 'app-add-extreme-rep',

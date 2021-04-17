@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
 import { setString } from '@nativescript/core/application-settings';
-import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
+import { WorkoutConstants } from '@src/app/services/workout/WorkoutConstants';
 import { EventData } from '@nativescript/core/data/observable';
 import { SearchBar } from '@nativescript/core/ui/search-bar';
 

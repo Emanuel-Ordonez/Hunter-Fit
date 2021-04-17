@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
+import { IRepSetWl } from '@src/app/services/workout/workout-templates/set-interface/IRepSet-weightlifting';
 //import { IRepSet } from '@src/app/services/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
-import { Workout } from '@src/app/services/workout';
-import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
-import { WeightLiftingWorkout } from '@src/app/services/weightlifting-workout'
-import { ExtremeWorkout } from '@src/app/services/extreme-workout';
-import { IRepSetE } from '@src/app/services/IRepSet-extreme';
+import { Workout } from '@src/app/services/workout/workout-templates/workout';
+import { WorkoutStorageService } from '@src/app/services/workout/workout-storage.service';
+import { WeightLiftingWorkout } from '@src/app/services/workout/workout-templates/weightlifting-workout'
+import { ExtremeWorkout } from '@src/app/services/workout/workout-templates/extreme-workout';
+import { IRepSetE } from '@src/app/services/workout/workout-templates/set-interface/IRepSet-extreme';
 
 @Component({
   selector: 'app-weightlifting-details',
@@ -55,52 +55,18 @@ export class WeightliftingDetailsComponent implements OnInit {
     let tempYearReps=0;
     let tempYearWeight=0;
 
-    //Parses through for Weightlifting workouts and add info
-    this.allWorkouts.forEach(workout => {
-      //Adds Weightlifting workout into profile weightlifting
+    this.allWorkouts.forEach( workout => {
+      let tempWorkout;
+      let workoutSets;
       if(workout.hasOwnProperty('totalWRepSets')){
-        let tempWorkout = workout as WeightLiftingWorkout;
-
-        if(todaysDate.checkSameYear(workout.workoutDate)){
-          tempYearTime+=tempWorkout.totalWorkoutTime;
-
-
-          if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
-            tempMonthTime+=tempWorkout.totalWorkoutTime;
-
-            if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
-              tempDayTime+=tempWorkout.totalWorkoutTime;
-            }
-
-          }
-          
-
-          let workoutSets: IRepSetWl[] = tempWorkout.totalWRepSets;
-          workoutSets.forEach(set => {
-            tempYearReps+=set.setReps;
-            tempYearWeight+=set.setWeight;
-
-
-            if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
-              tempMonthReps+=set.setReps;
-              tempMonthWeight+=set.setWeight;
-
-
-              if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
-                tempDayReps+=set.setReps;
-                tempDayWeight+=set.setWeight;
-              }
-
-            }
-          });
-
-        }
+        tempWorkout = workout as WeightLiftingWorkout;
+        workoutSets = tempWorkout.totalWRepSets as IRepSetWl[];
+      }
+      else{
+        tempWorkout = workout as ExtremeWorkout;
+        workoutSets = tempWorkout.totalERepSets as IRepSetE[];
       }
 
-      //Adds Extreme workout into profile weightlifting
-      else if(workout.hasOwnProperty('totalERepSets')){
-        let tempWorkout = workout as ExtremeWorkout;
-
         if(todaysDate.checkSameYear(workout.workoutDate)){
           tempYearTime+=tempWorkout.totalWorkoutTime;
 
@@ -113,9 +79,7 @@ export class WeightliftingDetailsComponent implements OnInit {
             }
 
           }
-          
 
-          let workoutSets: IRepSetE[] = tempWorkout.totalERepSets;
           workoutSets.forEach(set => {
             tempYearReps+=set.setReps;
             tempYearWeight+=set.setWeight;
@@ -134,8 +98,50 @@ export class WeightliftingDetailsComponent implements OnInit {
             }
           });
         }
-      }
     });
+
+    //Parses through for Weightlifting workouts and add info
+    // this.allWorkouts.forEach(workout => {
+
+    //   //Adds Extreme workout into profile weightlifting
+    //   else if(workout.hasOwnProperty('totalERepSets')){
+    //     let tempWorkout = workout as ExtremeWorkout;
+
+    //     if(todaysDate.checkSameYear(workout.workoutDate)){
+    //       tempYearTime+=tempWorkout.totalWorkoutTime;
+
+
+    //       if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
+    //         tempMonthTime+=tempWorkout.totalWorkoutTime;
+
+    //         if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
+    //           tempDayTime+=tempWorkout.totalWorkoutTime;
+    //         }
+
+    //       }
+          
+
+    //       let workoutSets: IRepSetE[] = tempWorkout.totalERepSets;
+    //       workoutSets.forEach(set => {
+    //         tempYearReps+=set.setReps;
+    //         tempYearWeight+=set.setWeight;
+
+
+    //         if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
+    //           tempMonthReps+=set.setReps;
+    //           tempMonthWeight+=set.setWeight;
+
+
+    //           if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
+    //             tempDayReps+=set.setReps;
+    //             tempDayWeight+=set.setWeight;
+    //           }
+
+    //         }
+    //       });
+    //     }
+    //   }
+    // });
 
     this.setDayStats(tempDayTime, tempDayReps, tempDayWeight);
 

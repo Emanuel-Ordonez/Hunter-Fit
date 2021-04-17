@@ -6,10 +6,10 @@ import { EventData} from '@nativescript/core/data/observable';
 import { ListPicker } from '@nativescript/core/ui/list-picker';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { DateService } from '@src/app/services/date/date.service';
-import { IRepSetE } from '@src/app/services/IRepSet-extreme';
+import { IRepSetE } from '@src/app/services/workout/workout-templates/set-interface/IRepSet-extreme';
 import { TimerService } from '@src/app/services/timer.service';
-import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
-import { WorkoutConstants } from '@src/app/services/WorkoutConstants';
+import { WorkoutStorageService } from '@src/app/services/workout/workout-storage.service';
+import { WorkoutConstants } from '@src/app/services/workout/WorkoutConstants';
 
 @Component({
   selector: 'app-extreme-workout',

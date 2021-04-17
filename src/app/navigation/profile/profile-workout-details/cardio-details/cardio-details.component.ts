@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CardioWorkout } from '@src/app/services/cardio-workout';
+import { CardioWorkout } from '@src/app/services/workout/workout-templates/cardio-workout';
 import { DateService } from '@src/app/services/date/date.service';
 import { TimerService } from '@src/app/services/timer.service';
-import { Workout } from '@src/app/services/workout';
-import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
+import { Workout } from '@src/app/services/workout/workout-templates/workout';
+import { WorkoutStorageService } from '@src/app/services/workout/workout-storage.service';
 
 @Component({
   selector: 'app-cardio-details',

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Color, Dialogs } from "@nativescript/core";
-import { Workout } from '@src/app/services/workout';
-import { WorkoutStorageService } from '@src/app/services/workout-storage.service';
+import { Workout } from '@src/app/services/workout/workout-templates/workout';
+import { WorkoutStorageService } from '@src/app/services/workout/workout-storage.service';
 import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-picker';
 import { TimerService } from '@src/app/services/timer.service';
-import { IRepSetWl } from '@src/app/services/IRepSet-weightlifting';
-import { WeightLiftingWorkout } from '@src/app/services/weightlifting-workout';
-import { ExtremeWorkout } from '@src/app/services/extreme-workout';
+import { IRepSetWl } from '@src/app/services/workout/workout-templates/set-interface/IRepSet-weightlifting';
+import { WeightLiftingWorkout } from '@src/app/services/workout/workout-templates/weightlifting-workout';
+import { ExtremeWorkout } from '@src/app/services/workout/workout-templates/extreme-workout';
 import { WeightLiftingWorkoutComponent } from '@src/app/start-workout/weight-lifting-workout/weight-lifting-workout.component';
 import { isObject } from '@nativescript/core/utils/types';
 

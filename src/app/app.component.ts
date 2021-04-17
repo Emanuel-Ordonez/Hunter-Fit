@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { setNumber } from '@nativescript/core/application-settings';
 import { DateService } from './services/date/date.service';
-import { IRepSetE } from './services/IRepSet-extreme';
-import { Workout } from './services/workout';
-import { WorkoutStorageService } from './services/workout-storage.service';
+import { IRepSetE } from './services/workout/workout-templates/set-interface/IRepSet-extreme';
+import { Workout } from './services/workout/workout-templates/workout';
+import { WorkoutStorageService } from './services/workout/workout-storage.service';
 
 @Component({
   selector: 'app-root',
