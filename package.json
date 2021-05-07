@@ -34,6 +34,7 @@
         "nativescript-google-maps-sdk": "^3.0.2",
         "nativescript-google-sdk": "^0.1.18",
         "nativescript-pedometer": "^2.1.0",
+        "nativescript-ui-chart": "^8.0.2",
         "reflect-metadata": "~0.1.12",
         "rxjs": "~6.6.0",
         "tslib": "~2.0.0",

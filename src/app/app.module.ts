@@ -33,6 +33,8 @@ import { ProfileWorkoutDetailsComponent } from '@src/app/navigation/profile/prof
 import { GoalsMetComponent } from '@src/app/profile-info/goals/goals-met/goals-met.component';
 import { TrackingComponent } from './tracking/tracking.component';
 
+import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
+
 import { isIOS } from '@nativescript/core';
 declare var GMSServices: any;
 
@@ -66,6 +68,8 @@ if (isIOS) {
     GoalsComponent,
     SetGoalComponent,
       GoalsMetComponent,
+
+    NativeScriptUIChartModule,
   ],
   imports: [
     BrowserModule,

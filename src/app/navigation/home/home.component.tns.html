@@ -1,13 +1,16 @@
-<GridLayout>
-    <ScrollView>
-        <StackLayout class="p-20">
-            <Button text='Home works!'></Button>
-            <Card:CardView class = "cardStyle">
-                <!-- <StackLayout class = "cardContent"> [nsRouterLink]="['/startWorkout']">
-                    <Label text="Start Workout" class="workout-name"  ></Label>
-                    <Image src="~/home/Images/Dumbbells.jpg" class = "startWorkoutImage" alt=""/> 
-                </StackLayout> -->
-            </Card:CardView>
-        </StackLayout>
-    </ScrollView>
-</GridLayout>
+<StackLayout>
+    <GridLayout rows="*" columns="*">
+        <RadPieChart allowAnimation="true" row="0" col="0">
+            <PieSeries tkPieSeries
+                selectionMode="DataPoint"
+                expandRadius="0.4"
+                outerRadiusFactor="0.7"
+                valueProperty="Amount"
+                legendLabel="Country"
+                [items]="pieSource">
+            </PieSeries>
+
+            <RadLegendView tkPieLegend position="Right" title="Country" offsetOrigin="TopRight" width="110" enableSelection="true"></RadLegendView>
+        </RadPieChart>
+    </GridLayout>
+</StackLayout>

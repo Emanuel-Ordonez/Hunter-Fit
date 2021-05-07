@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { ObservableArray } from '@nativescript/core';
 
 @Component({
   selector: 'app-home',
@@ -8,24 +9,30 @@ import { Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  private _pieSource: ObservableArray<any>;
+
   constructor() { }
 
+  get pieSource(): ObservableArray<any> {
+    return this._pieSource;
+  } 
+
   ngOnInit(): void {
+    this.pieInfo();
   }
 
-  onClick() {
-    //var dialogs = require("tns-core-modules/ui/dialogs");
-    // inputType property can be dialogs.inputType.password, dialogs.inputType.text, or dialogs.inputType.email.
-    // dialogs.prompt({
-    //   title: "Workout",
-    //   message: "Please fill in info",
-    //   cancelButtonText: "Cancel",
-    //   okButtonText: "Start Workout",
-    //   defaultText: "Default text",
-    //   inputType: dialogs.inputType.password
-    // }).then(function (r) {
-    //   console.log("Dialog result: " + r.result + ", text: " + r.text);
-    // });
+  pieInfo(){
+    this._pieSource = new ObservableArray(this.returnPieInfo());
+  }
+
+  returnPieInfo(): any[]{
+    return[
+        { Country: "Germany", Amount: 15, SecondVal: 14, ThirdVal: 24, Impact: 0, Year: 0 },
+        { Country: "France", Amount: 13, SecondVal: 23, ThirdVal: 25, Impact: 0, Year: 0 },
+        { Country: "Bulgaria", Amount: 24, SecondVal: 17, ThirdVal: 23, Impact: 0, Year: 0 },
+        { Country: "Spain", Amount: 11, SecondVal: 19, ThirdVal: 24, Impact: 0, Year: 0 },
+        { Country: "USA", Amount: 18, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
+    ];
   }
 
 }
