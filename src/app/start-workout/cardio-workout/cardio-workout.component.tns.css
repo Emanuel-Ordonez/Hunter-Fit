@@ -1,0 +1,45 @@
+/* Add mobile styles for the component here.  */
+
+Button {
+    color: white;
+}
+
+Label {
+    font-size: 20%;
+}
+
+TextField {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    border-style: outset;
+    border-width: 5px;
+}
+
+.cardioWorkout-gridLayout {
+    color: white;
+    border-radius: 15px;
+    border-width: 5px;
+    background-color: #00658A;
+}
+
+.workoutNotes {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    border-style: outset;
+    border-width: 5px;
+}
+
+.buttonFlexLayout-cardio {
+    margin: auto, 110px, auto, 130px;
+}
+
+.pause-button {
+    font-weight: bold;
+    width: 100%;
+}
+
+.finish-button {
+    font-weight: bold;
+    width: 40%;
+    background-color: #C00000
+}

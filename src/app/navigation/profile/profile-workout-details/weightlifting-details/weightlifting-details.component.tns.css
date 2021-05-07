@@ -1,0 +1,9 @@
+/* Add mobile styles for the component here.  */
+
+Button {
+    color: white;
+}
+
+.table-section {
+    border-width: .5;
+}

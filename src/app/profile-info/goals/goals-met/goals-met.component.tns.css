@@ -1,0 +1,20 @@
+/* Add mobile styles for the component here.  */
+
+.table-section {
+    border-width: .5;
+    border-color: black;
+}
+
+.table-section-header {
+    font-size: large;
+    font-weight: bold;
+    background-color: #00658A;
+    color: white;
+}
+
+.goal-details {
+    background-color: #ddded9;
+    border-radius: 10px;
+    height: 100px;
+    width: 100%;
+}

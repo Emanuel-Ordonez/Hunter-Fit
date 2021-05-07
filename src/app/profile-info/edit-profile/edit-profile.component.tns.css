@@ -1,0 +1,19 @@
+/* Add mobile styles for the component here.  */
+
+.profile-pic {
+    background-color: gainsboro;
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    vertical-align: middle;
+}
+
+.change-image-text {
+    font-size: 18px;
+    color: #0645AD;
+}
+
+.edit-profile-text {
+    font-size: 18px;
+    color: black;
+}

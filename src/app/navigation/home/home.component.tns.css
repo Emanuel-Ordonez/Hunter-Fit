@@ -1,0 +1,30 @@
+/* Add mobile styles for the component here.  */
+
+Button {
+    color: white;
+}
+
+.cardContent {
+    border-width: 5px;
+    border-style: outset;
+    background-color: #047493;
+    padding: 20;
+    font-weight: bold;
+    font-size: 30;
+    color: red;
+    border-radius: 25px;
+    width: 75%;
+    height: 50%;
+}
+
+.workout-name {
+    color: white;
+    text-align: center;
+    font-size: medium;
+    padding-bottom: 33px;
+}
+
+.startWorkoutImage {
+    align-self: center;
+    height: 500px;
+}

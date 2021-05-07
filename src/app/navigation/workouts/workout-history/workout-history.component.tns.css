@@ -1,0 +1,29 @@
+/* Add mobile styles for the component here.  */
+
+Button {
+    color: white;
+}
+
+.workout-info-scrollview {
+    height: auto;
+}
+
+.workout-info-headers {
+    background-color: #00658A;
+}
+
+.type-duration-header-label {
+    text-align: center;
+    font-size: larger;
+    color: white;
+}
+
+.type-duration-label {
+    text-align: center;
+}
+
+.stats-notes-button {
+    color: white;
+    width: 150px;
+    height: 80px;
+}

@@ -1,0 +1,30 @@
+<StackLayout>
+    <StackLayout id="reps-weight-stackLayout">
+        <GridLayout rows="auto" columns="30,10,*,20,*,10">
+            <Label col="0" text="Set" class="center-Text"></Label>
+            <Label col="2" text="Reps" class="center-Text"></Label>
+            <Label col="4" text="Weight" class="center-Text"></Label>
+        </GridLayout>
+
+        <ScrollView class="rep-details">
+            <StackLayout>
+                <GridLayout *ngFor="let repSet of repSets" id="repGrid{{repSet.setNumber}}" rows="auto"
+                    columns="30,10,*,20,*,10">
+                    <Label col="0" [text]="repSet.setNumber" class="center-Text"></Label>
+
+                    <TextField col="2" id="reps-textField-{{repSet.setNumber}}" class="set-textField"
+                        hint="input reps" type="number" (textChange)="repsInput($event, repSet)"></TextField>
+
+                    <TextField col="4" id="weight-textField-{{repSet.setNumber}}" class="set-textField"
+                        hint="input weight" (textChange)="weightInput($event, repSet)"></TextField>
+
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+    <GridLayout width="60%" rows="auto" columns="*,*">
+        <Button col="0" id="addRepButton" class="setButtons" text="Add Set" (tap)="addRepSetToRepSetsArray()"></Button>
+        <Button col="1" id="removeRepButton" class="setButtons" text="Remove Set" (tap)="deleteRow()"></Button>
+    </GridLayout>
+</StackLayout>

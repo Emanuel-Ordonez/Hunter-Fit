@@ -1,0 +1,44 @@
+<ActionBar title="My Goals"></ActionBar>
+
+<GridLayout rows="auto,*,auto,*,auto,*,auto" columns="*">
+    <Label class="table-section-header" row="0" col="0" text=" Daily Goals:"></Label>
+    <ScrollView class="table-section" row="1" col="0">
+        <StackLayout>
+            <GridLayout *ngFor="let goal of getAllDailyGoals()" class="table-section" rows="auto,auto" columns="10,auto,*,10,100,10">
+                <Label row="0" col="1" text="Date Set: "></Label>
+                <Label row="0" col="2" [text]="goal.goalSetDate.getFormattedDate()"></Label>
+                <TextView row="1" col="1" colSpan="2" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
+                <Button row="0" col="4" rowSpan="2" class="goal-met-button" text="Goal Met" (tap)="goalMet(goal)"></Button>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+
+    <Label class="table-section-header" row="2" col="0" text=" Monthly Goals:"></Label>
+    <ScrollView class="table-section" row="3" col="0">
+        <StackLayout>
+            <GridLayout *ngFor="let goal of getAllMonthlyGoals()" class="table-section" rows="auto,auto" columns="10,auto,*,10,100,10">
+                <Label row="0" col="1" text="Date Set: "></Label>
+                <Label row="0" col="2" [text]="goal.goalSetDate.getFormattedDate()"></Label>
+                <TextView row="1" col="1" colSpan="2" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
+                <Button row="0" col="4" rowSpan="2" class="goal-met-button" text="Goal Met" (tap)="goalMet(goal)"></Button>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+
+    <Label class="table-section-header" row="4" col="0" text=" Yearly Goals:"></Label>
+    <ScrollView class="table-section" row="5" col="0">
+        <StackLayout>
+            <GridLayout *ngFor="let goal of getAllYearlyGoals()" class="table-section" rows="auto,auto" columns="10,auto,*,10,100,10">
+                <Label row="0" col="1" text="Date Set: "></Label>
+                <Label row="0" col="2" [text]="goal.goalSetDate.getFormattedDate()"></Label>
+                <TextView row="1" col="1" colSpan="2" editable="false" class="goal-details" [text]="goal.goalDetails"></TextView>
+                <Button row="0" col="4" rowSpan="2" class="goal-met-button" text="Goal Met" (tap)="goalMet(goal)"></Button>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+
+    <GridLayout row="6" col="0" columns="10,*,10,*,10">
+        <Button row="0" col="1" text="Goals Met" (tap)="goToGoalsMet()"></Button>
+        <Button row="0" col="3" text="New Goal" (tap)="goSetGoal()"></Button>
+    </GridLayout>
+</GridLayout>

@@ -1,0 +1,40 @@
+@import '~@nativescript/theme/css/core.css';
+@import '~@nativescript/theme/css/blue.css';
+Page Button {
+    color: #eeeeee;
+    background-color: #00658A;
+    border-radius: 15px;
+    border-style: outset;
+    border-width: 5px;
+    font-weight: bold;
+    width: 35%;
+}
+
+Label {
+    font-size: larger;
+}
+
+.ns-light ActionBar {
+    background-color: #00658A;
+}
+
+.ns-dark ActionBar {
+    background-color: #00658A;
+}
+
+.center-Text {
+    text-align: center;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+}
+
+.ns-light Button {
+    background-color: #00658A;
+}
+
+.ns-dark Button {
+    background-color: #00658A;
+}

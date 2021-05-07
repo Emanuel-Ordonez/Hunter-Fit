@@ -1,0 +1,53 @@
+<ActionBar title="Cardio Workout"></ActionBar>
+<StackLayout>
+  <GridLayout rows="10,auto,10,auto,*,10" columns="10,*,10">
+
+    <!--<StackLayout class="cardioWorkout-stackLayout">
+      <Label class="currentWorkoutLabel" text="Current Workout: {{ currentWorkout }}"></Label>
+
+      <Label class="timeLabel" text="Elapsed Time:  {{ display }}" textWrap="true"></Label>
+
+      <Label text="Enter estimated distance: "></Label>
+      <!-- Distance output will go here when tracking component is implemented
+
+      <Label text="Notes: "></Label>
+      <TextView class="workoutNotes" hint="Enter some text..." [text]="tvtext" (textChange)="onTextChange($event)">
+      </TextView>
+      <!-- Research user input to go in here?
+    </StackLayout>-->
+
+    <Gridlayout row="1" col="1" class="cardioWorkout-gridLayout" rows="10,auto,10,auto,10,auto,50,auto,10" columns="10,*,10" >
+      <GridLayout row="1" col="1" columns="auto,10,*">
+        <Label col="0" text="Current Workout:"></Label>
+        <Label col="2" text="{{ currentWorkout }}"></Label>
+      </GridLayout>
+
+      <GridLayout row="3" col="1" columns="auto,10,*">
+        <Label col="0" text="Elapsed Time:"></Label>
+        <Label col="2" text="{{ display }}"></Label>
+      </GridLayout>
+
+      <GridLayout row="5" col="1" rows="auto,auto" columns="*,175,*">
+        <Label row="0" col="0" colSpan="3" text="Enter estimated distance (miles):"></Label>
+        <TextField row="1" col="1" class="center-Text" hint="Enter distance" (textChange)="onDistanceChange($event)"></TextField>
+      </GridLayout>
+
+      <GridLayout row="7" col="1" rows="auto,auto" columns="*">
+        <Label row="0" colSpan="3" text="Notes: "></Label>
+        <TextView row="1" class="workoutNotes" hint="Enter notes here..." (textChange)="onTextChange($event)"></TextView>
+      </GridLayout>
+
+    </Gridlayout>
+
+    <GridLayout row="3" col="1" columns="*,120,35,120,*">
+      <Button col="1" text="Pause" class="pause-button" (tap)="pauseTimer($event)"></Button>
+      <Button col="3" text="Finish" class="finish-button" (tap)="stopCardioWorkout()"></Button>
+    </GridLayout>
+
+
+    <!--<FlexboxLayout class="buttonFlexLayout-cardio">
+      <Button text="Pause" class="pause-button" (tap)="pauseTimer($event)"></Button> <!-- needs to route to a pause function
+      <Button text="Finish" class="stop-button" (tap)="stopCardioWorkout()"></Button>
+    </FlexboxLayout> -->
+  </GridLayout>
+</StackLayout>

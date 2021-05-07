@@ -1,0 +1,15 @@
+/* Add mobile styles for the component here.  */
+
+.goals-text {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    padding-left: 20px;
+    border-style: outset;
+    border-width: 5px;
+}
+
+.cancelGoalButton {
+    background-color: gainsboro;
+    color: #C00000;
+    font-weight: bold;
+}

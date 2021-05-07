@@ -1,0 +1,52 @@
+/* Add mobile styles for the component here.  */
+
+.goals {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    padding-left: 20px;
+    border-style: outset;
+    border-width: 5px;
+}
+
+.table-section {
+    border-width: .5;
+    border-color: black;
+}
+
+.table-section-header {
+    font-size: large;
+    font-weight: bold;
+    background-color: #00658A;
+    color: white;
+}
+
+.myGoalsText {
+    margin-top: 10em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+.goal-details {
+    background-color: #ddded9;
+    border-radius: 10px;
+    height: 100px;
+    width: 100%;
+}
+
+.goal-met-button {
+    width: 100%;
+    background-color: #499c5c;
+}
+
+.backGoal {
+    background-color: gainsboro;
+    color: #C00000;
+    font-weight: bold;
+}
+
+Dialogs.confirm {
+    color: red;
+}

@@ -1,0 +1,21 @@
+<StackLayout class="page">
+
+    <GridLayout rows = "auto" columns = "5,*,5,90,5,60,5,60,5" class = "workout-info-headers">
+        <Label col = "1" text = "Workout" class = "type-duration-header-label"></Label>
+        <Label col = "3" text = "Date" class = "type-duration-header-label"></Label>
+        <Label col = "5" text = "" class = "center-Text"></Label>
+        <Label col = "7" text = "" class = "center-Text"></Label>
+    </GridLayout>
+
+    <ScrollView class= "workout-info-scrollview">
+        <StackLayout>
+            <GridLayout  *ngFor="let workout of getAllWorkouts()"  rows = "auto" columns = "5,*,5,90,5,60,5,60,5">
+                <Label col = "1" [text]="workout.workoutType" class = "type-duration-label"></Label>
+                <Label col = "3" [text] = "workout.workoutDate.getFormattedDate()" class = "type-duration-label"></Label>
+                <Button col = "5" text = "Stats" class = "stats-notes-button" (tap) = "displayStats(workout)"></Button>
+                <Button col = "7" text = "Notes" class = "stats-notes-button" (tap) = "displayNotes(workout)"></Button>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+    
+</StackLayout>

@@ -1,0 +1,67 @@
+/* Add mobile styles for the component here.  */
+
+Button {
+    color: white;
+}
+
+Label {
+    margin-left: 1%;
+    font-size: 20%;
+}
+
+.weightLiftingWorkoutLabel-stackLayout {
+    color: white;
+    margin: 30px 15px auto 15px;
+    border-radius: 15px;
+    border-width: 5px;
+    background-color: #00658A;
+    height: 87%;
+}
+
+.workoutNotes {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    padding-left: 20px;
+    border-style: outset;
+    border-width: 5px;
+}
+
+.buttonFlexLayout-weightLifting {
+    margin: auto, 110px, auto, 130px;
+}
+
+.add-set-area {
+    height: 70%;
+}
+
+.add-set-button {
+    background-color: #00658A;
+    border-radius: 15px;
+    border-style: outset;
+    border-width: 5px;
+    color: white;
+    margin-bottom: 2%;
+    width: 40%;
+}
+
+.cancel-button {
+    background-color: gainsboro;
+    color: #C00000;
+    font-weight: bold;
+    width: 40%;
+}
+
+.pause-button {
+    font-weight: bold;
+    width: 40%;
+}
+
+.stop-button {
+    font-weight: bold;
+    width: 40%;
+    background-color: #C00000
+}
+
+.start-button:active {
+    background-color: orange;
+}

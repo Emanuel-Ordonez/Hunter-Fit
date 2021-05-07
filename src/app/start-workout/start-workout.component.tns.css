@@ -1,0 +1,29 @@
+/* Add mobile styles for the component here.  */
+
+.cancel-button {
+    background-color: gainsboro;
+    color: #C00000;
+    font-weight: bold;
+    width: 150ex;
+}
+
+.start-button {
+    font-weight: bold;
+    width: 150ex;
+}
+
+.chooseWorkoutLabel {
+    font-size: 25%;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.workoutLabel {
+    font-size: 20ex;
+}
+
+.cardioWorkoutButton,
+.wlWorkoutButton,
+.extremeWorkoutButton {
+    width: 140ex;
+}

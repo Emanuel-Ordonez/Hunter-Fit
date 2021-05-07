@@ -1,0 +1,57 @@
+<ActionBar title="HunterFit"></ActionBar>
+
+<FlexboxLayout>
+    <BottomNavigation id="bottomNavBar">
+        <TabStrip>
+            <TabStripItem>
+                <Label text="Home" class="nav-label" id="nav-home"></Label>
+            </TabStripItem>
+
+            <TabStripItem>
+                <Label text="Search" class="nav-label" id="nav-search"></Label>
+            </TabStripItem>
+            
+            <TabStripItem>
+                <Label text="Tracking" class="nav-label" id="nav-tracking"></Label>
+            </TabStripItem>
+            
+            <TabStripItem>
+                <Label text="Workouts" class="nav-label" id="nav-workouts"></Label>
+            </TabStripItem>
+            
+            <TabStripItem>
+                <Label text="Profile" class="nav-label" id="nav-profile"></Label>
+            </TabStripItem>
+        </TabStrip>
+
+        <TabContentItem>
+            <GridLayout>
+                <app-home></app-home>
+            </GridLayout>
+        </TabContentItem>
+
+        <TabContentItem>
+            <GridLayout>
+                <app-search></app-search>
+            </GridLayout>
+        </TabContentItem>
+        
+        <TabContentItem>
+            <GridLayout>
+                <app-tracking></app-tracking>
+            </GridLayout>
+        </TabContentItem>
+        
+        <TabContentItem>
+            <GridLayout>
+                <app-workouts></app-workouts>
+            </GridLayout>
+        </TabContentItem>
+        
+        <TabContentItem>
+            <GridLayout>
+                <app-profile></app-profile>
+            </GridLayout>
+        </TabContentItem>
+    </BottomNavigation>
+</FlexboxLayout>

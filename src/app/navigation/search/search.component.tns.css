@@ -1,0 +1,18 @@
+/* Add mobile styles for the component here.  */
+
+Button {
+    color: white;
+}
+
+SearchBar {
+    height: 8%;
+    font-size: x-large;
+}
+
+.search-scrollview {
+    height: 91.9%;
+}
+
+.table-section {
+    border-width: .5;
+}

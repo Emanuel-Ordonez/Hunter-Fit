@@ -1,0 +1,55 @@
+<!-- <Button text="startWorkout works!" class="btn btn-primary"></Button> -->
+<ActionBar title="Start Workout"></ActionBar>
+
+<StackLayout class="page">
+    <GridLayout rows="30,25,auto,25,auto,25,auto,25,50,*" columns="10,*,10">
+        <Label row="0" col="1" class="chooseWorkoutLabel" text="Please Choose Workout Below:"></Label>
+
+        <Label row="1" col="1" class="workoutLabel" text="Cardio:"></Label>
+        <GridLayout row="2" col="1" rows="50,50" columns="10,*,*,10">
+            <Button row="0" col="1" class="cardioWorkoutButton" id="walking" text="Walking"
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="0" col="2" class="cardioWorkoutButton" id="running" text="Running"
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="1" col="1" class="cardioWorkoutButton" id="swimming" text="Swimming"
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="1" col="2" class="cardioWorkoutButton" id="biking" text="Biking"
+                (tap)="selectWorkoutType($event)"></Button>
+        </GridLayout>
+
+        <Label row="3" col="1" class="workoutLabel" text="Weightlifting: "></Label>
+        <GridLayout row="4" col="1" rows="50,50,50,50,50" columns="10,*,*,10">
+            <Button row="0" col="1" class="wlWorkoutButton" id="benchpress" text="Bench Press"
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="0" col="2" class="wlWorkoutButton" id="squats" text="Squats" 
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="1" col="1" class="wlWorkoutButton" id="curls" text="Curls" 
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="1" col="2" class="wlWorkoutButton" id="deadlifts" text="Deadlifts"
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="2" col="1" class="wlWorkoutButton" id="rows" text="Rows" 
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="2" col="2" class="wlWorkoutButton" id="pushups" text="Push-Ups" 
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="3" col="1" class="wlWorkoutButton" id="crunches" text="Crunches"
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="3" col="2" class="wlWorkoutButton" id="planks" text="Planks" 
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="4" col="1" class="wlWorkoutButton" id="legpress" text="Leg Press"
+                (tap)="selectWorkoutType($event)"></Button>
+            <Button row="4" col="2" class="wlWorkoutButton" id="powerclean" text="Powerclean"
+                (tap)="selectWorkoutType($event)"></Button>
+        </GridLayout>
+
+        <Label row="5" col="1" class="workoutLabel" text="Other: "></Label>
+        <GridLayout row="6" col="1" rows="50" columns="10,*,10">
+            <Button row="0" col="1" class="extremeWorkoutButton" id="extreme" text="Extreme Workout"
+                (tap)="selectWorkoutType($event)"></Button>
+        </GridLayout>
+
+        <GridLayout row="8" col="1" rows="auto" columns="10,*,*,10">
+            <Button row="0" col="1" text="Cancel" class="cancel-button" (tap)="goBack()" pageTransition="slide"></Button>
+            <Button row="0" col="2" text="Start" class="start-button" (tap)="startWorkout()"></Button>
+        </GridLayout>
+    </GridLayout>
+</StackLayout>
