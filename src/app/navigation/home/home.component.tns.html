@@ -1,16 +1,19 @@
-<StackLayout>
-    <GridLayout rows="*" columns="*">
-        <RadPieChart allowAnimation="true" row="0" col="0">
-            <PieSeries tkPieSeries
-                selectionMode="DataPoint"
-                expandRadius="0.4"
-                outerRadiusFactor="0.7"
-                valueProperty="Amount"
-                legendLabel="Country"
-                [items]="pieSource">
-            </PieSeries>
-
-            <RadLegendView tkPieLegend position="Right" title="Country" offsetOrigin="TopRight" width="110" enableSelection="true"></RadLegendView>
-        </RadPieChart>
+<!--<StackLayout class="home-panel">
+    <GridLayout rows="30,*" height="1000px">
+        <Label row="0" text="Pie Chart"></Label>
+        <RadCartesianChart tkExampleTitle tkToggleNavButton>
+        <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+            <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+            <LineSeries tkCartesianSeries [items]="pieSource" categoryProperty="Brand" valueProperty="Amount"></LineSeries>
+        </RadCartesianChart>
     </GridLayout>
-</StackLayout>
+</StackLayout>-->
+
+<GridLayout rows="*" tkExampleTitle tkToggleNavButton>
+    <RadCartesianChart>
+        <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+        <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+        <BarSeries tkCartesianSeries [items]="pieSource" categoryProperty="Brand"
+            valueProperty="Amount"></BarSeries>
+    </RadCartesianChart>
+</GridLayout>

@@ -35,12 +35,12 @@ import { TrackingComponent } from './tracking/tracking.component';
 
 import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
 
-import { isIOS } from '@nativescript/core';
-declare var GMSServices: any;
+// import { isIOS } from '@nativescript/core';
+// declare var GMSServices: any;
 
-if (isIOS) { 
-  GMSServices.provideAPIKey("AIzaSyA78-ajT3guaYHOnT2vAR-1DRUdMAOviis");
-}
+// if (isIOS) { 
+//   GMSServices.provideAPIKey("AIzaSyA78-ajT3guaYHOnT2vAR-1DRUdMAOviis");
+// }
 
 @NgModule({
   declarations: [

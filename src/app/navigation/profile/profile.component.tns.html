@@ -1,17 +1,27 @@
 <StackLayout (loaded)="onPageLoaded()">
-    <StackLayout class="profile-info-stacklayout">
-        <GridLayout rows = "10,40,20,60,10,auto" columns = "10,120,10,*,10">
-            <Label row="1" col="1" rowSpan="3" class="profile-picture"></Label>
-            <Label row="1" col="3" class="profile-username" text="{{ username }}"></Label>
-            <Label row="2" col="3" class="personal-goal" text="Personal Motto:"></Label>
-            <TextView row="3" col="3" editable="false" class="personal-goal" text="{{ personalMotto }}"></TextView>
+    <Gridlayout rows="auto,*"class="profile-info-gridlayout">
+        <GridLayout row="0" rows = "10,auto,15,auto" columns = "10,*,10,auto,10">
+            <Label row="1" col="1" colSpan="3" class="profile-username" text="{{ username }}"></Label>
+
+            <GridLayout row="3" col="1" rows="20,80">
+                <Label row="0" class="personal-goal" text="Personal Motto"></Label>
+                <TextView row="1" editable="false" class="white-text" text="{{ personalMotto }}"></TextView>
+            </GridLayout>
+
+            <GridLayout row="3" col="3" rows="30,30,30" columns="auto,5,*">
+                <Label row="0" col="0" colSpan="3" class="personal-goal center-Text" text="Completed"></Label>
+                <Label row="1" col="0" class="white-text center-Text" text="Weightlifting"></Label>
+                <Label row="2" col="0" class="white-text center-Text" text="101"></Label>
+                <Label row="1" col="2" class="white-text center-Text" text="Cardio"></Label>
+                <Label row="2" col="2" class="white-text center-Text" text="210"></Label>
+            </GridLayout>
+
         </GridLayout>
 
-        <GridLayout rows="*,35,*" columns = "30,*,30,*,30">
+        <GridLayout row="1" colSpan="3" rows="*,40,*" columns = "20,*,30,*,20">
             <Button row="1" col="1" text="Edit Profile" (tap)="goToEditProfile()"></Button>
             <Button row="1" col="3" text="Goals" (tap)="goToGoals()"></Button>
         </GridLayout>
-    </StackLayout>
-
+    </Gridlayout>
     <app-profile-workout-details></app-profile-workout-details>
 </StackLayout>

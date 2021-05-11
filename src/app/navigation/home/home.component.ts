@@ -9,30 +9,32 @@ import { ObservableArray } from '@nativescript/core';
 })
 export class HomeComponent implements OnInit {
 
-  private _pieSource: ObservableArray<any>;
+  public pieSource: { Brand: string, Amount: number }[] = [
+    { Brand: "Audi", Amount: 10 },
+    { Brand: "Mercedes", Amount: 76 },
+    { Brand: "Fiat", Amount: 60 },
+    { Brand: "BMW", Amount: 24 },
+    { Brand: "Crysler", Amount: 40 }
+  ];
 
   constructor() { }
 
-  get pieSource(): ObservableArray<any> {
-    return this._pieSource;
-  } 
-
   ngOnInit(): void {
-    this.pieInfo();
   }
 
   pieInfo(){
-    this._pieSource = new ObservableArray(this.returnPieInfo());
   }
 
-  returnPieInfo(): any[]{
-    return[
-        { Country: "Germany", Amount: 15, SecondVal: 14, ThirdVal: 24, Impact: 0, Year: 0 },
-        { Country: "France", Amount: 13, SecondVal: 23, ThirdVal: 25, Impact: 0, Year: 0 },
-        { Country: "Bulgaria", Amount: 24, SecondVal: 17, ThirdVal: 23, Impact: 0, Year: 0 },
-        { Country: "Spain", Amount: 11, SecondVal: 19, ThirdVal: 24, Impact: 0, Year: 0 },
-        { Country: "USA", Amount: 18, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
-    ];
-  }
+  // private _pieSource: ObservableArray<Car>;
+
+  //   constructor() { }
+
+  //   get pieSource(): ObservableArray<Car> {
+  //       return this._pieSource;
+  //   }
+
+  //   ngOnInit() {
+  //       this._pieSource = new ObservableArray(this.getPieSource());
+  //   }
 
 }

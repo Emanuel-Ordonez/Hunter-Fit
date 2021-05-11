@@ -70,7 +70,5 @@ export const routes: Routes = [
   { path: "goalsMet", component: GoalsMetComponent },
 
   //temporary vvv
-  { path: "search", component: SearchComponent },
-  {path: "profile", component: ProfileComponent},
-  { path: "profileWorkoutDetails", component: ProfileWorkoutDetailsComponent},
+  { path: "home", component: HomeComponent},
 ];
