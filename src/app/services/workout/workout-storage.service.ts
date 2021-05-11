@@ -42,4 +42,43 @@ export class WorkoutStorageService {
   getWorkouts(){
     return this.allWorkouts;
   }
+
+  getCardioCount(){
+    var cardioWorkouts = this.getCardioWorkouts();
+    return cardioWorkouts.length;
+  }
+
+  private getCardioWorkouts(){
+    var tempCardio = this.allWorkouts.filter( workout => 
+      workout.hasOwnProperty('distanceTraveled')
+    );
+
+    return tempCardio;
+  }
+
+  getWeightliftingCount(){
+    var weightliftingWorkouts = this.getWeightliftingWorkouts();
+    return weightliftingWorkouts.length;
+  }
+
+  private getWeightliftingWorkouts(){
+    var tempWeightlifting = this.allWorkouts.filter( workout => 
+      workout.hasOwnProperty('totalWRepSets')
+    );
+    
+    return tempWeightlifting;
+  }
+
+  getExtremeCount(){
+    var extremeWorkouts = this.getExtremeWorkouts();
+    return extremeWorkouts.length;
+  }
+
+  private getExtremeWorkouts(){
+    var tempExtreme = this.allWorkouts.filter( workout => 
+      workout.hasOwnProperty('totalERepSets')
+    );
+    
+    return tempExtreme;
+  }
 }

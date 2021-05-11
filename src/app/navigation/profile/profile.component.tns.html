@@ -8,18 +8,20 @@
                 <TextView row="1" editable="false" class="white-text" text="{{ personalMotto }}"></TextView>
             </GridLayout>
 
-            <GridLayout row="3" col="3" rows="30,30,30" columns="auto,5,*">
-                <Label row="0" col="0" colSpan="3" class="personal-goal center-Text" text="Completed"></Label>
-                <Label row="1" col="0" class="white-text center-Text" text="Weightlifting"></Label>
-                <Label row="2" col="0" class="white-text center-Text" text="101"></Label>
-                <Label row="1" col="2" class="white-text center-Text" text="Cardio"></Label>
-                <Label row="2" col="2" class="white-text center-Text" text="210"></Label>
+            <GridLayout row="3" col="3" rows="30,30,30" columns="auto,7,auto,7,auto">
+                <Label row="0" col="0" colSpan="5" class="personal-goal center-Text" text="Completed"></Label>
+                <Label row="1" col="0" class="workout-text center-Text" text="Cardio"></Label>
+                <Label row="2" col="0" class="white-text center-Text" text="{{ cardioCount }}"></Label>
+                <Label row="1" col="2" class="workout-text center-Text" text="Weightlifting"></Label>
+                <Label row="2" col="2" class="white-text center-Text" text="{{ weightliftingCount }}"></Label>
+                <Label row="1" col="4" class="workout-text center-Text" text="Extreme"></Label>
+                <Label row="2" col="4" class="white-text center-Text" text="{{ extremeCount }}"></Label>
             </GridLayout>
 
         </GridLayout>
 
-        <GridLayout row="1" colSpan="3" rows="*,40,*" columns = "20,*,30,*,20">
-            <Button row="1" col="1" text="Edit Profile" (tap)="goToEditProfile()"></Button>
+        <GridLayout row="1" colSpan="3" rows="*,40,*" columns = "30,*,30,*,30">
+            <Button row="1" col="1" text="Edit Info" (tap)="goToEditProfile()"></Button>
             <Button row="1" col="3" text="Goals" (tap)="goToGoals()"></Button>
         </GridLayout>
     </Gridlayout>

@@ -1,19 +1,11 @@
-<!--<StackLayout class="home-panel">
-    <GridLayout rows="30,*" height="1000px">
-        <Label row="0" text="Pie Chart"></Label>
-        <RadCartesianChart tkExampleTitle tkToggleNavButton>
-        <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
-            <LinearAxis tkCartesianVerticalAxis></LinearAxis>
-            <LineSeries tkCartesianSeries [items]="pieSource" categoryProperty="Brand" valueProperty="Amount"></LineSeries>
-        </RadCartesianChart>
-    </GridLayout>
-</StackLayout>-->
+<ScrollView>
+    <StackLayout>
+        <GridLayout columns="*">
 
-<GridLayout rows="*" tkExampleTitle tkToggleNavButton>
-    <RadCartesianChart>
-        <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
-        <LinearAxis tkCartesianVerticalAxis></LinearAxis>
-        <BarSeries tkCartesianSeries [items]="pieSource" categoryProperty="Brand"
-            valueProperty="Amount"></BarSeries>
-    </RadCartesianChart>
-</GridLayout>
+            <TextView class="welcome-message" editable="false" text="Before you start your next workout, be sure to check out some tips hand-picked from Hunter Industries very own personal fitness trainer: Amador Porras."></TextView>
+
+        </GridLayout>
+
+
+    </StackLayout>
+</ScrollView>

@@ -107,49 +107,6 @@ export class WeightliftingDetailsComponent implements OnInit {
       }
     });
 
-    //Parses through for Weightlifting workouts and add info
-    // this.allWorkouts.forEach(workout => {
-
-    //   //Adds Extreme workout into profile weightlifting
-    //   else if(workout.hasOwnProperty('totalERepSets')){
-    //     let tempWorkout = workout as ExtremeWorkout;
-
-    //     if(todaysDate.checkSameYear(workout.workoutDate)){
-    //       tempYearTime+=tempWorkout.totalWorkoutTime;
-
-
-    //       if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
-    //         tempMonthTime+=tempWorkout.totalWorkoutTime;
-
-    //         if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
-    //           tempDayTime+=tempWorkout.totalWorkoutTime;
-    //         }
-
-    //       }
-          
-
-    //       let workoutSets: IRepSetE[] = tempWorkout.totalERepSets;
-    //       workoutSets.forEach(set => {
-    //         tempYearReps+=set.setReps;
-    //         tempYearWeight+=set.setWeight;
-
-
-    //         if(todaysDate.checkSameMonth(tempWorkout.workoutDate)){
-    //           tempMonthReps+=set.setReps;
-    //           tempMonthWeight+=set.setWeight;
-
-
-    //           if(todaysDate.checkSameDay(tempWorkout.workoutDate)){
-    //             tempDayReps+=set.setReps;
-    //             tempDayWeight+=set.setWeight;
-    //           }
-
-    //         }
-    //       });
-    //     }
-    //   }
-    // });
-
     this.setDayStats(tempDayTime, tempDayReps, tempDayWeight);
 
     this.setMonthStats(tempMonthTime, tempMonthReps, tempMonthWeight);
