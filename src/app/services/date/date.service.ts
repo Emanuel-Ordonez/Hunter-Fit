@@ -9,9 +9,21 @@ export class DateService {
   private year: number;
 
   constructor() {
-    this.day = new Date().getDate();
-    this.month = new Date().getMonth() + 1;
-    this.year = new Date().getFullYear();
+    this.initialize();
+  }
+
+  private initialize(){
+    var day = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+
+    this.setDate(day, month, year);
+  }
+
+  public setDate(day, month, year){
+    this.day = day;
+    this.month = month;
+    this.year = year;
   }
 
   public getFormattedDate(): string {
@@ -37,11 +49,5 @@ export class DateService {
       return true;
     else
       return false;
-  }
-
-  public setDate(day, month, year){
-    this.day = day;
-    this.month = month;
-    this.year = year;
   }
 }

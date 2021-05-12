@@ -24,6 +24,6 @@ Button {
 
 .stats-notes-button {
     color: white;
-    width: 150px;
+    width: 100%;
     height: 80px;
 }
