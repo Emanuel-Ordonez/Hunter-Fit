@@ -4,8 +4,29 @@ Button {
     color: white;
 }
 
+.welcome-message-gridlayout {
+    background-color: aliceblue;
+}
+
 .welcome-message {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.section-label {
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    background-color: #00658A;
+    color: white;
+}
+
+.tip-number {
+    font-weight: 400;
+}
+
+.reference-label {
+    font-size: 7px;
     font-style: italic;
 }

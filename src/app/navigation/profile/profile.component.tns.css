@@ -36,6 +36,11 @@ Button {
     width: 100%;
 }
 
+.white-text-motto {
+    font-size: 17px;
+    color: white;
+}
+
 .workout-text {
     color: white;
     font-size: 13px;
