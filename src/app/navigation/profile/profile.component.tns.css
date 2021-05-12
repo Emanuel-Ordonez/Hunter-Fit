@@ -7,6 +7,12 @@ Button {
     height: 100%;
 }
 
+.personal-motto-gridlayout,
+.completed-gridlayout {
+    background-color: #0376a1;
+    border-radius: 8%;
+}
+
 .profile-info-gridlayout {
     height: 40%;
     background-color: #00658A;
@@ -23,11 +29,13 @@ Button {
     font-style: italic;
 }
 
-.personal-goal {
+.personal-motto,
+.completed-label {
     color: white;
     font-weight: bold;
     height: 100%;
     width: 100%;
+    text-decoration: underline;
 }
 
 .white-text {
