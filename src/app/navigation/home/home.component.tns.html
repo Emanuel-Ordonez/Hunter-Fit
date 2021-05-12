@@ -1,12 +1,13 @@
 <ScrollView>
     <StackLayout>
-        <GridLayout class="welcome-message-gridlayout" columns="*">
+        <GridLayout class="welcome-message-gridlayout" rows="auto,auto" columns="*">
 
-            <TextView class="welcome-message" editable="false" text="Before you start your next workout, be sure to check out some tips hand-picked from Hunter Industries very own personal fitness trainer: Amador Porras."></TextView>
+            <TextView row="0" class="welcome-message" editable="false" text="Before you start your next workout, be sure to check out some tips hand-picked from Hunter Industries very own personal fitness trainer:"></TextView>
+            <Label row="1" class="amador-link" text="Amador Porras" (tap)="amadorLink()"></Label>
 
         </GridLayout>
 
-        <GridLayout rows="10,auto,10,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="10,*,10">
+        <GridLayout rows="15,auto,10,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="10,*,10">
 
             <Label row="1" col="1" class="section-label" text="Cardio Tips"></Label>
 
@@ -31,7 +32,7 @@
 
             <Label row="1" col="1" class="section-label" text="Weightlifting Tips"></Label>
 
-            <Label row="3" col="1" class="tip-number" text="1.  Keep A Journal"></Label>
+            <Label row="3" col="1" class="tip-number" text="1.  Keep a Journal"></Label>
             <TextView row="4" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[0] }}"></TextView>
 
             <Label row="5" col="1" class="tip-number" text="2.  Rest Between Sets"></Label>
@@ -58,7 +59,7 @@
             <Label row="5" col="1" class="tip-number" text="2.  Fuel Up (even if your goal is to lose weight)"></Label>
             <TextView row="6" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[1] }}"></TextView>
 
-            <Label row="7" col="1" class="tip-number" text="3.  Rebuild With Protein"></Label>
+            <Label row="7" col="1" class="tip-number" text="3.  Rebuild with Protein"></Label>
             <TextView row="8" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[2] }}"></TextView>
 
             <Label row="9" col="1" class="tip-number" text="4.  Eat Breakfast"></Label>
@@ -69,15 +70,23 @@
 
         </GridLayout>
 
-        <GridLayout class="references-gridlayout" rows="10,auto,5,auto,5,auto,5,auto,5,auto,5,auto,5,auto" columns="10,*,10">
+        <GridLayout class="references-gridlayout" rows="10,auto,5,auto,5,auto,5,auto,30" columns="10,*,10">
             
             <Label row="1" col="1" class="reference-label" text="References:"></Label>
-            <Label row="3" col="1" text="Cadio Tips:"></Label>
-            <Label row="5" col="1" text="Click here" (tap)="cardioLink()"></Label>
-            <Label row="7" col="1" text="Weightlifting Tips:"></Label>
-            <Label row="9" col="1" text="Click here" (tap)="weightliftingLink()"></Label>
-            <Label row="11" col="1" text="Nutrition Tips:"></Label>
-            <Label row="13" col="1" text="Click here" (tap)="nutritionLink()"></Label>
+            <GridLayout row="3" col="1" columns="5,auto,5,*,5">
+                <Label col="1" text="Cadio Tips:"></Label>
+                <Label col="3" text="Click here" (tap)="cardioLink()" class="link-labels"></Label>
+            </GridLayout>
+            
+            <GridLayout row="5" col="1" columns="5,auto,5,*,5">
+                <Label col="1" text="Weightlifting Tips:"></Label>
+                <Label col="3" text="Click here" (tap)="weightliftingLink()" class="link-labels"></Label>
+            </GridLayout>
+            
+            <GridLayout row="7" col="1" columns="5,auto,5,*,5">
+                <Label col="1" text="Nutrition Tips:"></Label>
+                <Label col="3" text="Click here" (tap)="nutritionLink()" class="link-labels"></Label>
+            </GridLayout>
             
         </GridLayout>
 

@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  amadorLink(){
+    Utils.openUrl("https://www.hunterindustries.com/headlines/hunter-employee-spotlight-amador-porras");
+  }
+
   cardioLink(){
     Utils.openUrl("https://www.fitday.com/fitness-articles/fitness/10-tips-to-improve-your-cardio-workout.html");
   }

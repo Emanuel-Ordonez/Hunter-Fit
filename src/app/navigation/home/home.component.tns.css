@@ -14,6 +14,15 @@ Button {
     font-style: italic;
 }
 
+.amador-link {
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+    color: #0645AD;
+    text-decoration: underline;
+    text-align: center;
+}
+
 .section-label {
     font-weight: bold;
     font-size: 15px;
@@ -32,4 +41,9 @@ Button {
 
 .references-gridlayout {
     background-color: aliceblue;
+}
+
+.link-labels {
+    color: #0645AD;
+    text-decoration: underline;
 }
