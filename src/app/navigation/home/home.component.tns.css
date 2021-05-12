@@ -27,6 +27,9 @@ Button {
 }
 
 .reference-label {
-    font-size: 7px;
     font-style: italic;
+}
+
+.references-gridlayout {
+    background-color: aliceblue;
 }

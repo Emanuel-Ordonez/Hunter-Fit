@@ -11,19 +11,19 @@
             <Label row="1" col="1" class="section-label" text="Cardio Tips"></Label>
 
             <Label row="3" col="1" class="tip-number" text="1.  Increase the Incline"></Label>
-            <TextView row="4" col="1" class="tip-details" editable="false" text="Instead of running on a flat road or treadmill, head for the hills or bump up the incline. Running uphill will send the heart rate through the roof and increase the calorie burn. Some added benefits include improved leg strength, running form and spring speed."></TextView>
+            <TextView row="4" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[0] }}"></TextView>
 
             <Label row="5" col="1" class="tip-number" text="2.  Stop and Go"></Label>
-            <TextView row="6" col="1" class="tip-details" editable="false" text="Use interval training to increase workout intensity and maximize results. Alternate periods of all-out effort with periods of low effort or rest. Try sprinting 100 meters and then walking or jogging back to the start line before repeating the sprint. Eight to 10 sprints is all it will take to get a great workout."></TextView>
+            <TextView row="6" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[1] }}"></TextView>
 
             <Label row="7" col="1" class="tip-number" text="3.  Turn it Up!"></Label>
-            <TextView row="8" col="1" class="tip-details" editable="false" text="The music that is. Listening to music during a workout improves performance by increasing motivation and reducing fatigue. Pick something up-beat and fast-paced to keep energy levels high throughout the workout."></TextView>
+            <TextView row="8" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[2] }}"></TextView>
 
             <Label row="9" col="1" class="tip-number" text="4.  The Buddy System"></Label>
-            <TextView row="10" col="1" class="tip-details" editable="false" text="Workout with a training partner or group of friends to make the entire gym experience more enjoyable. Being accountable to another person will also serve as motivation and prevent missed workouts."></TextView>
+            <TextView row="10" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[3] }}"></TextView>
 
             <Label row="11" col="1" class="tip-number" text="5.  Be Consistent"></Label>
-            <TextView row="12" col="1" class="tip-details" editable="false" text="The best way to get results from a cardio workout is to create a routine and stick to it. Whether it's first thing in the morning, at lunch or after work, the body will adapt to training any time during the day. Be consistent and exercise on a consistent basis and your fitness goals are within reach."></TextView>
+            <TextView row="12" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[4] }}"></TextView>
 
         </GridLayout>
 
@@ -31,25 +31,55 @@
 
             <Label row="1" col="1" class="section-label" text="Weightlifting Tips"></Label>
 
-            <Label row="3" col="1" class="tip-number" text="1.  Increase the Incline"></Label>
-            <TextView row="4" col="1" class="tip-details" editable="false" text="Instead of running on a flat road or treadmill, head for the hills or bump up the incline. Running uphill will send the heart rate through the roof and increase the calorie burn. Some added benefits include improved leg strength, running form and spring speed."></TextView>
+            <Label row="3" col="1" class="tip-number" text="1.  Keep A Journal"></Label>
+            <TextView row="4" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[0] }}"></TextView>
 
-            <Label row="5" col="1" class="tip-number" text="2.  Stop and Go"></Label>
-            <TextView row="6" col="1" class="tip-details" editable="false" text="Use interval training to increase workout intensity and maximize results. Alternate periods of all-out effort with periods of low effort or rest. Try sprinting 100 meters and then walking or jogging back to the start line before repeating the sprint. Eight to 10 sprints is all it will take to get a great workout."></TextView>
+            <Label row="5" col="1" class="tip-number" text="2.  Rest Between Sets"></Label>
+            <TextView row="6" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[1] }}"></TextView>
 
-            <Label row="7" col="1" class="tip-number" text="3.  Turn it Up!"></Label>
-            <TextView row="8" col="1" class="tip-details" editable="false" text="The music that is. Listening to music during a workout improves performance by increasing motivation and reducing fatigue. Pick something up-beat and fast-paced to keep energy levels high throughout the workout."></TextView>
+            <Label row="7" col="1" class="tip-number" text="3.  Prevent Imbalances"></Label>
+            <TextView row="8" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[2] }}"></TextView>
 
-            <Label row="9" col="1" class="tip-number" text="4.  The Buddy System"></Label>
-            <TextView row="10" col="1" class="tip-details" editable="false" text="Workout with a training partner or group of friends to make the entire gym experience more enjoyable. Being accountable to another person will also serve as motivation and prevent missed workouts."></TextView>
+            <Label row="9" col="1" class="tip-number" text="4.  Grip Work and Finishers"></Label>
+            <TextView row="10" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[3] }}"></TextView>
 
-            <Label row="11" col="1" class="tip-number" text="5.  Be Consistent"></Label>
-            <TextView row="12" col="1" class="tip-details" editable="false" text="The best way to get results from a cardio workout is to create a routine and stick to it. Whether it's first thing in the morning, at lunch or after work, the body will adapt to training any time during the day. Be consistent and exercise on a consistent basis and your fitness goals are within reach."></TextView>
+            <Label row="11" col="1" class="tip-number" text="5.  Take Time Off"></Label>
+            <TextView row="12" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[4] }}"></TextView>
 
         </GridLayout>
 
-        
+        <GridLayout rows="10,auto,10,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="10,*,10">
 
+            <Label row="1" col="1" class="section-label" text="Nutrition Tips"></Label>
+
+            <Label row="3" col="1" class="tip-number" text="1.  Pay Attention"></Label>
+            <TextView row="4" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[0] }}"></TextView>
+
+            <Label row="5" col="1" class="tip-number" text="2.  Fuel Up (even if your goal is to lose weight)"></Label>
+            <TextView row="6" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[1] }}"></TextView>
+
+            <Label row="7" col="1" class="tip-number" text="3.  Rebuild With Protein"></Label>
+            <TextView row="8" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[2] }}"></TextView>
+
+            <Label row="9" col="1" class="tip-number" text="4.  Eat Breakfast"></Label>
+            <TextView row="10" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[3] }}"></TextView>
+
+            <Label row="11" col="1" class="tip-number" text="5.  Drink Water"></Label>
+            <TextView row="12" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[4] }}"></TextView>
+
+        </GridLayout>
+
+        <GridLayout class="references-gridlayout" rows="10,auto,5,auto,5,auto,5,auto,5,auto,5,auto,5,auto" columns="10,*,10">
+            
+            <Label row="1" col="1" class="reference-label" text="References:"></Label>
+            <Label row="3" col="1" text="Cadio Tips:"></Label>
+            <Label row="5" col="1" text="Click here" (tap)="cardioLink()"></Label>
+            <Label row="7" col="1" text="Weightlifting Tips:"></Label>
+            <Label row="9" col="1" text="Click here" (tap)="weightliftingLink()"></Label>
+            <Label row="11" col="1" text="Nutrition Tips:"></Label>
+            <Label row="13" col="1" text="Click here" (tap)="nutritionLink()"></Label>
+            
+        </GridLayout>
 
     </StackLayout>
 </ScrollView>
