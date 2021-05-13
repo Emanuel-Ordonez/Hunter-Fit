@@ -2,79 +2,46 @@
     <StackLayout>
         <GridLayout class="welcome-message-gridlayout" rows="auto,auto" columns="*">
 
-            <TextView row="0" class="welcome-message" editable="false" text="Before you start your next workout, be sure to check out some tips hand-picked from Hunter Industries very own personal fitness trainer:"></TextView>
+            <TextView row="0" editable="false" class="welcome-message" text="Before you start your next workout, be sure to check out some tips hand-picked from Hunter Industries very own personal fitness trainer:"></TextView>
             <Label row="1" class="amador-link" text="Amador Porras" (tap)="amadorLink()"></Label>
 
         </GridLayout>
 
-        <GridLayout rows="15,auto,10,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="10,*,10">
-
+        <GridLayout rows="15,auto,10" columns="10,*,10">
             <Label row="1" col="1" class="section-label" text="Cardio Tips"></Label>
-
-            <Label row="3" col="1" class="tip-number" text="1.  Increase the Incline"></Label>
-            <TextView row="4" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[0] }}"></TextView>
-
-            <Label row="5" col="1" class="tip-number" text="2.  Stop and Go"></Label>
-            <TextView row="6" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[1] }}"></TextView>
-
-            <Label row="7" col="1" class="tip-number" text="3.  Turn it Up!"></Label>
-            <TextView row="8" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[2] }}"></TextView>
-
-            <Label row="9" col="1" class="tip-number" text="4.  The Buddy System"></Label>
-            <TextView row="10" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[3] }}"></TextView>
-
-            <Label row="11" col="1" class="tip-number" text="5.  Be Consistent"></Label>
-            <TextView row="12" col="1" class="tip-details" editable="false" text="{{ list_cardio_tips[4] }}"></TextView>
-
         </GridLayout>
 
-        <GridLayout rows="10,auto,10,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="10,*,10">
+        <GridLayout *ngFor="let tip of cardioTips; let i = index" rows="auto,auto" columns="10,auto,5,*,10">
+            <Label row="0" col="1" text="{{ i+1 }}."></Label>
+            <Label row="0" col="3" text="{{ tip.title }}"></Label>
+            <TextView row="1" col="1" colSpan="3" editable="false" text="{{ tip.tipDesc }}"></TextView>
+        </GridLayout>
 
+        <GridLayout rows="15,auto,10" columns="10,*,10">
             <Label row="1" col="1" class="section-label" text="Weightlifting Tips"></Label>
-
-            <Label row="3" col="1" class="tip-number" text="1.  Keep a Journal"></Label>
-            <TextView row="4" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[0] }}"></TextView>
-
-            <Label row="5" col="1" class="tip-number" text="2.  Rest Between Sets"></Label>
-            <TextView row="6" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[1] }}"></TextView>
-
-            <Label row="7" col="1" class="tip-number" text="3.  Prevent Imbalances"></Label>
-            <TextView row="8" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[2] }}"></TextView>
-
-            <Label row="9" col="1" class="tip-number" text="4.  Grip Work and Finishers"></Label>
-            <TextView row="10" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[3] }}"></TextView>
-
-            <Label row="11" col="1" class="tip-number" text="5.  Take Time Off"></Label>
-            <TextView row="12" col="1" class="tip-details" editable="false" text="{{ list_weightlifting_tips[4] }}"></TextView>
-
         </GridLayout>
 
-        <GridLayout rows="10,auto,10,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="10,*,10">
+        <GridLayout *ngFor="let tip of weightliftingTips; let i = index" rows="auto,auto" columns="10,auto,5,*,10">
+            <Label row="0" col="1" text="{{ i+1 }}."></Label>
+            <Label row="0" col="3" text="{{tip.title}}"></Label>
+            <TextView row="1" col="1" colSpan="3" class="tip-details" editable="false" text="{{ tip.tipDesc }}"></TextView>
+        </GridLayout>
 
+        <GridLayout rows="15,auto,10" columns="10,*,10">
             <Label row="1" col="1" class="section-label" text="Nutrition Tips"></Label>
+        </GridLayout>
 
-            <Label row="3" col="1" class="tip-number" text="1.  Pay Attention"></Label>
-            <TextView row="4" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[0] }}"></TextView>
-
-            <Label row="5" col="1" class="tip-number" text="2.  Fuel Up (even if your goal is to lose weight)"></Label>
-            <TextView row="6" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[1] }}"></TextView>
-
-            <Label row="7" col="1" class="tip-number" text="3.  Rebuild with Protein"></Label>
-            <TextView row="8" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[2] }}"></TextView>
-
-            <Label row="9" col="1" class="tip-number" text="4.  Eat Breakfast"></Label>
-            <TextView row="10" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[3] }}"></TextView>
-
-            <Label row="11" col="1" class="tip-number" text="5.  Drink Water"></Label>
-            <TextView row="12" col="1" class="tip-details" editable="false" text="{{ list_nutrition_tips[4] }}"></TextView>
-
+        <GridLayout *ngFor="let tip of nutritionTips; let i = index" rows="auto,auto" columns="10,auto,5,*,10">
+            <Label row="0" col="1" text="{{ i+1 }}."></Label>
+            <Label row="0" col="3" text="{{ tip.title }}"></Label>
+            <TextView row="1" col="1" colSpan="3" editable="false" text="{{ tip.tipDesc }}"></TextView>
         </GridLayout>
 
         <GridLayout class="references-gridlayout" rows="10,auto,5,auto,5,auto,5,auto,30" columns="10,*,10">
             
             <Label row="1" col="1" class="reference-label" text="References:"></Label>
             <GridLayout row="3" col="1" columns="5,auto,5,*,5">
-                <Label col="1" text="Cadio Tips:"></Label>
+                <Label col="1" text="Cardio Tips:"></Label>
                 <Label col="3" text="Click here" (tap)="cardioLink()" class="link-labels"></Label>
             </GridLayout>
             

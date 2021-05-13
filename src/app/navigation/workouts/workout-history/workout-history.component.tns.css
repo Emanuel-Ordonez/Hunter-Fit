@@ -5,6 +5,7 @@ Button {
 }
 
 .workout-info-scrollview {
+    background-color: aliceblue;
     height: auto;
 }
 

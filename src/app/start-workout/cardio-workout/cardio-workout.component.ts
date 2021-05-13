@@ -5,7 +5,7 @@ import { getString } from '@nativescript/core/application-settings';
 import { EventData } from '@nativescript/core/data/observable';
 import { TextView } from '@nativescript/core/ui/text-view';
 import { DateService } from '@src/app/services/date/date.service';
-import { TimerService } from '@src/app/services/timer.service';
+import { TimerService } from '@src/app/services/timer/timer.service';
 import { WorkoutStorageService } from '@src/app/services/workout/workout-storage.service';
 
 @Component({

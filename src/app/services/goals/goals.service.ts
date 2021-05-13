@@ -15,73 +15,107 @@ export class GoalsService {
 
   constructor() { }
 
-  saveDailyGoal(goal: string) {
+  public saveDailyGoal(goal: string) {
     // construct goal object:
+    let todaysDate = new DateService();
+    // store goal object:
+    this.pushDailyGoal(goal, todaysDate);
+  }
+
+  public setDailyGoal(goal: string, date: DateService){
+    this.pushDailyGoal(goal, date);
+  }
+
+  private pushDailyGoal(goal: string, setDate: DateService){
     const type: string = "Daily";
-    let todaysDate = new DateService();
-    const goalToSave : DailyGoal = { goalDType: type, goalDetails: goal, goalSetDate: todaysDate, goalMetDate: null };
-    // store goal object:
+    const goalToSave : DailyGoal = { goalDType: type, goalDetails: goal, goalSetDate: setDate, goalMetDate: null };
     this.allGoals.push(goalToSave);
   }
 
-  saveMonthlyGoal(goal: string) {
+  public saveMonthlyGoal(goal: string) {
     // construct goal object:
+    let todaysDate = new DateService();
+    // store goal object:
+    this.pushMonthlyGoal(goal, todaysDate);
+  }
+
+  public setMonthlyGoal(goal: string, date: DateService){
+    this.pushMonthlyGoal(goal, date);
+  }
+
+  private pushMonthlyGoal(goal: string, setDate: DateService){
     const type: string = "Monthly";
-    let todaysDate = new DateService();
-    const goalToSave : MonthlyGoal = { goalMType: type, goalDetails: goal, goalSetDate: todaysDate, goalMetDate: null };
-    // store goal object:
+    const goalToSave : MonthlyGoal = { goalMType: type, goalDetails: goal, goalSetDate: setDate, goalMetDate: null };
     this.allGoals.push(goalToSave);
   }
 
-  saveYearlyGoal(goal: string) {
+  public saveYearlyGoal(goal: string) {
     // construct goal object:
-    const type: string = "Yearly";
     let todaysDate = new DateService();
-    const goalToSave : YearlyGoal = { goalYType: type, goalDetails: goal, goalSetDate: todaysDate, goalMetDate: null };
     // store goal object:
+    this.pushYearlyGoal(goal, todaysDate);
+  }
+
+  public setYealyGoal(goal: string, date: DateService){
+    this.pushYearlyGoal(goal, date);
+  }
+
+  private pushYearlyGoal(goal: string, setDate: DateService){
+    const type: string = "Yearly";
+    const goalToSave : YearlyGoal = { goalYType: type, goalDetails: goal, goalSetDate: setDate, goalMetDate: null };
     this.allGoals.push(goalToSave);
   }
 
-  
 
-  getAllGoals(){
+
+  public getAllGoals(){
     return this.allGoals;
   }
 
-  getDailyGoals(){
+  public getDailyGoals(){
     return this.allGoals.filter(goal => goal.hasOwnProperty('goalDType'));
   }
 
-  getMonthlyGoals(){
+  public getMonthlyGoals(){
     return this.allGoals.filter(goal => goal.hasOwnProperty('goalMType'));
   }
 
-  getYearlyGoals(){
+  public getYearlyGoals(){
     return this.allGoals.filter(goal => goal.hasOwnProperty('goalYType'));
   }
 
 
 
 
-  completeGoal(completeGoal: IGoal){
+  public completeGoal(completeGoal: IGoal){
     this.allGoals = this.allGoals.filter( goal => goal !== completeGoal);
     completeGoal.goalMetDate = new DateService();
+    this.saveCompletedGoal(completeGoal);
+  }
+
+  public setDataCompletedGoal(completeGoal: IGoal){
+    this.saveCompletedGoal(completeGoal);
+  }
+
+  private saveCompletedGoal(completeGoal: IGoal){
     this.allCompletedGoals.push(completeGoal);
   }
 
-  getAllCompletedGoals(){
+
+
+  public getAllCompletedGoals(){
     return this.allCompletedGoals;
   }
 
-  getDailyCompleteGoals(){
+  public getDailyCompleteGoals(){
     return this.allCompletedGoals.filter(goal => goal.hasOwnProperty('goalDType'));
   }
 
-  getMonthlyCompleteGoals(){
+  public getMonthlyCompleteGoals(){
     return this.allCompletedGoals.filter(goal => goal.hasOwnProperty('goalMType'));
   }
 
-  getYearlyCompleteGoals(){
+  public getYearlyCompleteGoals(){
     return this.allCompletedGoals.filter(goal => goal.hasOwnProperty('goalYType'));
   }
 }
