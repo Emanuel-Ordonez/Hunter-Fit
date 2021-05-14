@@ -239,71 +239,71 @@ export class AppComponent implements OnInit {
     var m1day1 = new DateService();
     m1day1.setDate(1,1,2021);
     var m2day1 = new DateService();
-    m2day1.setDate(1,25,2021);
+    m2day1.setDate(25,1,2021);
     var monthGoal1: MonthlyGoal = {goalMType: "Monthly", goalDetails: "Walk 40 miles this month", goalSetDate: m1day1, goalMetDate: m2day1};
     this.goalsService.setDataCompletedGoal(monthGoal1);
 
     var m1day2 = new DateService();
-    m1day2.setDate(2,4,2021);
+    m1day2.setDate(4,2,2021);
     var m2day2 = new DateService();
-    m2day2.setDate(1,26,2021);
+    m2day2.setDate(26,2,2021);
     var monthGoal2: MonthlyGoal = {goalMType: "Monthly", goalDetails: "Swim 5 miles this month", goalSetDate: m1day2, goalMetDate: m2day2};
     this.goalsService.setDataCompletedGoal(monthGoal2);
 
     var m1day3 = new DateService();
-    m1day3.setDate(3,2,2021);
+    m1day3.setDate(2,3,2021);
     var m2day3 = new DateService();
-    m2day3.setDate(3,21,2021);
+    m2day3.setDate(21,3,2021);
     var monthGoal3: MonthlyGoal = {goalMType: "Monthly", goalDetails: "Squat max 200 pounds this month", goalSetDate: m1day3, goalMetDate: m2day3};
     this.goalsService.setDataCompletedGoal(monthGoal3);
 
     var m1day4 = new DateService();
-    m1day4.setDate(3,5,2021);
+    m1day4.setDate(5,3,2021);
     var m2day4 = new DateService();
-    m2day4.setDate(3,29,2021);
+    m2day4.setDate(29,3,2021);
     var monthGoal4: MonthlyGoal = {goalMType: "Monthly", goalDetails: "Deadlift 2000 pounds this month", goalSetDate: m1day4, goalMetDate: m2day4};
     this.goalsService.setDataCompletedGoal(monthGoal4);
 
     var m1day5 = new DateService();
-    m1day5.setDate(4,3,2021);
+    m1day5.setDate(3,4,2021);
     var m2day5 = new DateService();
-    m2day5.setDate(4,23,2021);
+    m2day5.setDate(23,4,2021);
     var monthGoal5: MonthlyGoal = {goalMType: "Monthly", goalDetails: "Powerclean 150 pounds 30 reps this month", goalSetDate: m1day5, goalMetDate: m2day5};
     this.goalsService.setDataCompletedGoal(monthGoal5);
 
 
     var y1day1 = new DateService();
-    y1day1.setDate(1,3,2020);
+    y1day1.setDate(3,1,2020);
     var y2day1 = new DateService();
-    y2day1.setDate(9,25,2020);
+    y2day1.setDate(25,9,2020);
     var yearGoal1: YearlyGoal = {goalYType: "Yearly", goalDetails: "Cardio for 1hr each day this year", goalSetDate: y1day1, goalMetDate: y2day1};
     this.goalsService.setDataCompletedGoal(yearGoal1);
 
     var y1day2 = new DateService();
-    y1day2.setDate(1,23,2020);
+    y1day2.setDate(23,1,2020);
     var y2day2 = new DateService();
-    y2day2.setDate(10,17,2020);
+    y2day2.setDate(17,10,2020);
     var yearGoal2: YearlyGoal = {goalYType: "Yearly", goalDetails: "Cardio for 1hr each day this year", goalSetDate: y1day2, goalMetDate: y2day2};
     this.goalsService.setDataCompletedGoal(yearGoal2);
 
     var y1day3 = new DateService();
-    y1day3.setDate(1,20,2020);
+    y1day3.setDate(20,1,2020);
     var y2day3 = new DateService();
-    y2day3.setDate(11,30,2020);
+    y2day3.setDate(30,1,2020);
     var yearGoal3: YearlyGoal = {goalYType: "Yearly", goalDetails: "Cardio for 1hr each day this year", goalSetDate: y1day3, goalMetDate: y2day3};
     this.goalsService.setDataCompletedGoal(yearGoal3);
 
     var y1day4 = new DateService();
-    y1day4.setDate(1,30,2020);
+    y1day4.setDate(30,1,2020);
     var y2day4 = new DateService();
-    y2day4.setDate(12,25,2020);
+    y2day4.setDate(25,12,2020);
     var yearGoal4: YearlyGoal = {goalYType: "Yearly", goalDetails: "Cardio for 1hr each day this year", goalSetDate: y1day4, goalMetDate: y2day4};
     this.goalsService.setDataCompletedGoal(yearGoal4);
 
     var y1day5 = new DateService();
     y1day5.setDate(1,1,2021);
     var y2day5 = new DateService();
-    y2day5.setDate(4,30,2021);
+    y2day5.setDate(30,4,2021);
     var yearGoal5: YearlyGoal = {goalYType: "Yearly", goalDetails: "Cardio for 1hr each day this year", goalSetDate: y1day5, goalMetDate: y2day5};
     this.goalsService.setDataCompletedGoal(yearGoal5);
   }
