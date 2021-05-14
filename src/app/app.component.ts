@@ -289,7 +289,7 @@ export class AppComponent implements OnInit {
     var y1day3 = new DateService();
     y1day3.setDate(20,1,2020);
     var y2day3 = new DateService();
-    y2day3.setDate(30,1,2020);
+    y2day3.setDate(30,11,2020);
     var yearGoal3: YearlyGoal = {goalYType: "Yearly", goalDetails: "Cardio for 1hr each day this year", goalSetDate: y1day3, goalMetDate: y2day3};
     this.goalsService.setDataCompletedGoal(yearGoal3);
 
