@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GoalsService } from '@src/app/services/goals/goals.service';
+import { IGoal } from '@src/app/services/goals/goalTypes/IGoal';
 
 @Component({
   selector: 'app-goals-met',
@@ -14,14 +15,18 @@ export class GoalsMetComponent implements OnInit {
   }
 
   public getAllCompletedDailyGoals(){
-    return this.goalService.getDailyCompleteGoals();
+    return this.reverseArray(this.goalService.getDailyCompleteGoals());
   }
 
   public getAllCompletedMonthlyGoals(){
-    return this.goalService.getMonthlyCompleteGoals();
+    return this.reverseArray(this.goalService.getMonthlyCompleteGoals());
   }
 
   public getAllCompletedYearlyGoals(){
-    return this.goalService.getYearlyCompleteGoals();
+    return this.reverseArray(this.goalService.getYearlyCompleteGoals());
+  }
+
+  private reverseArray(array: IGoal[]){
+    return array.slice().reverse();
   }
 }

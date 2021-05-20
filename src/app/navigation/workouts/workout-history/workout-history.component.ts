@@ -3,7 +3,7 @@ import { Color, Dialogs } from "@nativescript/core";
 import { Workout } from '@src/app/services/workout/workout-templates/workout';
 import { WorkoutStorageService } from '@src/app/services/workout/workout-storage.service';
 import { iosPreferredDatePickerStyleProperty } from '@nativescript/core/ui/date-picker';
-import { TimerService } from '@src/app/services/timer.service';
+import { TimerService } from '@src/app/services/timer/timer.service';
 import { IRepSetWl } from '@src/app/services/workout/workout-templates/set-interface/IRepSet-weightlifting';
 import { WeightLiftingWorkout } from '@src/app/services/workout/workout-templates/weightlifting-workout';
 import { ExtremeWorkout } from '@src/app/services/workout/workout-templates/extreme-workout';
