@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DateService } from '@src/app/services/date/date.service';
 import { IRepSetWl } from '@src/app/services/workout/workout-templates/set-interface/IRepSet-weightlifting';
 //import { IRepSet } from '@src/app/services/IRepSet-extreme';
-import { TimerService } from '@src/app/services/timer.service';
+import { TimerService } from '@src/app/services/timer/timer.service';
 import { Workout } from '@src/app/services/workout/workout-templates/workout';
 import { WorkoutStorageService } from '@src/app/services/workout/workout-storage.service';
 import { WeightLiftingWorkout } from '@src/app/services/workout/workout-templates/weightlifting-workout'
